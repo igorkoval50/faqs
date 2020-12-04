@@ -1,0 +1,1136 @@
+{% block sw_cms_element_faq %}
+<div class="cms-element-faq">
+{% block element_faq_inner %}
+{########################}
+{# Background image #}
+{########################}
+<div class="c108-faq-banner" :style="{ backgroundImage: getBackgroundImage }">
+<div class="c108-faq-inside" :style="{ backgroundImage: getTitleImage }">
+  {{ element.config.c108faqbannertitle.value }}
+</div>
+</div>
+{########################}
+{# Boxes #}
+{########################}
+<div class="cms-element-faq-boxes">
+{########################}
+{# Bereich 1 #}
+{########################}
+<div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection1icontype.value} c108-faq-section-box`" :style="passIconCol">
+{# Shopware Icon #}
+<div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+<div v-if="element.config.c108faqsection1icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+{# Check which icon and get name based on value #}
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'help'">
+  <sw-icon name="default-badge-help"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'plus-circle'">
+  <sw-icon name="default-basic-plus-circle"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'checkmark'">
+  <sw-icon name="default-basic-checkmark-line"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'checkmark-circle'">
+  <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'checkmark-block'">
+  <sw-icon name="default-basic-checkmark-block"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'info'">
+  <sw-icon name="default-badge-info"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'warning'">
+  <sw-icon name="default-badge-warning"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'trophy'">
+  <sw-icon name="default-award-trophy"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'avatar'">
+  <sw-icon name="default-avatar-single"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'arrow-switch'">
+  <sw-icon name="default-arrow-switch"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'star'">
+  <sw-icon name="default-basic-shape-star"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'stack-block'">
+  <sw-icon name="default-basic-stack-block"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'chart'">
+  <sw-icon name="default-chart-line"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'headset'">
+  <sw-icon name="default-device-headset"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'photocamera'">
+  <sw-icon name="default-device-photocamera"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'home'">
+  <sw-icon name="default-building-home"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'calendar-empty'">
+  <sw-icon name="default-calendar-empty"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'envelope'">
+  <sw-icon name="default-communication-envelope"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'speech-bubble'">
+  <sw-icon name="default-communication-speech-bubble"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'speech-bubbles'">
+  <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'pushpin'">
+  <sw-icon name="default-documentation-pushpin"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'marker'">
+  <sw-icon name="default-location-marker"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'lock-closed'">
+  <sw-icon name="default-lock-closed"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'graduate-cap'">
+  <sw-icon name="default-object-graduate-cap"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'package-gift'">
+  <sw-icon name="default-package-gift"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'cart'">
+  <sw-icon name="default-shopping-cart"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'bag'">
+  <sw-icon name="default-shopping-paper-bag"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'infinity'">
+  <sw-icon name="default-symbol-infinity"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'target-big'">
+  <sw-icon name="default-target-big"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'clock'">
+  <sw-icon name="default-time-clock"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'hourglass'">
+  <sw-icon name="default-time-hourglass"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'ruler-pencil'">
+  <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection1icon.value == 'settings'">
+  <sw-icon name="default-action-settings"></sw-icon>
+</div>
+{# End Check #}
+</div>
+{# Eigenes Icon #}
+<div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+<img :src="getPath1">
+</div>
+{# Text Wrapper #}
+<div class="c108-faq-text-wrapper">
+{# Titel #}
+<div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection1title.value }}</div>
+{# Text #}
+<div class="c108-faq-section-text-boxes">
+<p> {{ element.config.c108faqsection1text.value }} </p>
+</div>
+</div>
+</div>
+</div>
+{########################}
+{# Bereich 1: Ende #}
+{########################}
+{########################}
+{# Bereich 2 #}
+{########################}
+<div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection2icontype.value} c108-faq-section-box`" :style="passIconCol">
+{# Shopware Icon #}
+<div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+<div v-if="element.config.c108faqsection2icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+{# Check which icon and get name based on value #}
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'help'">
+  <sw-icon name="default-badge-help"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'plus-circle'">
+  <sw-icon name="default-basic-plus-circle"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'checkmark'">
+  <sw-icon name="default-basic-checkmark-line"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'checkmark-circle'">
+  <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'checkmark-block'">
+  <sw-icon name="default-basic-checkmark-block"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'info'">
+  <sw-icon name="default-badge-info"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'warning'">
+  <sw-icon name="default-badge-warning"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'trophy'">
+  <sw-icon name="default-award-trophy"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'avatar'">
+  <sw-icon name="default-avatar-single"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'arrow-switch'">
+  <sw-icon name="default-arrow-switch"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'star'">
+  <sw-icon name="default-basic-shape-star"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'stack-block'">
+  <sw-icon name="default-basic-stack-block"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'chart'">
+  <sw-icon name="default-chart-line"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'headset'">
+  <sw-icon name="default-device-headset"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'photocamera'">
+  <sw-icon name="default-device-photocamera"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'home'">
+  <sw-icon name="default-building-home"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'calendar-empty'">
+  <sw-icon name="default-calendar-empty"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'envelope'">
+  <sw-icon name="default-communication-envelope"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'speech-bubble'">
+  <sw-icon name="default-communication-speech-bubble"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'speech-bubbles'">
+  <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'pushpin'">
+  <sw-icon name="default-documentation-pushpin"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'marker'">
+  <sw-icon name="default-location-marker"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'lock-closed'">
+  <sw-icon name="default-lock-closed"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'graduate-cap'">
+  <sw-icon name="default-object-graduate-cap"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'package-gift'">
+  <sw-icon name="default-package-gift"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'cart'">
+  <sw-icon name="default-shopping-cart"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'bag'">
+  <sw-icon name="default-shopping-paper-bag"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'infinity'">
+  <sw-icon name="default-symbol-infinity"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'target-big'">
+  <sw-icon name="default-target-big"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'clock'">
+  <sw-icon name="default-time-clock"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'hourglass'">
+  <sw-icon name="default-time-hourglass"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'ruler-pencil'">
+  <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection2icon.value == 'settings'">
+  <sw-icon name="default-action-settings"></sw-icon>
+</div>
+{# End Check #}
+</div>
+{# Eigenes Icon #}
+<div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+<img :src="getPath2">
+</div>
+{# Text Wrapper #}
+<div class="c108-faq-text-wrapper">
+{# Titel #}
+<div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection2title.value }}</div>
+{# Text #}
+<div class="c108-faq-section-text-boxes">
+<p> {{ element.config.c108faqsection2text.value }} </p>
+</div>
+</div>
+</div>
+</div>
+{########################}
+{# Bereich 2: Ende #}
+{########################}
+{########################}
+{# Bereich 3 #}
+{########################}
+<div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection3icontype.value} c108-faq-section-box`" :style="passIconCol">
+{# Shopware Icon #}
+<div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+<div v-if="element.config.c108faqsection3icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+{# Check which icon and get name based on value #}
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'help'">
+  <sw-icon name="default-badge-help"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'plus-circle'">
+  <sw-icon name="default-basic-plus-circle"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'checkmark'">
+  <sw-icon name="default-basic-checkmark-line"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'checkmark-circle'">
+  <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'checkmark-block'">
+  <sw-icon name="default-basic-checkmark-block"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'info'">
+  <sw-icon name="default-badge-info"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'warning'">
+  <sw-icon name="default-badge-warning"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'trophy'">
+  <sw-icon name="default-award-trophy"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'avatar'">
+  <sw-icon name="default-avatar-single"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'arrow-switch'">
+  <sw-icon name="default-arrow-switch"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'star'">
+  <sw-icon name="default-basic-shape-star"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'stack-block'">
+  <sw-icon name="default-basic-stack-block"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'chart'">
+  <sw-icon name="default-chart-line"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'headset'">
+  <sw-icon name="default-device-headset"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'photocamera'">
+  <sw-icon name="default-device-photocamera"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'home'">
+  <sw-icon name="default-building-home"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'calendar-empty'">
+  <sw-icon name="default-calendar-empty"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'envelope'">
+  <sw-icon name="default-communication-envelope"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'speech-bubble'">
+  <sw-icon name="default-communication-speech-bubble"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'speech-bubbles'">
+  <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'pushpin'">
+  <sw-icon name="default-documentation-pushpin"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'marker'">
+  <sw-icon name="default-location-marker"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'lock-closed'">
+  <sw-icon name="default-lock-closed"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'graduate-cap'">
+  <sw-icon name="default-object-graduate-cap"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'package-gift'">
+  <sw-icon name="default-package-gift"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'cart'">
+  <sw-icon name="default-shopping-cart"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'bag'">
+  <sw-icon name="default-shopping-paper-bag"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'infinity'">
+  <sw-icon name="default-symbol-infinity"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'target-big'">
+  <sw-icon name="default-target-big"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'clock'">
+  <sw-icon name="default-time-clock"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'hourglass'">
+  <sw-icon name="default-time-hourglass"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'ruler-pencil'">
+  <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+</div>
+<div class="c108-faq-preview-icon" v-if="element.config.c108faqsection3icon.value == 'settings'">
+  <sw-icon name="default-action-settings"></sw-icon>
+</div>
+{# End Check #}
+</div>
+{# Eigenes Icon #}
+<div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+<img :src="getPath3">
+</div>
+{# Text Wrapper #}
+<div class="c108-faq-text-wrapper">
+{# Titel #}
+<div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection3title.value }}</div>
+{# Text #}
+<div class="c108-faq-section-text-boxes">
+<p> {{ element.config.c108faqsection3text.value }} </p>
+</div>
+</div>
+</div>
+</div>
+{########################}
+{# Bereich 3: Ende #}
+{########################}
+  {########################}
+  {# Bereich 4 #}
+  {########################}
+  <div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection4icontype.value} c108-faq-section-box`" :style="passIconCol">
+    {# Shopware Icon #}
+    <div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+      <div v-if="element.config.c108faqsection4icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+        {# Check which icon and get name based on value #}
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'help'">
+          <sw-icon name="default-badge-help"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'plus-circle'">
+          <sw-icon name="default-basic-plus-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'checkmark'">
+          <sw-icon name="default-basic-checkmark-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'checkmark-circle'">
+          <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'checkmark-block'">
+          <sw-icon name="default-basic-checkmark-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'info'">
+          <sw-icon name="default-badge-info"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'warning'">
+          <sw-icon name="default-badge-warning"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'trophy'">
+          <sw-icon name="default-award-trophy"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'avatar'">
+          <sw-icon name="default-avatar-single"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'arrow-switch'">
+          <sw-icon name="default-arrow-switch"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'star'">
+          <sw-icon name="default-basic-shape-star"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'stack-block'">
+          <sw-icon name="default-basic-stack-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'chart'">
+          <sw-icon name="default-chart-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'headset'">
+          <sw-icon name="default-device-headset"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'photocamera'">
+          <sw-icon name="default-device-photocamera"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'home'">
+          <sw-icon name="default-building-home"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'calendar-empty'">
+          <sw-icon name="default-calendar-empty"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'envelope'">
+          <sw-icon name="default-communication-envelope"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'speech-bubble'">
+          <sw-icon name="default-communication-speech-bubble"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'speech-bubbles'">
+          <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'pushpin'">
+          <sw-icon name="default-documentation-pushpin"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'marker'">
+          <sw-icon name="default-location-marker"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'lock-closed'">
+          <sw-icon name="default-lock-closed"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'graduate-cap'">
+          <sw-icon name="default-object-graduate-cap"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'package-gift'">
+          <sw-icon name="default-package-gift"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'cart'">
+          <sw-icon name="default-shopping-cart"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'bag'">
+          <sw-icon name="default-shopping-paper-bag"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'infinity'">
+          <sw-icon name="default-symbol-infinity"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'target-big'">
+          <sw-icon name="default-target-big"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'clock'">
+          <sw-icon name="default-time-clock"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'hourglass'">
+          <sw-icon name="default-time-hourglass"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'ruler-pencil'">
+          <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection4icon.value == 'settings'">
+          <sw-icon name="default-action-settings"></sw-icon>
+        </div>
+        {# End Check #}
+      </div>
+      {# Eigenes Icon #}
+      <div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+        <img :src="getPath4">
+      </div>
+      {# Text Wrapper #}
+      <div class="c108-faq-text-wrapper">
+        {# Titel #}
+        <div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection4title.value }}</div>
+        {# Text #}
+        <div class="c108-faq-section-text-boxes">
+          <p> {{ element.config.c108faqsection4text.value }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {########################}
+  {# Bereich 4: Ende #}
+  {########################}
+
+  {########################}
+  {# Bereich 5 #}
+  {########################}
+  <div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection5icontype.value} c108-faq-section-box`" :style="passIconCol">
+    {# Shopware Icon #}
+    <div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+      <div v-if="element.config.c108faqsection5icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+        {# Check which icon and get name based on value #}
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'help'">
+          <sw-icon name="default-badge-help"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'plus-circle'">
+          <sw-icon name="default-basic-plus-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'checkmark'">
+          <sw-icon name="default-basic-checkmark-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'checkmark-circle'">
+          <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'checkmark-block'">
+          <sw-icon name="default-basic-checkmark-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'info'">
+          <sw-icon name="default-badge-info"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'warning'">
+          <sw-icon name="default-badge-warning"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'trophy'">
+          <sw-icon name="default-award-trophy"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'avatar'">
+          <sw-icon name="default-avatar-single"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'arrow-switch'">
+          <sw-icon name="default-arrow-switch"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'star'">
+          <sw-icon name="default-basic-shape-star"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'stack-block'">
+          <sw-icon name="default-basic-stack-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'chart'">
+          <sw-icon name="default-chart-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'headset'">
+          <sw-icon name="default-device-headset"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'photocamera'">
+          <sw-icon name="default-device-photocamera"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'home'">
+          <sw-icon name="default-building-home"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'calendar-empty'">
+          <sw-icon name="default-calendar-empty"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'envelope'">
+          <sw-icon name="default-communication-envelope"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'speech-bubble'">
+          <sw-icon name="default-communication-speech-bubble"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'speech-bubbles'">
+          <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'pushpin'">
+          <sw-icon name="default-documentation-pushpin"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'marker'">
+          <sw-icon name="default-location-marker"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'lock-closed'">
+          <sw-icon name="default-lock-closed"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'graduate-cap'">
+          <sw-icon name="default-object-graduate-cap"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'package-gift'">
+          <sw-icon name="default-package-gift"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'cart'">
+          <sw-icon name="default-shopping-cart"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'bag'">
+          <sw-icon name="default-shopping-paper-bag"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'infinity'">
+          <sw-icon name="default-symbol-infinity"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'target-big'">
+          <sw-icon name="default-target-big"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'clock'">
+          <sw-icon name="default-time-clock"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'hourglass'">
+          <sw-icon name="default-time-hourglass"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'ruler-pencil'">
+          <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection5icon.value == 'settings'">
+          <sw-icon name="default-action-settings"></sw-icon>
+        </div>
+        {# End Check #}
+      </div>
+      {# Eigenes Icon #}
+      <div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+        <img :src="getPath5">
+      </div>
+      {# Text Wrapper #}
+      <div class="c108-faq-text-wrapper">
+        {# Titel #}
+        <div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection5title.value }}</div>
+        {# Text #}
+        <div class="c108-faq-section-text-boxes">
+          <p> {{ element.config.c108faqsection5text.value }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {########################}
+  {# Bereich 5: Ende #}
+  {########################}
+
+  {########################}
+  {# Bereich 6 #}
+  {########################}
+  <div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection6icontype.value} c108-faq-section-box`" :style="passIconCol">
+    {# Shopware Icon #}
+    <div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+      <div v-if="element.config.c108faqsection6icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+        {# Check which icon and get name based on value #}
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'help'">
+          <sw-icon name="default-badge-help"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'plus-circle'">
+          <sw-icon name="default-basic-plus-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'checkmark'">
+          <sw-icon name="default-basic-checkmark-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'checkmark-circle'">
+          <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'checkmark-block'">
+          <sw-icon name="default-basic-checkmark-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'info'">
+          <sw-icon name="default-badge-info"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'warning'">
+          <sw-icon name="default-badge-warning"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'trophy'">
+          <sw-icon name="default-award-trophy"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'avatar'">
+          <sw-icon name="default-avatar-single"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'arrow-switch'">
+          <sw-icon name="default-arrow-switch"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'star'">
+          <sw-icon name="default-basic-shape-star"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'stack-block'">
+          <sw-icon name="default-basic-stack-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'chart'">
+          <sw-icon name="default-chart-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'headset'">
+          <sw-icon name="default-device-headset"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'photocamera'">
+          <sw-icon name="default-device-photocamera"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'home'">
+          <sw-icon name="default-building-home"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'calendar-empty'">
+          <sw-icon name="default-calendar-empty"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'envelope'">
+          <sw-icon name="default-communication-envelope"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'speech-bubble'">
+          <sw-icon name="default-communication-speech-bubble"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'speech-bubbles'">
+          <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'pushpin'">
+          <sw-icon name="default-documentation-pushpin"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'marker'">
+          <sw-icon name="default-location-marker"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'lock-closed'">
+          <sw-icon name="default-lock-closed"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'graduate-cap'">
+          <sw-icon name="default-object-graduate-cap"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'package-gift'">
+          <sw-icon name="default-package-gift"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'cart'">
+          <sw-icon name="default-shopping-cart"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'bag'">
+          <sw-icon name="default-shopping-paper-bag"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'infinity'">
+          <sw-icon name="default-symbol-infinity"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'target-big'">
+          <sw-icon name="default-target-big"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'clock'">
+          <sw-icon name="default-time-clock"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'hourglass'">
+          <sw-icon name="default-time-hourglass"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'ruler-pencil'">
+          <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection6icon.value == 'settings'">
+          <sw-icon name="default-action-settings"></sw-icon>
+        </div>
+        {# End Check #}
+      </div>
+      {# Eigenes Icon #}
+      <div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+        <img :src="getPath6">
+      </div>
+      {# Text Wrapper #}
+      <div class="c108-faq-text-wrapper">
+        {# Titel #}
+        <div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection6title.value }}</div>
+        {# Text #}
+        <div class="c108-faq-section-text-boxes">
+          <p> {{ element.config.c108faqsection6text.value }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {########################}
+  {# Bereich 6: Ende #}
+  {########################}
+
+  {########################}
+  {# Bereich 7 #}
+  {########################}
+  <div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection7icontype.value} c108-faq-section-box`" :style="passIconCol">
+    {# Shopware Icon #}
+    <div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+      <div v-if="element.config.c108faqsection7icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+        {# Check which icon and get name based on value #}
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'help'">
+          <sw-icon name="default-badge-help"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'plus-circle'">
+          <sw-icon name="default-basic-plus-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'checkmark'">
+          <sw-icon name="default-basic-checkmark-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'checkmark-circle'">
+          <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'checkmark-block'">
+          <sw-icon name="default-basic-checkmark-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'info'">
+          <sw-icon name="default-badge-info"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'warning'">
+          <sw-icon name="default-badge-warning"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'trophy'">
+          <sw-icon name="default-award-trophy"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'avatar'">
+          <sw-icon name="default-avatar-single"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'arrow-switch'">
+          <sw-icon name="default-arrow-switch"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'star'">
+          <sw-icon name="default-basic-shape-star"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'stack-block'">
+          <sw-icon name="default-basic-stack-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'chart'">
+          <sw-icon name="default-chart-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'headset'">
+          <sw-icon name="default-device-headset"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'photocamera'">
+          <sw-icon name="default-device-photocamera"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'home'">
+          <sw-icon name="default-building-home"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'calendar-empty'">
+          <sw-icon name="default-calendar-empty"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'envelope'">
+          <sw-icon name="default-communication-envelope"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'speech-bubble'">
+          <sw-icon name="default-communication-speech-bubble"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'speech-bubbles'">
+          <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'pushpin'">
+          <sw-icon name="default-documentation-pushpin"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'marker'">
+          <sw-icon name="default-location-marker"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'lock-closed'">
+          <sw-icon name="default-lock-closed"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'graduate-cap'">
+          <sw-icon name="default-object-graduate-cap"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'package-gift'">
+          <sw-icon name="default-package-gift"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'cart'">
+          <sw-icon name="default-shopping-cart"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'bag'">
+          <sw-icon name="default-shopping-paper-bag"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'infinity'">
+          <sw-icon name="default-symbol-infinity"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'target-big'">
+          <sw-icon name="default-target-big"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'clock'">
+          <sw-icon name="default-time-clock"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'hourglass'">
+          <sw-icon name="default-time-hourglass"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'ruler-pencil'">
+          <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection7icon.value == 'settings'">
+          <sw-icon name="default-action-settings"></sw-icon>
+        </div>
+        {# End Check #}
+      </div>
+      {# Eigenes Icon #}
+      <div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+        <img :src="getPath7">
+      </div>
+      {# Text Wrapper #}
+      <div class="c108-faq-text-wrapper">
+        {# Titel #}
+        <div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection7title.value }}</div>
+        {# Text #}
+        <div class="c108-faq-section-text-boxes">
+          <p> {{ element.config.c108faqsection7text.value }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {########################}
+  {# Bereich 7: Ende #}
+  {########################}
+
+  {########################}
+  {# Bereich 8 #}
+  {########################}
+  <div class="c108faq-content" :class="`c108faqwrapper-${element.config.c108faqsection8icontype.value} c108-faq-section-box`" :style="passIconCol">
+    {# Shopware Icon #}
+    <div class="c108-faq-outer-wrapper" :class="`c108faqwrapper-einfach`" :style="passIconCol">
+      <div v-if="element.config.c108faqsection8icontype.value == 'shippedicon'"  class="c108-icon-wrapper">
+        {# Check which icon and get name based on value #}
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'help'">
+          <sw-icon name="default-badge-help"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'plus-circle'">
+          <sw-icon name="default-basic-plus-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'checkmark'">
+          <sw-icon name="default-basic-checkmark-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'checkmark-circle'">
+          <sw-icon name="default-basic-checkmark-circle"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'checkmark-block'">
+          <sw-icon name="default-basic-checkmark-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'info'">
+          <sw-icon name="default-badge-info"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'warning'">
+          <sw-icon name="default-badge-warning"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'trophy'">
+          <sw-icon name="default-award-trophy"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'avatar'">
+          <sw-icon name="default-avatar-single"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'arrow-switch'">
+          <sw-icon name="default-arrow-switch"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'star'">
+          <sw-icon name="default-basic-shape-star"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'stack-block'">
+          <sw-icon name="default-basic-stack-block"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'chart'">
+          <sw-icon name="default-chart-line"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'headset'">
+          <sw-icon name="default-device-headset"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'photocamera'">
+          <sw-icon name="default-device-photocamera"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'home'">
+          <sw-icon name="default-building-home"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'calendar-empty'">
+          <sw-icon name="default-calendar-empty"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'envelope'">
+          <sw-icon name="default-communication-envelope"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'speech-bubble'">
+          <sw-icon name="default-communication-speech-bubble"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'speech-bubbles'">
+          <sw-icon name="default-communication-speech-bubbles"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'pushpin'">
+          <sw-icon name="default-documentation-pushpin"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'marker'">
+          <sw-icon name="default-location-marker"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'lock-closed'">
+          <sw-icon name="default-lock-closed"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'graduate-cap'">
+          <sw-icon name="default-object-graduate-cap"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'package-gift'">
+          <sw-icon name="default-package-gift"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'cart'">
+          <sw-icon name="default-shopping-cart"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'bag'">
+          <sw-icon name="default-shopping-paper-bag"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'infinity'">
+          <sw-icon name="default-symbol-infinity"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'target-big'">
+          <sw-icon name="default-target-big"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'clock'">
+          <sw-icon name="default-time-clock"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'hourglass'">
+          <sw-icon name="default-time-hourglass"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'ruler-pencil'">
+          <sw-icon name="default-tools-ruler-pencil"></sw-icon>
+        </div>
+        <div class="c108-faq-preview-icon" v-if="element.config.c108faqsection8icon.value == 'settings'">
+          <sw-icon name="default-action-settings"></sw-icon>
+        </div>
+        {# End Check #}
+      </div>
+      {# Eigenes Icon #}
+      <div v-else class="sw-cms-el-image" class="c108faqownimgwrapper">
+        <img :src="getPath8">
+      </div>
+      {# Text Wrapper #}
+      <div class="c108-faq-text-wrapper">
+        {# Titel #}
+        <div class="c108-faq-section-title-boxes">{{ element.config.c108faqsection8title.value }}</div>
+        {# Text #}
+        <div class="c108-faq-section-text-boxes">
+          <p> {{ element.config.c108faqsection8text.value }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {########################}
+  {# Bereich 8: Ende #}
+  {########################}
+{# Suche #}
+<div class="c108-faq-suchfeld-holder">
+<span class="c108-faq-search-title">{{ $tc('sw-cms.elements.faq.component.searchlabel') }}</span>
+<input type="text" name="faqsuchfeld" class="c108-faq-suchfeld">
+</div>
+{# Suche: Ende #}
+</div>
+{########################}
+{# Questions and answers #}
+{########################}
+{# Fragen Bereich 1 #}
+<div class="c108-faq-section-outer">
+<div class="c108-faq-section-title">
+{{ element.config.c108faqsection1title.value }}
+</div>
+<div class="c108-question-array-wrapper">
+<div v-for="(currentQuestion, index) in element.config.c108faqsection1questionsArray.value">
+<button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+</div>
+</div>
+</div>
+{# Fragen Bereich 2 #}
+<div class="c108-faq-section-outer">
+<div class="c108-faq-section-title">
+{{ element.config.c108faqsection2title.value }}
+</div>
+<div class="c108-question-array-wrapper">
+<div v-for="(currentQuestion, index) in element.config.c108faqsection2questionsArray.value">
+<button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+</div>
+</div>
+</div>
+{# Fragen Bereich 3 #}
+<div class="c108-faq-section-outer">
+<div class="c108-faq-section-title">
+{{ element.config.c108faqsection3title.value }}
+</div>
+<div class="c108-question-array-wrapper">
+<div v-for="(currentQuestion, index) in element.config.c108faqsection3questionsArray.value">
+<button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+</div>
+</div>
+</div>
+{# Fragen Bereich 4 #}
+  <div class="c108-faq-section-outer">
+    <div class="c108-faq-section-title">
+      {{ element.config.c108faqsection4title.value }}
+    </div>
+    <div class="c108-question-array-wrapper">
+      <div v-for="(currentQuestion, index) in element.config.c108faqsection4questionsArray.value">
+        <button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+      </div>
+    </div>
+  </div>
+  {# Fragen Bereich 5 #}
+  <div class="c108-faq-section-outer">
+    <div class="c108-faq-section-title">
+      {{ element.config.c108faqsection5title.value }}
+    </div>
+    <div class="c108-question-array-wrapper">
+      <div v-for="(currentQuestion, index) in element.config.c108faqsection5questionsArray.value">
+        <button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+      </div>
+    </div>
+  </div>
+  {# Fragen Bereich 6 #}
+  <div class="c108-faq-section-outer">
+    <div class="c108-faq-section-title">
+      {{ element.config.c108faqsection6title.value }}
+    </div>
+    <div class="c108-question-array-wrapper">
+      <div v-for="(currentQuestion, index) in element.config.c108faqsection6questionsArray.value">
+        <button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+      </div>
+    </div>
+  </div>
+  {# Fragen Bereich 7 #}
+  <div class="c108-faq-section-outer">
+    <div class="c108-faq-section-title">
+      {{ element.config.c108faqsection7title.value }}
+    </div>
+    <div class="c108-question-array-wrapper">
+      <div v-for="(currentQuestion, index) in element.config.c108faqsection7questionsArray.value">
+        <button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+      </div>
+    </div>
+  </div>
+  {# Fragen Bereich 8 #}
+  <div class="c108-faq-section-outer">
+    <div class="c108-faq-section-title">
+      {{ element.config.c108faqsection8title.value }}
+    </div>
+    <div class="c108-question-array-wrapper">
+      <div v-for="(currentQuestion, index) in element.config.c108faqsection8questionsArray.value">
+        <button v-if="currentQuestion.question.length" class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+</div>
+{% endblock %}

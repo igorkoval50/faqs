@@ -1,0 +1,42 @@
+{
+  "sw-cms": {
+    "blocks": {
+      "textImage": {
+        "faq": {
+          "label": "FAQ-Bereich"
+        }
+      }
+    },
+    "elements": {
+      "faq": {
+        "component": {
+          "searchlabel": "FAQ-Bereich durchsuchen"
+        },
+        "config": {
+          "tabsettings": {
+            "label": "Einstellungen",
+            "highlight": "Farbe",
+            "media": "Hintergrundbild",
+            "mediahint": "Wir empfehlen das Bild komprimiert hochzuladen.",
+            "iconhint": "Wir empfehlen eine Auflösung von 100 Pixeln x 100 Pixeln.",
+            "mediatype": "Hintergrundbild",
+            "mediatypeshipped": "Standard",
+            "mediatypeown": "Eigenes",
+            "titletype": "Titel",
+            "titletype01": "Style 1",
+            "titletype02": "Style 2",
+            "titletype03": "Style 3",
+            "titletype04": "Style 4"
+          },
+          "tabcontent": {
+            "section": "Bereich",
+            "title": "Titel",
+            "description": "Beschreibung",
+            "path": "Link zum Icon",
+            "question": "Frage"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{% block block_faq %}
+<div class="c108-faq-outer">
+{% set element = block.slots.getSlot('c108faqcontent') %}
+{% set id = element.id %}
+<div data-cms-element-id="{{ id }}" class="c108-faq-block">
+{% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+</div>
+</div>
+{% endblock %}

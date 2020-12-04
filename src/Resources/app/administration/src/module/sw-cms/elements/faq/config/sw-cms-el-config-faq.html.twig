@@ -1,0 +1,1577 @@
+{% block sw_cms_element_c108_ib_config %}
+<div class="sw-cms-el-config-faq">
+{########################}
+{# Tabs #}
+{########################}
+<sw-tabs defaultItem="settings">
+{########################}
+{# Template Tabs #}
+{########################}
+<template slot-scope="{ active }">
+<sw-tabs-item name="settings" :activeTab="active">
+{{ $tc('sw-cms.elements.faq.config.tabsettings.label') }}
+</sw-tabs-item>
+<sw-tabs-item name="section1" :activeTab="active">
+{{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 1
+</sw-tabs-item>
+<sw-tabs-item name="section2" :activeTab="active">
+{{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 2
+</sw-tabs-item>
+<sw-tabs-item name="section3" :activeTab="active">
+{{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 3
+</sw-tabs-item>
+    <sw-tabs-item name="section4" :activeTab="active">
+        {{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 4
+    </sw-tabs-item>
+    </sw-tabs-item>
+    <sw-tabs-item name="section5" :activeTab="active">
+        {{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 5
+    </sw-tabs-item>
+    </sw-tabs-item>
+    <sw-tabs-item name="section6" :activeTab="active">
+        {{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 6
+    </sw-tabs-item>
+    </sw-tabs-item>
+    <sw-tabs-item name="section7" :activeTab="active">
+        {{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 7
+    </sw-tabs-item>
+    </sw-tabs-item>
+    <sw-tabs-item name="section8" :activeTab="active">
+        {{ $tc('sw-cms.elements.faq.config.tabcontent.section') }} 8
+    </sw-tabs-item>
+</template>
+{########################}
+{# Template Tabs Inhalt #}
+{########################}
+<template slot="content" slot-scope="{ active }">
+{######################}
+{# Tab: Einstellungen #}
+{######################}
+<sw-container v-if="active === 'settings'"
+class="sw-cms-el-config-form__tab-options">
+{# Standard Settings #}
+<div class="c108-faq-standard-settings">
+{# Highlightfarbe #}
+<sw-colorpicker class="c108-faq-select-small" v-model="element.config.c108faqhighlightcolor.value"
+:label="$tc('sw-cms.elements.faq.config.tabsettings.highlight')"
+value="#015E06"
+colorOutput="auto"
+:alpha="true"
+:disabled="false"
+:colorLabels="true"
+zIndex="100">
+</sw-colorpicker>
+{# Select Shipped or Own Image for Background image #}
+<sw-select-field class="c108-faq-select-small" v-model="element.config.c108faqbannertype.value" :label="$tc('sw-cms.elements.faq.config.tabsettings.mediatype')">
+<option value="shippedimage">{{ $tc('sw-cms.elements.faq.config.tabsettings.mediatypeshipped') }}</option>
+<option value="ownimage">{{ $tc('sw-cms.elements.faq.config.tabsettings.mediatypeown') }}</option>
+</sw-select-field>
+{# Shipped Images #}
+<div class="bg-select-wrapper" v-show="element.config.c108faqbannertype.value=='shippedimage'">
+<div class="c108-ip-bg-imgs">
+<label>
+<input type="radio" value="c108-faq-bg-1" checked v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-1.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-2" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-2.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-3" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-3.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-4" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-4.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-5" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-5.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-6" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-6.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-7" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-7.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-8" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-8.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-9" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-9.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-10" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-10.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-11" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-11.jpg' | asset">
+</label>
+<label>
+<input type="radio" value="c108-faq-bg-12" v-model="element.config.c108faqbannerimg.value">
+<img :src="'/c108faq/static/img/cms/c108-faq-bg-12.jpg' | asset">
+</label>
+</div>
+</div>
+{# Media Upload V2 #}
+<div class="c108-config-img" v-show="element.config.c108faqbannertype.value=='ownimage'">
+<sw-help-text :text="$tc('sw-cms.elements.faq.config.tabsettings.mediahint')" :width="200" tooltipPosition="left">
+</sw-help-text>
+<sw-cms-mapping-field :label="$tc('sw-cms.elements.faq.config.tabsettings.media')"
+valueTypes="entity" entity="media" v-model="element.config.media">
+<sw-media-upload-v2 variant="regular"
+:uploadTag="uploadTag"
+:source="previewSource"
+:allowMultiSelect="false"
+:defaultFolder="cmsPageState.pageEntityName"
+:caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+@media-upload-sidebar-open="onOpenMediaModal"
+@media-upload-remove-image="onImageRemove">
+</sw-media-upload-v2>
+<div class="sw-cms-el-config-image__mapping-preview" slot="preview" slot-scope="{ demoValue }">
+<img :src="demoValue.url" v-if="demoValue.url">
+<sw-alert class="sw-cms-el-config-image__preview-info" variant="info" v-else>
+{{ $tc('sw-cms.detail.label.mappingEmptyPreview') }}
+</sw-alert>
+</div>
+</sw-cms-mapping-field>
+<sw-upload-listener
+:uploadTag="uploadTag"
+autoUpload
+@media-upload-finish="onImageUpload">
+</sw-upload-listener>
+<sw-media-modal-v2
+variant="regular"
+v-if="mediaModalIsOpen"
+:caption="$tc('sw-cms.elements.general.config.caption.mediaUpload')"
+:entityContext="cmsPageState.entityName"
+:allowMultiSelect="false"
+:initialFolderId="cmsPageState.defaultMediaFolderId"
+@media-upload-remove-image="onImageRemove"
+@media-modal-selection-change="onSelectionChanges"
+@modal-close="onCloseModal">
+</sw-media-modal-v2>
+</div>
+{# Media Upload V2 Ende #}
+{# Title image #}
+<sw-text-field class="c108-faq-select-small" v-model="element.config.c108faqbannertitle.value" :label="$tc('sw-cms.elements.faq.config.tabsettings.titletype')">
+</sw-text-field>
+</div>
+</sw-container>
+{#################################}
+{# Tab: Bereich 1 #}
+{#################################}
+<sw-container v-else-if="active === 'section1'"
+class="sw-cms-el-config-form__tab-content">
+<div class="c108-faq-icontype-settings">
+<sw-select-field v-model="element.config.c108faqsection1icontype.value" label="Icon">
+<option value="shippedicon">Shopware Icon</option>
+<option value="ownicon">Eigenes Icon</option>
+</sw-select-field>
+</div>
+{# Shopware Icon #}
+<div v-if="element.config.c108faqsection1icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection1icontype">
+<div class="icon-select-wrapper">
+<div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+<sw-radio-panel value="help"
+icon="default-badge-help"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="plus-circle"
+icon="default-basic-plus-circle"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark"
+icon="default-basic-checkmark-line"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark-circle"
+icon="default-basic-checkmark-circle"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark-block"
+icon="default-basic-checkmark-block"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="info"
+icon="default-badge-info"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="warning"
+icon="default-badge-warning"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="trophy"
+icon="default-award-trophy"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="avatar"
+icon="default-avatar-single"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="arrow-switch"
+icon="default-arrow-switch"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="star"
+icon="default-basic-shape-star"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="stack-block"
+icon="default-basic-stack-block"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="chart"
+icon="default-chart-line"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="headset"
+icon="default-device-headset"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="photocamera"
+icon="default-device-photocamera"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="home"
+icon="default-building-home"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="calendar-empty"
+icon="default-calendar-empty"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="envelope"
+icon="default-communication-envelope"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="speech-bubble"
+icon="default-communication-speech-bubble"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="speech-bubbles"
+icon="default-communication-speech-bubbles"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="pushpin"
+icon="default-documentation-pushpin"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="marker"
+icon="default-location-marker"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="lock-closed"
+icon="default-lock-closed"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="graduate-cap"
+icon="default-object-graduate-cap"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="package-gift"
+icon="default-package-gift"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="cart"
+icon="default-shopping-cart"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="bag"
+icon="default-shopping-paper-bag"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="infinity"
+icon="default-symbol-infinity"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="target-big"
+icon="default-target-big"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="clock"
+icon="default-time-clock"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="hourglass"
+icon="default-time-hourglass"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="ruler-pencil"
+icon="default-tools-ruler-pencil"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="settings"
+icon="default-action-settings"
+v-model="element.config.c108faqsection1icon.value"
+></sw-radio-panel>
+</div>
+</div>
+</div>
+{# Shopware Icon Ende #}
+{# Eigenes Icon #}
+<div v-else class="c108faqwrapper" class="media c108faqsection1icontype">
+<sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection1iconpath.value"></sw-url-field>
+</div>
+{# Eigenes Icon Ende #}
+{# Bereich Titel #}
+<div class="c108-faq-spacer">
+<sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection1title.value"></sw-text-field>
+{# Bereich Beschreibung #}
+<sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection1text.value"></sw-textarea-field>
+</div>
+{# Fragen #}
+<div class="c108-question-array-wrapper">
+<div v-for="(currentQuestion, index) in element.config.c108faqsection1questionsArray.value">
+<span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+<input v-model="currentQuestion.question">
+<textarea v-model="currentQuestion.answer"></textarea>
+</span>
+</div>
+</div>
+{# Fragen: Ende #}
+</sw-container>
+{#################################}
+{# Tab: Bereich 1: Ende #}
+{#################################}
+{#################################}
+{# Tab: Bereich 2 #}
+{#################################}
+<sw-container v-else-if="active === 'section2'"
+class="sw-cms-el-config-form__tab-content">
+<div class="c108-faq-icontype-settings">
+<sw-select-field v-model="element.config.c108faqsection2icontype.value" label="Icon">
+<option value="shippedicon">Shopware Icon</option>
+<option value="ownicon">Eigenes Icon</option>
+</sw-select-field>
+</div>
+{# Shopware Icon #}
+<div v-if="element.config.c108faqsection2icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection2icontype">
+<div class="icon-select-wrapper">
+<div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+<sw-radio-panel value="help"
+icon="default-badge-help"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="plus-circle"
+icon="default-basic-plus-circle"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark"
+icon="default-basic-checkmark-line"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark-circle"
+icon="default-basic-checkmark-circle"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark-block"
+icon="default-basic-checkmark-block"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="info"
+icon="default-badge-info"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="warning"
+icon="default-badge-warning"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="trophy"
+icon="default-award-trophy"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="avatar"
+icon="default-avatar-single"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="arrow-switch"
+icon="default-arrow-switch"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="star"
+icon="default-basic-shape-star"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="stack-block"
+icon="default-basic-stack-block"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="chart"
+icon="default-chart-line"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="headset"
+icon="default-device-headset"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="photocamera"
+icon="default-device-photocamera"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="home"
+icon="default-building-home"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="calendar-empty"
+icon="default-calendar-empty"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="envelope"
+icon="default-communication-envelope"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="speech-bubble"
+icon="default-communication-speech-bubble"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="speech-bubbles"
+icon="default-communication-speech-bubbles"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="pushpin"
+icon="default-documentation-pushpin"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="marker"
+icon="default-location-marker"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="lock-closed"
+icon="default-lock-closed"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="graduate-cap"
+icon="default-object-graduate-cap"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="package-gift"
+icon="default-package-gift"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="cart"
+icon="default-shopping-cart"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="bag"
+icon="default-shopping-paper-bag"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="infinity"
+icon="default-symbol-infinity"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="target-big"
+icon="default-target-big"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="clock"
+icon="default-time-clock"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="hourglass"
+icon="default-time-hourglass"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="ruler-pencil"
+icon="default-tools-ruler-pencil"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="settings"
+icon="default-action-settings"
+v-model="element.config.c108faqsection2icon.value"
+></sw-radio-panel>
+</div>
+</div>
+</div>
+{# Shopware Icon Ende #}
+{# Eigenes Icon #}
+<div v-else class="c108faqwrapper" class="media c108faqsection2icontype">
+<sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection2iconpath.value"></sw-url-field>
+</div>
+{# Eigenes Icon Ende #}
+{# Bereich Titel #}
+<div class="c108-faq-spacer">
+<sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection2title.value"></sw-text-field>
+{# Bereich Beschreibung #}
+<sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection2text.value"></sw-textarea-field>
+</div>
+{# Fragen #}
+<div class="c108-question-array-wrapper">
+<div v-for="(currentQuestion, index) in element.config.c108faqsection2questionsArray.value">
+<span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+<input v-model="currentQuestion.question">
+<textarea v-model="currentQuestion.answer"></textarea>
+</span>
+</div>
+</div>
+{# Fragen: Ende #}
+</sw-container>
+{#################################}
+{# Tab: Bereich 2: Ende #}
+{#################################}
+{#################################}
+{# Tab: Bereich 3 #}
+{#################################}
+<sw-container v-else-if="active === 'section3'"
+class="sw-cms-el-config-form__tab-content">
+<div class="c108-faq-icontype-settings">
+<sw-select-field v-model="element.config.c108faqsection3icontype.value" label="Icon">
+<option value="shippedicon">Shopware Icon</option>
+<option value="ownicon">Eigenes Icon</option>
+</sw-select-field>
+</div>
+{# Shopware Icon #}
+<div v-if="element.config.c108faqsection3icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection3icontype">
+<div class="icon-select-wrapper">
+<div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+<sw-radio-panel value="help"
+icon="default-badge-help"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="plus-circle"
+icon="default-basic-plus-circle"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark"
+icon="default-basic-checkmark-line"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark-circle"
+icon="default-basic-checkmark-circle"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="checkmark-block"
+icon="default-basic-checkmark-block"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="info"
+icon="default-badge-info"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="warning"
+icon="default-badge-warning"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="trophy"
+icon="default-award-trophy"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="avatar"
+icon="default-avatar-single"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="arrow-switch"
+icon="default-arrow-switch"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="star"
+icon="default-basic-shape-star"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="stack-block"
+icon="default-basic-stack-block"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="chart"
+icon="default-chart-line"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="headset"
+icon="default-device-headset"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="photocamera"
+icon="default-device-photocamera"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="home"
+icon="default-building-home"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="calendar-empty"
+icon="default-calendar-empty"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="envelope"
+icon="default-communication-envelope"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="speech-bubble"
+icon="default-communication-speech-bubble"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="speech-bubbles"
+icon="default-communication-speech-bubbles"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="pushpin"
+icon="default-documentation-pushpin"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="marker"
+icon="default-location-marker"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="lock-closed"
+icon="default-lock-closed"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="graduate-cap"
+icon="default-object-graduate-cap"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="package-gift"
+icon="default-package-gift"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="cart"
+icon="default-shopping-cart"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="bag"
+icon="default-shopping-paper-bag"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="infinity"
+icon="default-symbol-infinity"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="target-big"
+icon="default-target-big"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="clock"
+icon="default-time-clock"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="hourglass"
+icon="default-time-hourglass"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="ruler-pencil"
+icon="default-tools-ruler-pencil"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+<sw-radio-panel value="settings"
+icon="default-action-settings"
+v-model="element.config.c108faqsection3icon.value"
+></sw-radio-panel>
+</div>
+</div>
+</div>
+{# Shopware Icon Ende #}
+{# Eigenes Icon #}
+<div v-else class="c108faqwrapper" class="media c108faqsection3icontype">
+<sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection3iconpath.value"></sw-url-field>
+</div>
+{# Eigenes Icon Ende #}
+{# Bereich Titel #}
+<div class="c108-faq-spacer">
+<sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection3title.value"></sw-text-field>
+{# Bereich Beschreibung #}
+<sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection3text.value"></sw-textarea-field>
+</div>
+{# Fragen #}
+<div class="c108-question-array-wrapper">
+<div v-for="(currentQuestion, index) in element.config.c108faqsection3questionsArray.value">
+<span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+<input v-model="currentQuestion.question">
+<textarea v-model="currentQuestion.answer"></textarea>
+</span>
+</div>
+</div>
+{# Fragen: Ende #}
+</sw-container>
+{#################################}
+{# Tab: Bereich 3: Ende #}
+{#################################}
+
+{# Tab: Bereich 4 #}
+    {#################################}
+    <sw-container v-else-if="active === 'section4'"
+                  class="sw-cms-el-config-form__tab-content">
+        <div class="c108-faq-icontype-settings">
+            <sw-select-field v-model="element.config.c108faqsection4icontype.value" label="Icon">
+                <option value="shippedicon">Shopware Icon</option>
+                <option value="ownicon">Eigenes Icon</option>
+            </sw-select-field>
+        </div>
+        {# Shopware Icon #}
+    <div v-if="element.config.c108faqsection4icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection4icontype">
+        <div class="icon-select-wrapper">
+            <div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+                <sw-radio-panel value="help"
+                                icon="default-badge-help"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="plus-circle"
+                                icon="default-basic-plus-circle"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark"
+                                icon="default-basic-checkmark-line"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-circle"
+                                icon="default-basic-checkmark-circle"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-block"
+                                icon="default-basic-checkmark-block"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="info"
+                                icon="default-badge-info"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="warning"
+                                icon="default-badge-warning"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="trophy"
+                                icon="default-award-trophy"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="avatar"
+                                icon="default-avatar-single"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="arrow-switch"
+                                icon="default-arrow-switch"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="star"
+                                icon="default-basic-shape-star"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="stack-block"
+                                icon="default-basic-stack-block"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="chart"
+                                icon="default-chart-line"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="headset"
+                                icon="default-device-headset"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="photocamera"
+                                icon="default-device-photocamera"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="home"
+                                icon="default-building-home"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="calendar-empty"
+                                icon="default-calendar-empty"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="envelope"
+                                icon="default-communication-envelope"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubble"
+                                icon="default-communication-speech-bubble"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubbles"
+                                icon="default-communication-speech-bubbles"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="pushpin"
+                                icon="default-documentation-pushpin"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="marker"
+                                icon="default-location-marker"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="lock-closed"
+                                icon="default-lock-closed"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="graduate-cap"
+                                icon="default-object-graduate-cap"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="package-gift"
+                                icon="default-package-gift"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="cart"
+                                icon="default-shopping-cart"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="bag"
+                                icon="default-shopping-paper-bag"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="infinity"
+                                icon="default-symbol-infinity"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="target-big"
+                                icon="default-target-big"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="clock"
+                                icon="default-time-clock"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="hourglass"
+                                icon="default-time-hourglass"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="ruler-pencil"
+                                icon="default-tools-ruler-pencil"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="settings"
+                                icon="default-action-settings"
+                                v-model="element.config.c108faqsection4icon.value"
+                ></sw-radio-panel>
+            </div>
+        </div>
+    </div>
+    {# Shopware Icon Ende #}
+    {# Eigenes Icon #}
+    <div v-else class="c108faqwrapper" class="media c108faqsection4icontype">
+        <sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection4iconpath.value"></sw-url-field>
+    </div>
+    {# Eigenes Icon Ende #}
+    {# Bereich Titel #}
+    <div class="c108-faq-spacer">
+        <sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection4title.value"></sw-text-field>
+        {# Bereich Beschreibung #}
+        <sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection4text.value"></sw-textarea-field>
+    </div>
+    {# Fragen #}
+    <div class="c108-question-array-wrapper">
+        <div v-for="(currentQuestion, index) in element.config.c108faqsection4questionsArray.value">
+            <span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+            <input v-model="currentQuestion.question">
+            <textarea v-model="currentQuestion.answer"></textarea>
+            </span>
+        </div>
+    </div>
+    {# Fragen: Ende #}
+    </sw-container>
+    {#################################}
+    {# Tab: Bereich 4: Ende #}
+{#################################}
+{# Tab: Bereich 5 #}
+    {#################################}
+    <sw-container v-else-if="active === 'section5'"
+                  class="sw-cms-el-config-form__tab-content">
+        <div class="c108-faq-icontype-settings">
+            <sw-select-field v-model="element.config.c108faqsection5icontype.value" label="Icon">
+                <option value="shippedicon">Shopware Icon</option>
+                <option value="ownicon">Eigenes Icon</option>
+            </sw-select-field>
+        </div>
+        {# Shopware Icon #}
+    <div v-if="element.config.c108faqsection5icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection5icontype">
+        <div class="icon-select-wrapper">
+            <div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+                <sw-radio-panel value="help"
+                                icon="default-badge-help"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="plus-circle"
+                                icon="default-basic-plus-circle"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark"
+                                icon="default-basic-checkmark-line"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-circle"
+                                icon="default-basic-checkmark-circle"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-block"
+                                icon="default-basic-checkmark-block"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="info"
+                                icon="default-badge-info"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="warning"
+                                icon="default-badge-warning"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="trophy"
+                                icon="default-award-trophy"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="avatar"
+                                icon="default-avatar-single"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="arrow-switch"
+                                icon="default-arrow-switch"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="star"
+                                icon="default-basic-shape-star"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="stack-block"
+                                icon="default-basic-stack-block"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="chart"
+                                icon="default-chart-line"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="headset"
+                                icon="default-device-headset"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="photocamera"
+                                icon="default-device-photocamera"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="home"
+                                icon="default-building-home"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="calendar-empty"
+                                icon="default-calendar-empty"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="envelope"
+                                icon="default-communication-envelope"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubble"
+                                icon="default-communication-speech-bubble"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubbles"
+                                icon="default-communication-speech-bubbles"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="pushpin"
+                                icon="default-documentation-pushpin"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="marker"
+                                icon="default-location-marker"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="lock-closed"
+                                icon="default-lock-closed"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="graduate-cap"
+                                icon="default-object-graduate-cap"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="package-gift"
+                                icon="default-package-gift"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="cart"
+                                icon="default-shopping-cart"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="bag"
+                                icon="default-shopping-paper-bag"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="infinity"
+                                icon="default-symbol-infinity"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="target-big"
+                                icon="default-target-big"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="clock"
+                                icon="default-time-clock"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="hourglass"
+                                icon="default-time-hourglass"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="ruler-pencil"
+                                icon="default-tools-ruler-pencil"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="settings"
+                                icon="default-action-settings"
+                                v-model="element.config.c108faqsection5icon.value"
+                ></sw-radio-panel>
+            </div>
+        </div>
+    </div>
+    {# Shopware Icon Ende #}
+    {# Eigenes Icon #}
+    <div v-else class="c108faqwrapper" class="media c108faqsection5icontype">
+        <sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection5iconpath.value"></sw-url-field>
+    </div>
+    {# Eigenes Icon Ende #}
+    {# Bereich Titel #}
+    <div class="c108-faq-spacer">
+        <sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection5title.value"></sw-text-field>
+        {# Bereich Beschreibung #}
+        <sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection5text.value"></sw-textarea-field>
+    </div>
+    {# Fragen #}
+    <div class="c108-question-array-wrapper">
+        <div v-for="(currentQuestion, index) in element.config.c108faqsection5questionsArray.value">
+            <span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+            <input v-model="currentQuestion.question">
+            <textarea v-model="currentQuestion.answer"></textarea>
+            </span>
+        </div>
+    </div>
+    {# Fragen: Ende #}
+    </sw-container>
+    {#################################}
+    {# Tab: Bereich 5: Ende #}
+{#################################}
+
+{# Tab: Bereich 6 #}
+    {#################################}
+    <sw-container v-else-if="active === 'section6'"
+                  class="sw-cms-el-config-form__tab-content">
+        <div class="c108-faq-icontype-settings">
+            <sw-select-field v-model="element.config.c108faqsection6icontype.value" label="Icon">
+                <option value="shippedicon">Shopware Icon</option>
+                <option value="ownicon">Eigenes Icon</option>
+            </sw-select-field>
+        </div>
+        {# Shopware Icon #}
+    <div v-if="element.config.c108faqsection6icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection6icontype">
+        <div class="icon-select-wrapper">
+            <div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+                <sw-radio-panel value="help"
+                                icon="default-badge-help"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="plus-circle"
+                                icon="default-basic-plus-circle"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark"
+                                icon="default-basic-checkmark-line"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-circle"
+                                icon="default-basic-checkmark-circle"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-block"
+                                icon="default-basic-checkmark-block"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="info"
+                                icon="default-badge-info"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="warning"
+                                icon="default-badge-warning"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="trophy"
+                                icon="default-award-trophy"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="avatar"
+                                icon="default-avatar-single"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="arrow-switch"
+                                icon="default-arrow-switch"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="star"
+                                icon="default-basic-shape-star"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="stack-block"
+                                icon="default-basic-stack-block"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="chart"
+                                icon="default-chart-line"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="headset"
+                                icon="default-device-headset"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="photocamera"
+                                icon="default-device-photocamera"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="home"
+                                icon="default-building-home"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="calendar-empty"
+                                icon="default-calendar-empty"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="envelope"
+                                icon="default-communication-envelope"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubble"
+                                icon="default-communication-speech-bubble"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubbles"
+                                icon="default-communication-speech-bubbles"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="pushpin"
+                                icon="default-documentation-pushpin"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="marker"
+                                icon="default-location-marker"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="lock-closed"
+                                icon="default-lock-closed"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="graduate-cap"
+                                icon="default-object-graduate-cap"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="package-gift"
+                                icon="default-package-gift"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="cart"
+                                icon="default-shopping-cart"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="bag"
+                                icon="default-shopping-paper-bag"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="infinity"
+                                icon="default-symbol-infinity"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="target-big"
+                                icon="default-target-big"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="clock"
+                                icon="default-time-clock"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="hourglass"
+                                icon="default-time-hourglass"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="ruler-pencil"
+                                icon="default-tools-ruler-pencil"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="settings"
+                                icon="default-action-settings"
+                                v-model="element.config.c108faqsection6icon.value"
+                ></sw-radio-panel>
+            </div>
+        </div>
+    </div>
+    {# Shopware Icon Ende #}
+    {# Eigenes Icon #}
+    <div v-else class="c108faqwrapper" class="media c108faqsection6icontype">
+        <sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection6iconpath.value"></sw-url-field>
+    </div>
+    {# Eigenes Icon Ende #}
+    {# Bereich Titel #}
+    <div class="c108-faq-spacer">
+        <sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection6title.value"></sw-text-field>
+        {# Bereich Beschreibung #}
+        <sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection6text.value"></sw-textarea-field>
+    </div>
+    {# Fragen #}
+    <div class="c108-question-array-wrapper">
+        <div v-for="(currentQuestion, index) in element.config.c108faqsection6questionsArray.value">
+            <span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+            <input v-model="currentQuestion.question">
+            <textarea v-model="currentQuestion.answer"></textarea>
+            </span>
+        </div>
+    </div>
+    {# Fragen: Ende #}
+    </sw-container>
+    {#################################}
+    {# Tab: Bereich 6: Ende #}
+{#################################}
+{# Tab: Bereich 7 #}
+    {#################################}
+    <sw-container v-else-if="active === 'section7'"
+                  class="sw-cms-el-config-form__tab-content">
+        <div class="c108-faq-icontype-settings">
+            <sw-select-field v-model="element.config.c108faqsection7icontype.value" label="Icon">
+                <option value="shippedicon">Shopware Icon</option>
+                <option value="ownicon">Eigenes Icon</option>
+            </sw-select-field>
+        </div>
+        {# Shopware Icon #}
+    <div v-if="element.config.c108faqsection7icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection7icontype">
+        <div class="icon-select-wrapper">
+            <div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+                <sw-radio-panel value="help"
+                                icon="default-badge-help"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="plus-circle"
+                                icon="default-basic-plus-circle"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark"
+                                icon="default-basic-checkmark-line"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-circle"
+                                icon="default-basic-checkmark-circle"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-block"
+                                icon="default-basic-checkmark-block"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="info"
+                                icon="default-badge-info"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="warning"
+                                icon="default-badge-warning"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="trophy"
+                                icon="default-award-trophy"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="avatar"
+                                icon="default-avatar-single"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="arrow-switch"
+                                icon="default-arrow-switch"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="star"
+                                icon="default-basic-shape-star"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="stack-block"
+                                icon="default-basic-stack-block"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="chart"
+                                icon="default-chart-line"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="headset"
+                                icon="default-device-headset"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="photocamera"
+                                icon="default-device-photocamera"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="home"
+                                icon="default-building-home"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="calendar-empty"
+                                icon="default-calendar-empty"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="envelope"
+                                icon="default-communication-envelope"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubble"
+                                icon="default-communication-speech-bubble"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubbles"
+                                icon="default-communication-speech-bubbles"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="pushpin"
+                                icon="default-documentation-pushpin"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="marker"
+                                icon="default-location-marker"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="lock-closed"
+                                icon="default-lock-closed"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="graduate-cap"
+                                icon="default-object-graduate-cap"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="package-gift"
+                                icon="default-package-gift"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="cart"
+                                icon="default-shopping-cart"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="bag"
+                                icon="default-shopping-paper-bag"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="infinity"
+                                icon="default-symbol-infinity"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="target-big"
+                                icon="default-target-big"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="clock"
+                                icon="default-time-clock"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="hourglass"
+                                icon="default-time-hourglass"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="ruler-pencil"
+                                icon="default-tools-ruler-pencil"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="settings"
+                                icon="default-action-settings"
+                                v-model="element.config.c108faqsection7icon.value"
+                ></sw-radio-panel>
+            </div>
+        </div>
+    </div>
+    {# Shopware Icon Ende #}
+    {# Eigenes Icon #}
+    <div v-else class="c108faqwrapper" class="media c108faqsection7icontype">
+        <sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection7iconpath.value"></sw-url-field>
+    </div>
+    {# Eigenes Icon Ende #}
+    {# Bereich Titel #}
+    <div class="c108-faq-spacer">
+        <sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection7title.value"></sw-text-field>
+        {# Bereich Beschreibung #}
+        <sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection7text.value"></sw-textarea-field>
+    </div>
+    {# Fragen #}
+    <div class="c108-question-array-wrapper">
+        <div v-for="(currentQuestion, index) in element.config.c108faqsection7questionsArray.value">
+            <span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+            <input v-model="currentQuestion.question">
+            <textarea v-model="currentQuestion.answer"></textarea>
+            </span>
+        </div>
+    </div>
+    {# Fragen: Ende #}
+    </sw-container>
+    {#################################}
+    {# Tab: Bereich 7: Ende #}
+{#################################}
+{# Tab: Bereich 8 #}
+    {#################################}
+    <sw-container v-else-if="active === 'section8'"
+                  class="sw-cms-el-config-form__tab-content">
+        <div class="c108-faq-icontype-settings">
+            <sw-select-field v-model="element.config.c108faqsection8icontype.value" label="Icon">
+                <option value="shippedicon">Shopware Icon</option>
+                <option value="ownicon">Eigenes Icon</option>
+            </sw-select-field>
+        </div>
+        {# Shopware Icon #}
+    <div v-if="element.config.c108faqsection8icontype.value == 'shippedicon'" class="c108faqshippedicon c108faqsection8icontype">
+        <div class="icon-select-wrapper">
+            <div class="c108-faq-icon-selection-wrapper" :style="passStylesFirst">
+                <sw-radio-panel value="help"
+                                icon="default-badge-help"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="plus-circle"
+                                icon="default-basic-plus-circle"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark"
+                                icon="default-basic-checkmark-line"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-circle"
+                                icon="default-basic-checkmark-circle"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="checkmark-block"
+                                icon="default-basic-checkmark-block"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="info"
+                                icon="default-badge-info"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="warning"
+                                icon="default-badge-warning"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="trophy"
+                                icon="default-award-trophy"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="avatar"
+                                icon="default-avatar-single"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="arrow-switch"
+                                icon="default-arrow-switch"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="star"
+                                icon="default-basic-shape-star"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="stack-block"
+                                icon="default-basic-stack-block"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="chart"
+                                icon="default-chart-line"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="headset"
+                                icon="default-device-headset"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="photocamera"
+                                icon="default-device-photocamera"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="home"
+                                icon="default-building-home"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="calendar-empty"
+                                icon="default-calendar-empty"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="envelope"
+                                icon="default-communication-envelope"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubble"
+                                icon="default-communication-speech-bubble"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="speech-bubbles"
+                                icon="default-communication-speech-bubbles"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="pushpin"
+                                icon="default-documentation-pushpin"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="marker"
+                                icon="default-location-marker"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="lock-closed"
+                                icon="default-lock-closed"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="graduate-cap"
+                                icon="default-object-graduate-cap"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="package-gift"
+                                icon="default-package-gift"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="cart"
+                                icon="default-shopping-cart"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="bag"
+                                icon="default-shopping-paper-bag"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="infinity"
+                                icon="default-symbol-infinity"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="target-big"
+                                icon="default-target-big"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="clock"
+                                icon="default-time-clock"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="hourglass"
+                                icon="default-time-hourglass"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="ruler-pencil"
+                                icon="default-tools-ruler-pencil"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+                <sw-radio-panel value="settings"
+                                icon="default-action-settings"
+                                v-model="element.config.c108faqsection8icon.value"
+                ></sw-radio-panel>
+            </div>
+        </div>
+    </div>
+    {# Shopware Icon Ende #}
+    {# Eigenes Icon #}
+    <div v-else class="c108faqwrapper" class="media c108faqsection8icontype">
+        <sw-url-field :label="$tc('sw-cms.elements.faq.config.tabcontent.path')" v-model="element.config.c108faqsection8iconpath.value"></sw-url-field>
+    </div>
+    {# Eigenes Icon Ende #}
+    {# Bereich Titel #}
+    <div class="c108-faq-spacer">
+        <sw-text-field :label="$tc('sw-cms.elements.faq.config.tabcontent.title')" v-model="element.config.c108faqsection8title.value"></sw-text-field>
+        {# Bereich Beschreibung #}
+        <sw-textarea-field type="textarea" :label="$tc('sw-cms.elements.faq.config.tabcontent.description')" v-model="element.config.c108faqsection8text.value"></sw-textarea-field>
+    </div>
+    {# Fragen #}
+    <div class="c108-question-array-wrapper">
+        <div v-for="(currentQuestion, index) in element.config.c108faqsection8questionsArray.value">
+            <span class="c108-faq-custom-label">{{ $tc('sw-cms.elements.faq.config.tabcontent.question') }} {{ index + 1 }}:</span>
+            <input v-model="currentQuestion.question">
+            <textarea v-model="currentQuestion.answer"></textarea>
+            </span>
+        </div>
+    </div>
+    {# Fragen: Ende #}
+    </sw-container>
+    {#################################}
+    {# Tab: Bereich 8: Ende #}
+{#################################}
+
+
+</template>
+</sw-tabs>
+</div>
+{% endblock %}

@@ -1,0 +1,315 @@
+{% block element_faq %}
+
+{# Settings Allgemein #}
+{% set id = element.id %}
+{% set c108faqhighlightcolor = element.config.c108faqhighlightcolor.value %}
+{% set c108faqbannertype = element.config.c108faqbannertype.value %}
+{% set c108faqbannerimg = element.config.c108faqbannerimg.value %}
+{% set c108faqbannertitle = element.config.c108faqbannertitle.value %}
+{% set currBannerTitle = element.config.c108faqbannertitle.value %}
+
+{# Settings Bereich 1 #}
+{% set c108faqsection1title = element.config.c108faqsection1title.value %}
+{% set c108faqsection1text = element.config.c108faqsection1text.value %}
+{% set c108faqsection1icon = element.config.c108faqsection1icon.value %}
+{% set c108faqsection1icontype = element.config.c108faqsection1icontype.value %}
+{% set c108faqsection1iconpath = element.config.c108faqsection1iconpath.value %}
+{% set c108faqsection1questionsArray = element.config.c108faqsection1questionsArray.value %}
+
+{# Settings Bereich 2 #}
+{% set c108faqsection2title = element.config.c108faqsection2title.value %}
+{% set c108faqsection2text = element.config.c108faqsection2text.value %}
+{% set c108faqsection2icon = element.config.c108faqsection2icon.value %}
+{% set c108faqsection2icontype = element.config.c108faqsection2icontype.value %}
+{% set c108faqsection2iconpath = element.config.c108faqsection2iconpath.value %}
+{% set c108faqsection2questionsArray = element.config.c108faqsection2questionsArray.value %}
+
+{# Settings Bereich 3 #}
+{% set c108faqsection3title = element.config.c108faqsection3title.value %}
+{% set c108faqsection3text = element.config.c108faqsection3text.value %}
+{% set c108faqsection3icon = element.config.c108faqsection3icon.value %}
+{% set c108faqsection3icontype = element.config.c108faqsection3icontype.value %}
+{% set c108faqsection3iconpath = element.config.c108faqsection3iconpath.value %}
+{% set c108faqsection3questionsArray = element.config.c108faqsection3questionsArray.value %}
+
+{# FAQ Element#}
+<div class="cms-element-faq" style="height: 100%; width: 100%">
+
+{% block element_faq_inner %}
+
+{# Background image #}
+{# Shipped image #}
+{% if c108faqbannertype == 'shippedimage' %}
+{% set currImgPath = asset('bundles/c108faq/static/img/cms/'~ c108faqbannerimg ~'.jpg') %}
+{% endif %}
+
+{# Own image #}
+{% if c108faqbannertype == 'ownimage' %}
+{% set currMediaId = element.config.media.value %}
+{% if currMediaId %}
+{% set currMediaCollection = searchMedia([currMediaId], context.context) %}
+{% set currMediaObject = currMediaCollection.get(currMediaId) %}
+{% set currImgPath = currMediaObject.url %}
+{% else %}
+  {% set currImgPath = '' %}
+{% endif %}
+{% endif %}
+
+<div class="c108-faq-banner" style="background-image:url('{{ currImgPath }}');">
+<div class="c108-faq-inside">
+    {{ currBannerTitle }}
+</div>
+    {# Suche #}
+    <div class="c108-faq-suchfeld-holder">
+        <label class="c108-faq-search-title">{{ 'faq.element.labelsearch'|trans }}
+            <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld">
+        </label>
+    </div>
+    {# Suche: Ende #}
+</div>
+{# Background image Ende #}
+
+{# Boxes #}
+<div class="cms-element-faq-boxes">
+
+{# Bereich 1 #}
+<div class="c108faqwrappertype-{{ c108faqsection1icontype }} c108faqwrapper-einfach c108-faq-section-box">
+<div class="c108faq-content">
+
+{# Case 1: Shopware Icon #}
+{% if c108faqsection1icontype == 'shippedicon' %}
+<div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection1icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection1icon ~'.svg', ignore_missing = true) }}
+</span>
+</div>
+{# Case 1: Shopware Icon - Ende #}
+{# Case 2: Own Icon #}
+{% elseif c108faqsection1icontype == 'ownicon' %}
+<div class="c108-icon-wrapper c108faqowniconwrapper">
+<img src="{{ c108faqsection1iconpath }}" alt="{{ c108faqsection1title }} Icon">
+</div>
+{% endif %}
+{# Case 2: Own Icon- Ende #}
+
+<div class="c108-faq-text-wrapper">
+<div class="c108-faq-section-title-boxes">{{ c108faqsection1title }}</div>
+<div class="c108-faq-section-text-boxes"><a href="#">{{ c108faqsection1text|nl2br }}</a></div>
+</div>
+</div>
+</div>
+{# Bereich 1: Ende #}
+
+{# Bereich 2 #}
+<div class="c108faqwrappertype-{{ c108faqsection2icontype }} c108faqwrapper-einfach c108-faq-section-box">
+<div class="c108faq-content">
+
+{# Case 1: Shopware Icon #}
+{% if c108faqsection2icontype == 'shippedicon' %}
+<div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection2icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection2icon ~'.svg', ignore_missing = true) }}
+</span>
+</div>
+{# Case 1: Shopware Icon - Ende #}
+
+{# Case 2: Own Icon #}
+{% elseif c108faqsection2icontype == 'ownicon' %}
+<div class="c108-icon-wrapper c108faqowniconwrapper">
+<img src="{{ c108faqsection2iconpath }}" alt="{{ c108faqsection2title }} Icon">
+</div>
+{% endif %}
+{# Case 2: Own Icon- Ende #}
+
+<div class="c108-faq-text-wrapper">
+<div class="c108-faq-section-title-boxes">{{ c108faqsection2title }}</div>
+<div class="c108-faq-section-text-boxes"><a href="#">{{ c108faqsection2text|nl2br }}</a></div>
+</div>
+</div>
+</div>
+{# Bereich 2: Ende #}
+
+{# Bereich 1 #}
+<div class="c108faqwrappertype-{{ c108faqsection3icontype }} c108faqwrapper-einfach c108-faq-section-box">
+<div class="c108faq-content">
+
+{# Case 1: Shopware Icon #}
+{% if c108faqsection3icontype == 'shippedicon' %}
+<div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection3icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection3icon ~'.svg', ignore_missing = true) }}
+</span>
+</div>
+{# Case 1: Shopware Icon - Ende #}
+
+{# Case 2: Own Icon #}
+{% elseif c108faqsection3icontype == 'ownicon' %}
+<div class="c108-icon-wrapper c108faqowniconwrapper">
+<img src="{{ c108faqsection3iconpath }}" alt="{{ c108faqsection3title }} Icon">
+</div>
+{% endif %}
+{# Case 2: Own Icon- Ende #}
+
+<div class="c108-faq-text-wrapper">
+<div class="c108-faq-section-title-boxes">{{ c108faqsection3title }}</div>
+<div class="c108-faq-section-text-boxes"><a href="#">{{ c108faqsection3text|nl2br }}</a></div>
+</div>
+</div>
+</div>
+{# Bereich 3: Ende #}
+</div>
+
+{# Boxes inkl. Suche: Ende #}
+
+{# Fragen Bereich #}
+<div id="{{ id }}-questionwrapper" class="c108-faq-question-section" >
+
+{# Fragen Bereich 1 #}
+<div class="c108-faq-section-outer">
+<div class="c108-faq-section-title">
+{{ c108faqsection1title }}
+</div>
+{% for currentQuestion in c108faqsection1questionsArray %}
+{% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+<button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+<div class="answertab">
+<p>{{ currentQuestion.answer|nl2br}}</p>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+{# Fragen Bereich 1: Ende #}
+
+{# Fragen Bereich 2 #}
+<div class="c108-faq-section-outer">
+<div class="c108-faq-section-title">
+{{ c108faqsection2title }}
+</div>
+{% for currentQuestion in c108faqsection2questionsArray %}
+{% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+<button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+<div class="answertab">
+<p>{{ currentQuestion.answer|nl2br}}</p>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+{# Fragen Bereich 2: Ende #}
+
+{# Fragen Bereich 3 #}
+<div class="c108-faq-section-outer">
+<div class="c108-faq-section-title">
+{{ c108faqsection3title }}
+</div>
+{% for currentQuestion in c108faqsection3questionsArray %}
+{% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+<button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+<div class="answertab">
+<p>{{ currentQuestion.answer|nl2br}}</p>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+{# Fragen Bereich 3: Ende #}
+
+{# Anzeige keine Suchtreffer #}
+<div class="c108-faq-no-results">
+<p>{{ 'faq.element.noresults'|trans }}</p>
+</div>
+{# Anzeige keine Suchtreffer: Ende #}
+
+</div>
+{# Fragen Bereich: Ende #}
+
+{% endblock %}
+
+<script>
+var faqElement = document.getElementById("{{ id }}-questionwrapper");
+var questionTabs = faqElement.getElementsByClassName("questiontab");
+var answerTabs = faqElement.getElementsByClassName("answertab");
+var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
+var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
+
+var j;
+
+for (j = 0; j < questionTabs.length; j++) {
+  questionTabs[j].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var answertab = this.nextElementSibling;
+    if (answertab.style.maxHeight) {
+      answertab.style.maxHeight = null;
+    } else {
+      answertab.style.maxHeight = answertab.scrollHeight + "px";
+    }
+  });
+}
+
+var searchField = document.getElementById("{{ id }}-searchField");
+
+searchField.addEventListener('input', function() {
+
+  var faqElement = document.getElementById("{{ id }}-questionwrapper");
+  var questionTabs = faqElement.getElementsByClassName("questiontab");
+  var answerTabs = faqElement.getElementsByClassName("answertab");
+  var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
+  var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
+
+  var noResults = true;
+
+  // hide section title
+  for (var k = 0; k < sectionTitles.length; k++) {
+    sectionTitles[k].style['display'] = 'none';
+  }
+
+  // get search input
+  var searchVal = this.value.toLowerCase();
+
+  // check if search input matches content of answer or question
+  for (var i = 0; i < questionTabs.length; i++) {
+    if (questionTabs[i].textContent.toLowerCase().indexOf(searchVal) > -1 && searchVal ||  answerTabs[i].textContent.toLowerCase().indexOf(searchVal) > -1 && searchVal) {
+      questionTabs[i].style['display'] = 'block';
+      questionTabs[i].style['background-color'] = '{{ c108faqhighlightcolor }}';
+      questionTabs[i].querySelector('span').style['color'] = 'white';
+      questionTabs[i].classList.add('hide');
+      answerTabs[i].style.maxHeight = answerTabs[i].scrollHeight + "px";
+
+      // hide no results text
+      noResults = false;
+      noResultsText[0].style['display'] = 'none';
+    }
+
+    else if(!searchVal){
+      questionTabs[i].style['display'] = 'block';
+      questionTabs[i].style['background-color'] = 'white';
+      questionTabs[i].querySelector('span').style['color'] = '#4a545b';
+      questionTabs[i].classList.remove('hide');
+      answerTabs[i].style.maxHeight = null;
+
+      // hide no results text
+      noResults = true;
+      noResultsText[0].style['display'] = 'none';
+
+      // show section title
+      for (var k = 0; k < sectionTitles.length; k++) {
+        sectionTitles[k].style['display'] = 'block';
+      }
+    }
+
+    else {
+      questionTabs[i].style['display'] = 'none';
+      questionTabs[i].style['background-color'] = 'white';
+      questionTabs[i].querySelector('span').style['color'] = '#4a545b';
+      questionTabs[i].classList.remove('hide');
+      answerTabs[i].style.maxHeight = null;
+
+      // show no results text
+      noResults = true;
+      noResultsText[0].style['display'] = 'block';
+    }
+  }
+
+});
+
+</script>
+</div>
+{% endblock %}

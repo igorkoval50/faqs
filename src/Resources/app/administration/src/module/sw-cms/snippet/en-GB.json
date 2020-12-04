@@ -1,0 +1,42 @@
+{
+  "sw-cms": {
+    "blocks": {
+      "textImage": {
+        "faq": {
+          "label": "FAQ section"
+        }
+      }
+    },
+    "elements": {
+      "faq": {
+        "component": {
+          "searchlabel": "Search in FAQ section"
+        },
+        "config": {
+          "tabsettings": {
+            "label": "Settings",
+            "highlight": "Color",
+            "media": "Background image",
+            "mediahint": "We recommend to upload the image compressed.",
+            "iconhint": "We recommend a resolution of 100 pixels x 100 pixels.",
+            "mediatype": "Background image",
+            "mediatypeshipped": "Standard",
+            "mediatypeown": "Custom",
+            "titletype": "Title",
+            "titletype01": "Style 1",
+            "titletype02": "Style 2",
+            "titletype03": "Style 3",
+            "titletype04": "Style 4"
+          },
+          "tabcontent": {
+            "section": "Section",
+            "title": "Title",
+            "description": "Description",
+            "path": "Path to icon",
+            "question": "Question"
+          }
+        }
+      }
+    }
+  }
+}

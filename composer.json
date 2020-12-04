@@ -1,0 +1,43 @@
+{
+  "name": "c108/faq",
+  "description": "FAQ-Bereich für Erlebniswelten",
+  "version": "1.0.1",
+  "type": "shopware-platform-plugin",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Code 108",
+      "homepage": "https://code108.de",
+      "role": "Manufacturer"
+    }
+  ],
+  "require": {
+    "shopware/core": ">=6.2",
+    "shopware/administration": ">=6.2",
+    "shopware/storefront": ">=6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "C108Faq\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "C108Faq\\C108Faq",
+    "label": {
+      "de-DE": "FAQ-Bereich für Erlebniswelten",
+      "en-GB": "FAQ section for Shopping Experiences"
+    },
+    "description": {
+      "de-DE": "Mit diesem Plugin können Sie über die Erlebniswelten einen FAQ-Bereich hinzufügen.",
+      "en-GB": "With this plugin you can add a FAQ section via the Shopping Experiences."
+    },
+    "manufacturerLink": {
+      "de-DE": "https://code108.de/",
+      "en-GB": "https://code108.de/"
+    },
+    "supportLink": {
+      "de-DE": "https://code108.de/plugins/faq-fuer-erlebniswelten/",
+      "en-GB": "https://code108.de/plugins/faq-fuer-erlebniswelten/"
+    }
+  }
+}

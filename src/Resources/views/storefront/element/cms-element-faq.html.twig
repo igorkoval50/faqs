@@ -32,6 +32,47 @@
 {% set c108faqsection3iconpath = element.config.c108faqsection3iconpath.value %}
 {% set c108faqsection3questionsArray = element.config.c108faqsection3questionsArray.value %}
 
+    {# Settings Bereich 4 #}
+    {% set c108faqsection4title = element.config.c108faqsection4title.value %}
+    {% set c108faqsection4text = element.config.c108faqsection4text.value %}
+    {% set c108faqsection4icon = element.config.c108faqsection4icon.value %}
+    {% set c108faqsection4icontype = element.config.c108faqsection4icontype.value %}
+    {% set c108faqsection4iconpath = element.config.c108faqsection4iconpath.value %}
+    {% set c108faqsection4questionsArray = element.config.c108faqsection4questionsArray.value %}
+
+    {# Settings Bereich 5 #}
+    {% set c108faqsection5title = element.config.c108faqsection5title.value %}
+    {% set c108faqsection5text = element.config.c108faqsection5text.value %}
+    {% set c108faqsection5icon = element.config.c108faqsection5icon.value %}
+    {% set c108faqsection5icontype = element.config.c108faqsection5icontype.value %}
+    {% set c108faqsection5iconpath = element.config.c108faqsection5iconpath.value %}
+    {% set c108faqsection5questionsArray = element.config.c108faqsection5questionsArray.value %}
+
+    {# Settings Bereich 6 #}
+    {% set c108faqsection6title = element.config.c108faqsection6title.value %}
+    {% set c108faqsection6text = element.config.c108faqsection6text.value %}
+    {% set c108faqsection6icon = element.config.c108faqsection6icon.value %}
+    {% set c108faqsection6icontype = element.config.c108faqsection6icontype.value %}
+    {% set c108faqsection6iconpath = element.config.c108faqsection6iconpath.value %}
+    {% set c108faqsection6questionsArray = element.config.c108faqsection6questionsArray.value %}
+
+    {# Settings Bereich 7 #}
+    {% set c108faqsection7title = element.config.c108faqsection7title.value %}
+    {% set c108faqsection7text = element.config.c108faqsection7text.value %}
+    {% set c108faqsection7icon = element.config.c108faqsection7icon.value %}
+    {% set c108faqsection7icontype = element.config.c108faqsection7icontype.value %}
+    {% set c108faqsection7iconpath = element.config.c108faqsection7iconpath.value %}
+    {% set c108faqsection7questionsArray = element.config.c108faqsection7questionsArray.value %}
+
+    {# Settings Bereich 8 #}
+    {% set c108faqsection8title = element.config.c108faqsection8title.value %}
+    {% set c108faqsection8text = element.config.c108faqsection8text.value %}
+    {% set c108faqsection8icon = element.config.c108faqsection8icon.value %}
+    {% set c108faqsection8icontype = element.config.c108faqsection8icontype.value %}
+    {% set c108faqsection8iconpath = element.config.c108faqsection8iconpath.value %}
+    {% set c108faqsection8questionsArray = element.config.c108faqsection8questionsArray.value %}
+
+
 {# FAQ Element#}
 <div class="cms-element-faq" style="height: 100%; width: 100%">
 
@@ -61,8 +102,8 @@
 </div>
     {# Suche #}
     <div class="c108-faq-suchfeld-holder">
-        <label class="c108-faq-search-title">{{ 'faq.element.labelsearch'|trans }}
-            <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld">
+        <label class="c108-faq-search-title">
+            <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld" placeholder="{{ 'faq.element.labelsearch'|trans }}">
         </label>
     </div>
     {# Suche: Ende #}
@@ -94,7 +135,7 @@
 
 <div class="c108-faq-text-wrapper">
 <div class="c108-faq-section-title-boxes">{{ c108faqsection1title }}</div>
-<div class="c108-faq-section-text-boxes"><a href="#">{{ c108faqsection1text|nl2br }}</a></div>
+<div class="c108-faq-section-text-boxes"><a href="#account">{{ c108faqsection1text|nl2br }}</a></div>
 </div>
 </div>
 </div>
@@ -123,7 +164,7 @@
 
 <div class="c108-faq-text-wrapper">
 <div class="c108-faq-section-title-boxes">{{ c108faqsection2title }}</div>
-<div class="c108-faq-section-text-boxes"><a href="#">{{ c108faqsection2text|nl2br }}</a></div>
+<div class="c108-faq-section-text-boxes"><a href="#order">{{ c108faqsection2text|nl2br }}</a></div>
 </div>
 </div>
 </div>
@@ -152,11 +193,156 @@
 
 <div class="c108-faq-text-wrapper">
 <div class="c108-faq-section-title-boxes">{{ c108faqsection3title }}</div>
-<div class="c108-faq-section-text-boxes"><a href="#">{{ c108faqsection3text|nl2br }}</a></div>
+<div class="c108-faq-section-text-boxes"><a href="#return">{{ c108faqsection3text|nl2br }}</a></div>
 </div>
 </div>
 </div>
 {# Bereich 3: Ende #}
+
+    {# Bereich 4 #}
+    <div class="c108faqwrappertype-{{ c108faqsection4icontype }} c108faqwrapper-einfach c108-faq-section-box">
+        <div class="c108faq-content">
+
+            {# Case 1: Shopware Icon #}
+            {% if c108faqsection2icontype == 'shippedicon' %}
+                <div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection4icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection4icon ~'.svg', ignore_missing = true) }}
+</span>
+                </div>
+                {# Case 1: Shopware Icon - Ende #}
+
+                {# Case 2: Own Icon #}
+            {% elseif c108faqsection2icontype == 'ownicon' %}
+                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                    <img src="{{ c108faqsection4iconpath }}" alt="{{ c108faqsection4title }} Icon">
+                </div>
+            {% endif %}
+            {# Case 2: Own Icon- Ende #}
+
+            <div class="c108-faq-text-wrapper">
+                <div class="c108-faq-section-title-boxes">{{ c108faqsection4title }}</div>
+                <div class="c108-faq-section-text-boxes"><a href="#pay">{{ c108faqsection4text|nl2br }}</a></div>
+            </div>
+        </div>
+    </div>
+    {# Bereich 4: Ende #}
+
+    {# Bereich 5 #}
+    <div class="c108faqwrappertype-{{ c108faqsection5icontype }} c108faqwrapper-einfach c108-faq-section-box">
+        <div class="c108faq-content">
+
+            {# Case 1: Shopware Icon #}
+            {% if c108faqsection2icontype == 'shippedicon' %}
+                <div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection5icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection5icon ~'.svg', ignore_missing = true) }}
+</span>
+                </div>
+                {# Case 1: Shopware Icon - Ende #}
+
+                {# Case 2: Own Icon #}
+            {% elseif c108faqsection2icontype == 'ownicon' %}
+                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                    <img src="{{ c108faqsection5iconpath }}" alt="{{ c108faqsection5title }} Icon">
+                </div>
+            {% endif %}
+            {# Case 2: Own Icon- Ende #}
+
+            <div class="c108-faq-text-wrapper">
+                <div class="c108-faq-section-title-boxes">{{ c108faqsection5title }}</div>
+                <div class="c108-faq-section-text-boxes"><a href="#availability">{{ c108faqsection5text|nl2br }}</a></div>
+            </div>
+        </div>
+    </div>
+    {# Bereich 5: Ende #}
+
+    {# Bereich 6 #}
+    <div class="c108faqwrappertype-{{ c108faqsection6icontype }} c108faqwrapper-einfach c108-faq-section-box">
+        <div class="c108faq-content">
+
+            {# Case 1: Shopware Icon #}
+            {% if c108faqsection2icontype == 'shippedicon' %}
+                <div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection6icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection6icon ~'.svg', ignore_missing = true) }}
+</span>
+                </div>
+                {# Case 1: Shopware Icon - Ende #}
+
+                {# Case 2: Own Icon #}
+            {% elseif c108faqsection2icontype == 'ownicon' %}
+                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                    <img src="{{ c108faqsection6iconpath }}" alt="{{ c108faqsection6title }} Icon">
+                </div>
+            {% endif %}
+            {# Case 2: Own Icon- Ende #}
+
+            <div class="c108-faq-text-wrapper">
+                <div class="c108-faq-section-title-boxes">{{ c108faqsection6title }}</div>
+                <div class="c108-faq-section-text-boxes"><a href="#responsibility">{{ c108faqsection6text|nl2br }}</a></div>
+            </div>
+        </div>
+    </div>
+    {# Bereich 6: Ende #}
+
+    {# Bereich 7 #}
+    <div class="c108faqwrappertype-{{ c108faqsection7icontype }} c108faqwrapper-einfach c108-faq-section-box">
+        <div class="c108faq-content">
+
+            {# Case 1: Shopware Icon #}
+            {% if c108faqsection2icontype == 'shippedicon' %}
+                <div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection7icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection7icon ~'.svg', ignore_missing = true) }}
+</span>
+                </div>
+                {# Case 1: Shopware Icon - Ende #}
+
+                {# Case 2: Own Icon #}
+            {% elseif c108faqsection2icontype == 'ownicon' %}
+                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                    <img src="{{ c108faqsection7iconpath }}" alt="{{ c108faqsection7title }} Icon">
+                </div>
+            {% endif %}
+            {# Case 2: Own Icon- Ende #}
+
+            <div class="c108-faq-text-wrapper">
+                <div class="c108-faq-section-title-boxes">{{ c108faqsection7title }}</div>
+                <div class="c108-faq-section-text-boxes"><a href="#about">{{ c108faqsection7text|nl2br }}</a></div>
+            </div>
+        </div>
+    </div>
+    {# Bereich 7: Ende #}
+
+    {# Bereich 8 #}
+    <div class="c108faqwrappertype-{{ c108faqsection8icontype }} c108faqwrapper-einfach c108-faq-section-box">
+        <div class="c108faq-content">
+
+            {# Case 1: Shopware Icon #}
+            {% if c108faqsection2icontype == 'shippedicon' %}
+                <div class="c108-icon-wrapper">
+<span class="icon icon-{{ c108faqsection8icon }}" style="color:{{ c108faqhighlightcolor }};">
+{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection8icon ~'.svg', ignore_missing = true) }}
+</span>
+                </div>
+                {# Case 1: Shopware Icon - Ende #}
+
+                {# Case 2: Own Icon #}
+            {% elseif c108faqsection2icontype == 'ownicon' %}
+                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                    <img src="{{ c108faqsection8iconpath }}" alt="{{ c108faqsection8title }} Icon">
+                </div>
+            {% endif %}
+            {# Case 2: Own Icon- Ende #}
+
+            <div class="c108-faq-text-wrapper">
+                <div class="c108-faq-section-title-boxes">{{ c108faqsection8title }}</div>
+                <div class="c108-faq-section-text-boxes"><a href="#job">{{ c108faqsection8text|nl2br }}</a></div>
+            </div>
+        </div>
+    </div>
+    {# Bereich 8: Ende #}
 </div>
 
 {# Boxes inkl. Suche: Ende #}
@@ -165,7 +351,7 @@
 <div id="{{ id }}-questionwrapper" class="c108-faq-question-section" >
 
 {# Fragen Bereich 1 #}
-<div class="c108-faq-section-outer">
+<div class="c108-faq-section-outer" id="account">
 <div class="c108-faq-section-title">
 {{ c108faqsection1title }}
 </div>
@@ -181,7 +367,7 @@
 {# Fragen Bereich 1: Ende #}
 
 {# Fragen Bereich 2 #}
-<div class="c108-faq-section-outer">
+<div class="c108-faq-section-outer" id="order">
 <div class="c108-faq-section-title">
 {{ c108faqsection2title }}
 </div>
@@ -197,7 +383,7 @@
 {# Fragen Bereich 2: Ende #}
 
 {# Fragen Bereich 3 #}
-<div class="c108-faq-section-outer">
+<div class="c108-faq-section-outer" id="return">
 <div class="c108-faq-section-title">
 {{ c108faqsection3title }}
 </div>
@@ -212,7 +398,88 @@
 </div>
 {# Fragen Bereich 3: Ende #}
 
-{# Anzeige keine Suchtreffer #}
+    {# Fragen Bereich 4 #}
+    <div class="c108-faq-section-outer" id="pay">
+        <div class="c108-faq-section-title">
+            {{ c108faqsection4title }}
+        </div>
+        {% for currentQuestion in c108faqsection4questionsArray %}
+            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+                <div class="answertab">
+                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Fragen Bereich 4: Ende #}
+
+    {# Fragen Bereich 5 #}
+    <div class="c108-faq-section-outer" id="availability">
+        <div class="c108-faq-section-title">
+            {{ c108faqsection5title }}
+        </div>
+        {% for currentQuestion in c108faqsection5questionsArray %}
+            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+                <div class="answertab">
+                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Fragen Bereich 5: Ende #}
+
+    {# Fragen Bereich 6 #}
+    <div class="c108-faq-section-outer" id="responsibility">
+        <div class="c108-faq-section-title">
+            {{ c108faqsection6title }}
+        </div>
+        {% for currentQuestion in c108faqsection6questionsArray %}
+            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+                <div class="answertab">
+                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Fragen Bereich 6: Ende #}
+
+    {# Fragen Bereich 7 #}
+    <div class="c108-faq-section-outer" id="about">
+        <div class="c108-faq-section-title">
+            {{ c108faqsection7title }}
+        </div>
+        {% for currentQuestion in c108faqsection7questionsArray %}
+            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+                <div class="answertab">
+                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Fragen Bereich 7: Ende #}
+
+    {# Fragen Bereich 8 #}
+    <div class="c108-faq-section-outer" id="job">
+        <div class="c108-faq-section-title">
+            {{ c108faqsection8title }}
+        </div>
+        {% for currentQuestion in c108faqsection8questionsArray %}
+            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
+                <div class="answertab">
+                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {# Fragen Bereich 8: Ende #}
+
+
+    {# Anzeige keine Suchtreffer #}
 <div class="c108-faq-no-results">
 <p>{{ 'faq.element.noresults'|trans }}</p>
 </div>

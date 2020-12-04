@@ -9,6 +9,7 @@
   -webkit-hyphens: auto;
   hyphens: auto;
   word-break: break-word;
+  margin: 160px 0 108px;
 }
 
 .c108-faq-outer{
@@ -86,10 +87,37 @@
 .c108-faq-suchfeld-holder{
   grid-column: 3;
   -ms-grid-columns: 3;
-  margin-left: 20px;
-  position: relative;
-  top: 60px;
   z-index: 10;
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  max-width: 628px;
+  height: 52px;
+  margin-left: 0;
+  top: auto;
+  input::-webkit-input-placeholder {
+    color: #ccc;
+  }
+  input:-moz-placeholder {
+    color: #ccc;
+  }
+  input::-moz-placeholder {
+    color: #ccc;
+  }
+  input:-ms-input-placeholder {
+    color: #ccc;
+  }
+  .c108-faq-suchfeld {
+    width: 100%;
+    top: 0;
+    position: relative;
+    height: 52px;
+    padding-left: 42px;
+    font-size: 24px;
+    color: #333;
+  }
 }
 
 .c108-faq-suchfeld-holder .c108-faq-suchfeld {
@@ -98,7 +126,7 @@
   border-radius: 0;
   border: 1px solid #e0e0e0;
   width: 100%;
-  top: 14px;
+  top: 0;
   position: relative;
 }
 
@@ -145,7 +173,7 @@
 
 .answertab{
   padding: 0;
-  width: 50%;
+  max-width: 896px;
   background-color: white;
   overflow: hidden;
   transition: max-height .3s ease-out;
@@ -169,7 +197,7 @@
   -moz-osx-font-smoothing: grayscale;
   color: #4a545b;
   padding-top: 14px;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 .questiontab:focus {
@@ -269,5 +297,63 @@
 @media screen and (min-width: 480px) and (max-width: 767px){
   .c108-faq-outer{
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cms-element-faq {
+  .c108-faq-banner {
+    height: 520px;
+    background-position: 0px 0px;
+  }
+  .cms-element-faq-boxes, .c108-faq-question-section {
+    padding: 0 278px;
+  }
+  .c108-faq-section-box {
+    background: #F5F3F1;
+    border: none;
+    height: 336px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    .c108faq-content {
+      a {
+        margin-bottom: 0;
+        font-size: 18px;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+  .c108-faq-section-title-boxes {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+  .c108-faq-section-title, .questiontab span {
+    font-size: 24px;
+    color: #333 !important;
+    font-weight: 500;
+  }
+  .c108-faq-section-title {
+    padding-bottom: 26px;
+    max-width: 100%;
+    border-bottom: 1px solid #333;
+  }
+  .questiontab {
+    width: 100%;
+    border: none;
+  }
+  .answertab {
+    p {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+  .questiontab:after {
+    font-size: 23px;
   }
 }

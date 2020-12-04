@@ -43,16 +43,16 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection1title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Mein Account'
 		},
 		c108faqsection1questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -93,11 +93,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection2questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -138,11 +138,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection3questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -183,11 +183,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection4questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -228,11 +228,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection5questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -273,11 +273,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection6questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -318,11 +318,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection7questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -363,11 +363,11 @@ Shopware.Service('cmsService').registerCmsElement({
 		c108faqsection8questionsArray: {
 			source: 'static',
 			value: [
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
-				{ question: 'Lorem ipsum dolor?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
+				{ question: 'Hier sollte eine Frage stehen ?', answer:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
 				{ question: '', answer:'' },
@@ -423,7 +423,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection2title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Bestellung und Versand'
 		},
 		c108faqsection2icontype: {
 			source: 'static',
@@ -463,7 +463,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection3title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Rückgabe und Erstattung'
 		},
 		c108faqsection3icontype: {
 			source: 'static',
@@ -479,7 +479,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection4title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Bezahlung'
 		},
 		c108faqsection4icontype: {
 			source: 'static',
@@ -495,7 +495,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection5title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Verfügbarkeit'
 		},
 		c108faqsection5icontype: {
 			source: 'static',
@@ -511,7 +511,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection6title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Verantwortung'
 		},
 		c108faqsection6icontype: {
 			source: 'static',
@@ -527,7 +527,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection7title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Über uns'
 		},
 		c108faqsection7icontype: {
 			source: 'static',
@@ -543,7 +543,7 @@ Shopware.Service('cmsService').registerCmsElement({
 		},
 		c108faqsection8title: {
 			source: 'static',
-			value: 'Titel'
+			value: 'Jobs bei uns'
 		},
 		c108faqsection8icontype: {
 			source: 'static',

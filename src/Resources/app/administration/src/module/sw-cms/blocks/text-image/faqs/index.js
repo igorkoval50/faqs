@@ -2,11 +2,11 @@ import './component';
 import './preview';
 
 Shopware.Service('cmsService').registerCmsBlock({
-    name: 'faq',
+    name: 'faqs',
     label: 'sw-cms.blocks.textImage.faq.label',
     category: 'text-image',
-    component: 'sw-cms-block-faq',
-    previewComponent: 'sw-cms-preview-faq',
+    component: 'sw-cms-block-faqs',
+    previewComponent: 'sw-cms-preview-faqs',
     defaultConfig: {
         marginBottom: '20px',
         marginTop: '20px',
@@ -16,7 +16,7 @@ Shopware.Service('cmsService').registerCmsBlock({
     },
     slots: {
         c108faqcontent: {
-            type: 'faq',
+            type: 'faqs',
             default: {
                 config: {
                     displayMode: { source: 'static', value: 'cover' }

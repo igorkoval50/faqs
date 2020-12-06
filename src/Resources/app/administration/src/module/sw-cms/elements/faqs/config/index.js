@@ -2,7 +2,7 @@ import { Component, Mixin } from 'src/core/shopware';
 import template from './sw-cms-el-config-faq.html.twig';
 import './sw-cms-el-config-faq.scss';
 
-Component.register('sw-cms-el-config-faq', {
+Component.register('sw-cms-el-config-faqs', {
   template,
 
   mixins: [

@@ -1,5 +1,5 @@
-import './module/sw-cms/blocks/text-image/faq';
-import './module/sw-cms/elements/faq';
+import './module/sw-cms/blocks/text-image/faqs';
+import './module/sw-cms/elements/faqs';
 import deDE from './module/sw-cms/snippet/de-DE.json';
 import enGB from './module/sw-cms/snippet/en-GB.json';
 

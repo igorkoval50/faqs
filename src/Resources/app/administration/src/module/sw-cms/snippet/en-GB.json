@@ -3,7 +3,7 @@
     "blocks": {
       "textImage": {
         "faq": {
-          "label": "FAQ section"
+          "label": "Custom FAQ section"
         }
       }
     },

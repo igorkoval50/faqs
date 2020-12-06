@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace C108Faq\Resources\snippet\de_DE;
+namespace C108Faqs\Resources\snippet\de_DE;
 
 use Shopware\Core\System\Snippet\Files\SnippetFileInterface;
 

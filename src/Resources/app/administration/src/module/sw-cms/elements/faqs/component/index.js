@@ -2,7 +2,7 @@ import { Component, Mixin } from 'src/core/shopware';
 import template from './sw-cms-el-faq.html.twig';
 import './sw-cms-el-faq.scss';
 
-Component.register('sw-cms-el-faq', {
+Component.register('sw-cms-el-faqs', {
   template,
 
   mixins: [
@@ -88,8 +88,8 @@ Component.register('sw-cms-el-faq', {
 
   methods: {
     createdComponent() {
-      this.initElementConfig('faq');
-      this.initElementData('faq');
+      this.initElementConfig('faqs');
+      this.initElementData('faqs');
     }
   }
 });

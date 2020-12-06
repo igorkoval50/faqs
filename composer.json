@@ -1,5 +1,5 @@
 {
-  "name": "c108/faq",
+  "name": "c108/faqs",
   "description": "FAQ-Bereich für Erlebniswelten",
   "version": "1.0.1",
   "type": "shopware-platform-plugin",
@@ -18,14 +18,14 @@
   },
   "autoload": {
     "psr-4": {
-      "C108Faq\\": "src/"
+      "C108Faqs\\": "src/"
     }
   },
   "extra": {
-    "shopware-plugin-class": "C108Faq\\C108Faq",
+    "shopware-plugin-class": "C108Faqs\\C108Faqs",
     "label": {
-      "de-DE": "FAQ-Bereich für Erlebniswelten",
-      "en-GB": "FAQ section for Shopping Experiences"
+      "de-DE": "Custom FAQ-Bereich für Erlebniswelten",
+      "en-GB": "Custom FAQ section for Shopping Experiences"
     },
     "description": {
       "de-DE": "Mit diesem Plugin können Sie über die Erlebniswelten einen FAQ-Bereich hinzufügen.",

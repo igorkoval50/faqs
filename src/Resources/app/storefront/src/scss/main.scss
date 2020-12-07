@@ -323,6 +323,10 @@
         font-size: 18px;
         text-decoration: underline;
         cursor: pointer;
+        color: #333;
+        &:hover {
+          opacity: .9;
+        }
       }
     }
   }

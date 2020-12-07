@@ -3,11 +3,11 @@ import './config';
 import './preview';
 
 Shopware.Service('cmsService').registerCmsElement({
-	name: 'faqs',
+	name: 'faq',
 	label: 'FAQ',
-	component: 'sw-cms-el-faqs',
-	configComponent: 'sw-cms-el-config-faqs',
-	previewComponent: 'sw-cms-el-preview-faqs',
+	component: 'sw-cms-el-faq',
+	configComponent: 'sw-cms-el-config-faq',
+	previewComponent: 'sw-cms-el-preview-faq',
 
 	defaultConfig: {
 		c108faqhighlightcolor: {

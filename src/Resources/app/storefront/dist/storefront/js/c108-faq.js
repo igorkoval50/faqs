@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([["c108-faq"],{xVc5:function(o,n,t){(function(o){o(".c108-faq-section-box a").click((function(n){n.preventDefault();var t=o(this).attr("href"),c=o(t).offset().top-80;scroll({top:c,behavior:"smooth"})}))}).call(this,t("UoTJ"))}},[["xVc5","runtime","vendor-node"]]]);

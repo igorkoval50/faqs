@@ -1,7 +1,7 @@
 {
     "faq": {
         "element": {
-            "labelsearch": "Search in FAQ section",
+            "labelsearch": "Search by keywords",
             "noresults": "No results."
         }
     }

@@ -1,5 +1,9 @@
 @import 'variables.scss';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* General Styling */
 .cms-element-faq-boxes{
   display:grid;
@@ -137,6 +141,13 @@
   font-weight: 600;
   display: block;
   margin-bottom: 14px;
+  .icon-search {
+    position: absolute;
+    z-index: 10;
+    top: 48%;
+    transform: translate(0, -50%);
+    left: 13px;
+  }
 }
 
 .c108-faq-no-results{

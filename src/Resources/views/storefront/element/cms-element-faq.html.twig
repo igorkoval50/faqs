@@ -150,6 +150,8 @@
 {# Background image Ende #}
 
 {# Boxes #}
+    <div id="{{ id }}-questionwrapper" class="c108-faq-question-section" >
+
 <div class="cms-element-faq-boxes">
 
 {# Bereich 1 #}
@@ -179,7 +181,31 @@
 </div>
 </div>
 {# Bereich 1: Ende #}
-
+   <div id="accordion-account" class="c108-faq-question-section d-block d-sm-none">
+            {# Fragen Bereich 1 #}
+            <div class="c108-faq-section-outer">
+                <div class="c108-faq-section-title">
+                    {{ c108faqsection1title }}
+                </div>
+                {% for currentQuestion in c108faqsection1questionsArray %}
+                    {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                        <div class="card">
+                            <div id="headingTwo-{{ loop.index }}">
+                                <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseTwo-{{ loop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ loop.index }}">
+                                    <span>{{ currentQuestion.question }}</span>
+                                </button>
+                            </div>
+                            <div id="collapseTwo-{{ loop.index }}" class="collapse" aria-labelledby="headingTwo-{{ loop.index }}" data-parent="#accordion-account">
+                                <div class="card-body">
+                                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            {# Fragen Bereich 1: Ende #}
+        </div>
 {# Bereich 2 #}
 <div class="c108faqwrappertype-{{ c108faqsection2icontype }} c108faqwrapper-einfach c108-faq-section-box">
 <div class="c108faq-content">
@@ -418,22 +444,34 @@
 {# Boxes inkl. Suche: Ende #}
 
 {# Fragen Bereich #}
-<div id="{{ id }}-questionwrapper" class="c108-faq-question-section" >
+<div class="d-none d-sm-block" >
 
 {# Fragen Bereich 1 #}
-<div class="c108-faq-section-outer" id="account">
-<div class="c108-faq-section-title">
-{{ c108faqsection1title }}
-</div>
-{% for currentQuestion in c108faqsection1questionsArray %}
-{% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-<button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-<div class="answertab">
-<p>{{ currentQuestion.answer|nl2br}}</p>
-</div>
-{% endif %}
-{% endfor %}
-</div>
+    <div id="account">
+        {# Fragen Bereich 1 #}
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection1title }}
+            </div>
+            {% for currentQuestion in c108faqsection1questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingTwo-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseTwo-{{ loop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseTwo-{{ loop.index }}" class="collapse" aria-labelledby="headingTwo-{{ loop.index }}" data-parent="#account">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {# Fragen Bereich 1: Ende #}
+    </div>
 {# Fragen Bereich 1: Ende #}
 
 {# Fragen Bereich 2 #}
@@ -557,7 +595,7 @@
 
 </div>
 {# Fragen Bereich: Ende #}
-
+    </div>
 {% endblock %}
 
 <script>

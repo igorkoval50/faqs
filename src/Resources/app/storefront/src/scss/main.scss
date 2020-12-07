@@ -17,7 +17,7 @@ html {
   @media (max-width: 1200px) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 20px;
-    margin: 90px 0 80px;
+    margin: 90px 20px 80px;
   }
   @media (max-width: 480px) {
     margin: 34px 0 0px;
@@ -52,6 +52,8 @@ html {
   max-width: 800px;
   @media (max-width: 1200px) {
     font-size: 57px;
+    max-width: 100%;
+    width: 65%;
   }
   @media (max-width: 768px) {
     font-size: 43px;
@@ -363,8 +365,11 @@ html {
       height: 400px;
     }
   }
-  .cms-element-faq-boxes, .c108-faq-question-section {
+  .c108-faq-question-section {
     padding: 0 278px;
+    @media (max-width: 1600px) {
+      padding: 0 10%;
+    }
     @media (max-width: 1200px) {
       padding: 0 20px;
     }
@@ -411,6 +416,7 @@ html {
     font-size: 24px;
     color: #333 !important;
     font-weight: 500;
+    padding: 0;
     @media (max-width: 480px) {
       font-size: 14px;
     }
@@ -423,9 +429,15 @@ html {
   .questiontab {
     width: 100%;
     border: none;
+    padding-bottom: 21px;
+    @media (max-width: 576px) {
+      padding-bottom: 10px;
+    }
   }
   .answertab {
+    margin-bottom: 21px;
     p {
+      margin-bottom: 0;
       font-size: 14px;
       color: #333;
       @media (max-width: 480px) {
@@ -436,4 +448,26 @@ html {
   .questiontab:after {
     font-size: 23px;
   }
+  .questiontab {
+    &:after {
+      content: "-";
+    }
+  }
+  .questiontab.collapsed {
+    &:after {
+      content: "+";
+    }
+  }
+  .card {
+    p {
+      margin-bottom: 21px;
+      font-size: 14px;
+      max-width: 896px;
+      @media (max-width: 576px) {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+    }
+  }
 }
+

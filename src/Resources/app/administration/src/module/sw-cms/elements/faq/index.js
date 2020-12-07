@@ -26,6 +26,10 @@ Shopware.Service('cmsService').registerCmsElement({
 			source: 'static',
 			value: 'shippedimage'
 		},
+		c108faqbannermobiletype: {
+			source: 'static',
+			value: 'shippedimagemobile'
+		},
 		c108faqbannertitle: {
 			source: 'static',
 			value: 'Unsere Antworten auf deine Fragen'

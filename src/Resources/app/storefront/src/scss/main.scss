@@ -58,7 +58,7 @@ html {
   }
   @media (max-width: 480px) {
     font-size: 36px;
-    width: 100%;
+    width: 89%;
   }
 }
 
@@ -160,6 +160,9 @@ html {
   width: 100%;
   top: 0;
   position: relative;
+  @media (max-width: 480px) {
+    width: 96%;
+  }
 }
 
 .c108-faq-suchfeld-holder .c108-faq-search-title {

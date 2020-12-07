@@ -20,6 +20,7 @@
             "mediahint": "We recommend to upload the image compressed.",
             "iconhint": "We recommend a resolution of 100 pixels x 100 pixels.",
             "mediatype": "Background image",
+            "mediatypemobile": "Background image mobile",
             "mediatypeshipped": "Standard",
             "mediatypeown": "Custom",
             "titletype": "Title",

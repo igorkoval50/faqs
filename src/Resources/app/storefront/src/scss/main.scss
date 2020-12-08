@@ -405,8 +405,10 @@ html {
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
-    @media (max-width: 480px) {
+    @media (max-width: 576px) {
       height: 240px;
+      margin-left: 20px;
+      margin-right: 20px;
     }
     .c108faq-content {
       a, .boxes-link {

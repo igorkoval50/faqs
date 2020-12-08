@@ -10,7 +10,8 @@ $( document ).ready(function() {
             behavior: "smooth"
         });
     });
-    
+
+    //logic for search
     $('.c108-faq-suchfeld').on('input', function (e) {
         if(e.target.value !== "") {
             $('.c108-faq-section-box').hide();
@@ -34,5 +35,5 @@ $( document ).ready(function() {
                 $('.c108-faq-question-wrapper').removeClass('add-margin');
             }
         }
-    })
+    });
 });

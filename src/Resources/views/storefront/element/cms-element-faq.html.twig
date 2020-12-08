@@ -176,7 +176,10 @@
 
 <div class="c108-faq-text-wrapper">
 <div class="c108-faq-section-title-boxes">{{ c108faqsection1title }}</div>
-<div class="c108-faq-section-text-boxes"><a href="#account">{{ c108faqsection1text|nl2br }}</a></div>
+<div class="c108-faq-section-text-boxes">
+    <a class="d-sm-block d-none" href="#account">{{ c108faqsection1text|nl2br }}</a>
+    <span class="accordion-account boxes-link d-block d-sm-none">{{ c108faqsection1text|nl2br }}</span>
+</div>
 </div>
 </div>
 </div>
@@ -230,11 +233,39 @@
 
 <div class="c108-faq-text-wrapper">
 <div class="c108-faq-section-title-boxes">{{ c108faqsection2title }}</div>
-<div class="c108-faq-section-text-boxes"><a href="#order">{{ c108faqsection2text|nl2br }}</a></div>
+<div class="c108-faq-section-text-boxes">
+    <a class="d-sm-block d-none" href="#order">{{ c108faqsection2text|nl2br }}</a>
+    <span class="order-accordion boxes-link d-block d-sm-none">{{ c108faqsection2text|nl2br }}</span>
+</div>
 </div>
 </div>
 </div>
 {# Bereich 2: Ende #}
+    {# Fragen Bereich 2 #}
+    <div id="order-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection2title }}
+            </div>
+            {% for currentQuestion in c108faqsection2questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingThree-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseThree-{{ loop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseThree-{{ loop.index }}" class="collapse" aria-labelledby="headingThree-{{ loop.index }}" data-parent="#order-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 2: Ende #}
 
 {# Bereich 1 #}
 <div class="c108faqwrappertype-{{ c108faqsection3icontype }} c108faqwrapper-einfach c108-faq-section-box">
@@ -259,10 +290,39 @@
 
 <div class="c108-faq-text-wrapper">
 <div class="c108-faq-section-title-boxes">{{ c108faqsection3title }}</div>
-<div class="c108-faq-section-text-boxes"><a href="#return">{{ c108faqsection3text|nl2br }}</a></div>
+<div class="c108-faq-section-text-boxes">
+    <a class="d-sm-block d-none" href="#return">{{ c108faqsection3text|nl2br }}</a>
+    <span class="return-accordion boxes-link d-block d-sm-none">{{ c108faqsection3text|nl2br }}</span>
 </div>
 </div>
 </div>
+</div>
+
+    {# Fragen Bereich 3 #}
+    <div id="return-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection3title }}
+            </div>
+            {% for currentQuestion in c108faqsection3questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingFour-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFour-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseFour-{{ loop.index }}" class="collapse" aria-labelledby="headingFour-{{ loop.index }}" data-parent="#return-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 3: Ende #}
 {# Bereich 3: Ende #}
 
     {# Bereich 4 #}
@@ -289,10 +349,40 @@
 
             <div class="c108-faq-text-wrapper">
                 <div class="c108-faq-section-title-boxes">{{ c108faqsection4title }}</div>
-                <div class="c108-faq-section-text-boxes"><a href="#pay">{{ c108faqsection4text|nl2br }}</a></div>
+                <div class="c108-faq-section-text-boxes">
+                    <a class="d-sm-block d-none" href="#pay">{{ c108faqsection4text|nl2br }}</a>
+                    <span class="pay-accordion boxes-link d-block d-sm-none">{{ c108faqsection4text|nl2br }}</span>
+                </div>
             </div>
         </div>
     </div>
+
+    {# Fragen Bereich 4 #}
+    <div id="pay-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection4title }}
+            </div>
+            {% for currentQuestion in c108faqsection4questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingFive-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFive-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseFive-{{ loop.index }}" class="collapse" aria-labelledby="headingFive-{{ loop.index }}" data-parent="#pay-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 4: Ende #}
+
     {# Bereich 4: Ende #}
 
     {# Bereich 5 #}
@@ -319,10 +409,39 @@
 
             <div class="c108-faq-text-wrapper">
                 <div class="c108-faq-section-title-boxes">{{ c108faqsection5title }}</div>
-                <div class="c108-faq-section-text-boxes"><a href="#availability">{{ c108faqsection5text|nl2br }}</a></div>
+                <div class="c108-faq-section-text-boxes">
+                    <a class="d-sm-block d-none" href="#availability">{{ c108faqsection5text|nl2br }}</a>
+                    <span class="availability-accordion boxes-link d-block d-sm-none">{{ c108faqsection5text|nl2br }}</span>
+                </div>
             </div>
         </div>
     </div>
+
+    {# Fragen Bereich 5 #}
+    <div id="availability-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection5title }}
+            </div>
+            {% for currentQuestion in c108faqsection5questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingSix-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSix-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseSix-{{ loop.index }}" class="collapse" aria-labelledby="headingSix-{{ loop.index }}" data-parent="#availability-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 5: Ende #}
     {# Bereich 5: Ende #}
 
     {# Bereich 6 #}
@@ -348,10 +467,39 @@
 
             <div class="c108-faq-text-wrapper">
                 <div class="c108-faq-section-title-boxes">{{ c108faqsection6title }}</div>
-                <div class="c108-faq-section-text-boxes"><a href="#responsibility">{{ c108faqsection6text|nl2br }}</a></div>
+                <div class="c108-faq-section-text-boxes">
+                    <a class="d-sm-block d-none" href="#responsibility">{{ c108faqsection6text|nl2br }}</a>
+                    <span class="responsibility-accordion boxes-link d-block d-sm-none">{{ c108faqsection6text|nl2br }}</span>
+                </div>
             </div>
         </div>
     </div>
+
+    {# Fragen Bereich 6 #}
+    <div id="responsibility-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection6title }}
+            </div>
+            {% for currentQuestion in c108faqsection6questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headieven-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSeven-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseSeven-{{ loop.index }}" class="collapse" aria-labelledby="headingSeven-{{ loop.index }}" data-parent="#responsibility-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 6: Ende #}
     {# Bereich 6: Ende #}
 
     {# Bereich 7 #}
@@ -405,10 +553,39 @@
 
             <div class="c108-faq-text-wrapper">
                 <div class="c108-faq-section-title-boxes">{{ c108faqsection7title }}</div>
-                <div class="c108-faq-section-text-boxes"><a href="#about">{{ c108faqsection7text|nl2br }}</a></div>
+                <div class="c108-faq-section-text-boxes">
+                    <a class="d-sm-block d-none" href="#about">{{ c108faqsection7text|nl2br }}</a>
+                    <span class="about-accordion boxes-link d-block d-sm-none" >{{ c108faqsection7text|nl2br }}</span>
+                </div>
             </div>
         </div>
     </div>
+
+    {# Fragen Bereich 7 #}
+    <div id="about-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection7title }}
+            </div>
+            {% for currentQuestion in c108faqsection7questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headieven-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseEight-{{ loop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseEight-{{ loop.index }}" class="collapse" aria-labelledby="headingEight-{{ loop.index }}" data-parent="#about-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 7: Ende #}
     {# Bereich 7: Ende #}
 
     {# Bereich 8 #}
@@ -434,10 +611,38 @@
 
             <div class="c108-faq-text-wrapper">
                 <div class="c108-faq-section-title-boxes">{{ c108faqsection8title }}</div>
-                <div class="c108-faq-section-text-boxes"><a href="#job">{{ c108faqsection8text|nl2br }}</a></div>
+                <div class="c108-faq-section-text-boxes">
+                    <a class="d-sm-block d-none" href="#job">{{ c108faqsection8text|nl2br }}</a>
+                    <span class="job-accordion boxes-link d-block d-sm-none" href="#job">{{ c108faqsection8text|nl2br }}</span>
+                </div>
             </div>
         </div>
     </div>
+    {# Fragen Bereich 8 #}
+    <div id="job-accordion" class="c108-faq-question-section d-block d-sm-none">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection8title }}
+            </div>
+            {% for currentQuestion in c108faqsection8questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headieven-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseNine-{{ loop.index }}" aria-expanded="false" aria-controls="collapseNine-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseNine-{{ loop.index }}" class="collapse" aria-labelledby="headingNine-{{ loop.index }}" data-parent="#job-accordion">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {# Fragen Bereich 8: Ende #}
     {# Bereich 8: Ende #}
 </div>
 
@@ -475,114 +680,184 @@
 {# Fragen Bereich 1: Ende #}
 
 {# Fragen Bereich 2 #}
-<div class="c108-faq-section-outer" id="order">
-<div class="c108-faq-section-title">
-{{ c108faqsection2title }}
-</div>
-{% for currentQuestion in c108faqsection2questionsArray %}
-{% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-<button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-<div class="answertab">
-<p>{{ currentQuestion.answer|nl2br}}</p>
-</div>
-{% endif %}
-{% endfor %}
-</div>
+    <div id="order">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection2title }}
+            </div>
+            {% for currentQuestion in c108faqsection2questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingThree-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseThree-{{ loop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseThree-{{ loop.index }}" class="collapse" aria-labelledby="headingThree-{{ loop.index }}" data-parent="#order">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {# Fragen Bereich 2: Ende #}
 
 {# Fragen Bereich 3 #}
-<div class="c108-faq-section-outer" id="return">
-<div class="c108-faq-section-title">
-{{ c108faqsection3title }}
-</div>
-{% for currentQuestion in c108faqsection3questionsArray %}
-{% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-<button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-<div class="answertab">
-<p>{{ currentQuestion.answer|nl2br}}</p>
-</div>
-{% endif %}
-{% endfor %}
-</div>
+    <div id="return">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection3title }}
+            </div>
+            {% for currentQuestion in c108faqsection3questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingFour-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFour-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseFour-{{ loop.index }}" class="collapse" aria-labelledby="headingFour-{{ loop.index }}" data-parent="#return">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
 {# Fragen Bereich 3: Ende #}
 
     {# Fragen Bereich 4 #}
-    <div class="c108-faq-section-outer" id="pay">
-        <div class="c108-faq-section-title">
-            {{ c108faqsection4title }}
+    <div id="pay">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection4title }}
+            </div>
+            {% for currentQuestion in c108faqsection4questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingFive-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFive-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseFive-{{ loop.index }}" class="collapse" aria-labelledby="headingFive-{{ loop.index }}" data-parent="#pay">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% for currentQuestion in c108faqsection4questionsArray %}
-            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-                <div class="answertab">
-                    <p>{{ currentQuestion.answer|nl2br}}</p>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
     {# Fragen Bereich 4: Ende #}
 
     {# Fragen Bereich 5 #}
-    <div class="c108-faq-section-outer" id="availability">
-        <div class="c108-faq-section-title">
-            {{ c108faqsection5title }}
+    <div id="availability">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection5title }}
+            </div>
+            {% for currentQuestion in c108faqsection5questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headingSix-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSix-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseSix-{{ loop.index }}" class="collapse" aria-labelledby="headingSix-{{ loop.index }}" data-parent="#availability">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% for currentQuestion in c108faqsection5questionsArray %}
-            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-                <div class="answertab">
-                    <p>{{ currentQuestion.answer|nl2br}}</p>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
     {# Fragen Bereich 5: Ende #}
 
     {# Fragen Bereich 6 #}
-    <div class="c108-faq-section-outer" id="responsibility">
-        <div class="c108-faq-section-title">
-            {{ c108faqsection6title }}
+    <div id="responsibility">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection6title }}
+            </div>
+            {% for currentQuestion in c108faqsection6questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headieven-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSeven-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseSeven-{{ loop.index }}" class="collapse" aria-labelledby="headingSeven-{{ loop.index }}" data-parent="#responsibility">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% for currentQuestion in c108faqsection6questionsArray %}
-            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-                <div class="answertab">
-                    <p>{{ currentQuestion.answer|nl2br}}</p>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
     {# Fragen Bereich 6: Ende #}
 
     {# Fragen Bereich 7 #}
-    <div class="c108-faq-section-outer" id="about">
-        <div class="c108-faq-section-title">
-            {{ c108faqsection7title }}
+    <div id="about">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection7title }}
+            </div>
+            {% for currentQuestion in c108faqsection7questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headieven-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseEight-{{ loop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseEight-{{ loop.index }}" class="collapse" aria-labelledby="headingEight-{{ loop.index }}" data-parent="#about">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% for currentQuestion in c108faqsection7questionsArray %}
-            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-                <div class="answertab">
-                    <p>{{ currentQuestion.answer|nl2br}}</p>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
     {# Fragen Bereich 7: Ende #}
 
     {# Fragen Bereich 8 #}
-    <div class="c108-faq-section-outer" id="job">
-        <div class="c108-faq-section-title">
-            {{ c108faqsection8title }}
+    <div id="job">
+        <div class="c108-faq-section-outer">
+            <div class="c108-faq-section-title">
+                {{ c108faqsection8title }}
+            </div>
+            {% for currentQuestion in c108faqsection8questionsArray %}
+                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                    <div class="card">
+                        <div id="headieven-{{ loop.index }}">
+                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseNine-{{ loop.index }}" aria-expanded="false" aria-controls="collapseNine-{{ loop.index }}">
+                                <span>{{ currentQuestion.question }}</span>
+                            </button>
+                        </div>
+                        <div id="collapseNine-{{ loop.index }}" class="collapse" aria-labelledby="headingNine-{{ loop.index }}" data-parent="#job">
+                            <div class="card-body">
+                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-        {% for currentQuestion in c108faqsection8questionsArray %}
-            {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                <button class="questiontab"><span>{{ currentQuestion.question }}</span></button>
-                <div class="answertab">
-                    <p>{{ currentQuestion.answer|nl2br}}</p>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
     {# Fragen Bereich 8: Ende #}
 

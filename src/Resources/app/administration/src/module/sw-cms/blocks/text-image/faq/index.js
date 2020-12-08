@@ -22,6 +22,19 @@ Shopware.Service('cmsService').registerCmsBlock({
                     displayMode: { source: 'static', value: 'cover' }
                 }
             }
-        }
+        },
+        left: {
+            type: 'image',
+            default: {
+                config: {
+                    displayMode: { source: 'static', value: 'cover' }
+                },
+                data: {
+                    media: {
+                        url: '/administration/static/img/cms/preview_camera_large.jpg'
+                    }
+                }
+            }
+        },
     }
 });

@@ -12,7 +12,7 @@ Shopware.Service('cmsService').registerCmsElement({
 	defaultConfig: {
 		c108faqhighlightcolor: {
 			source: 'static',
-			value: '#015E06'
+			value: '#f5f3f1'
 		},
 		c108faqbannerimg: {
 			source: 'static',

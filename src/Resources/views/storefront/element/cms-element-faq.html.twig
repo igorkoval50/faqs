@@ -95,14 +95,15 @@
   {% set currImgPath = '' %}
 {% endif %}
 {% endif %}
-
-<div class="c108-faq-banner" style="background-image:url('{{ currImgPath }}');">
-<div class="c108-faq-inside">
-    {{ currBannerTitle }}
-</div>
-    {# Suche #}
-    <div class="c108-faq-suchfeld-holder">
-        <label class="c108-faq-search-title">
+    <div class="c108-faq-banner">
+        <div class="c108-faq-banner d-block d-sm-none" style="background-image:url('{{ elements.data.media.url }}');"></div>
+        <div class="c108-faq-banner d-none d-sm-block" style="background-image:url('{{ currImgPath }}');"></div>
+        <div class="c108-faq-inside">
+            {{ currBannerTitle }}
+        </div>
+        {# Suche #}
+        <div class="c108-faq-suchfeld-holder">
+            <label class="c108-faq-search-title">
             <span class="icon-search">
              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="18" height="18" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 19 19" xml:space="preserve" class=""><g>
             <g xmlns="http://www.w3.org/2000/svg">
@@ -142,10 +143,10 @@
             </g>
             </g></svg>
             </span>
-            <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld" placeholder="{{ 'faq.element.labelsearch'|trans }}">
-        </label>
-    </div>
-    {# Suche: Ende #}
+                <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld" placeholder="{{ 'faq.element.labelsearch'|trans }}">
+            </label>
+        </div>
+        {# Suche: Ende #}
 </div>
 {# Background image Ende #}
 

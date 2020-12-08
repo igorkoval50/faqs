@@ -18,6 +18,7 @@ $( document ).ready(function() {
             $('.cms-element-faq-boxes').addClass('less-margin');
             $('.c108-faq-section-outer').addClass('remove-margin');
             $('.wrapper-cms').addClass('add-margin');
+            $('.questiontab').addClass('add-padding');
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').addClass('show');
                 $('.c108-faq-question-section').addClass('remove-margin');
@@ -29,6 +30,7 @@ $( document ).ready(function() {
             $('.cms-element-faq-boxes').removeClass('less-margin');
             $('.c108-faq-section-outer').removeClass('remove-margin');
             $('.wrapper-cms').removeClass('add-margin');
+            $('.questiontab').removeClass('add-padding');
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').removeClass('show');
                 $('.c108-faq-question-section').removeClass('remove-margin');

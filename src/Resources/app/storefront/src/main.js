@@ -19,6 +19,8 @@ $( document ).ready(function() {
             $('.c108-faq-section-outer').addClass('remove-margin');
             $('.wrapper-cms').addClass('add-margin');
             $('.questiontab').addClass('add-padding');
+            $('.questiontab').addClass('collapsed');
+            $('.collapse-item').removeClass('show');
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').addClass('show');
                 $('.c108-faq-question-section').addClass('remove-margin');

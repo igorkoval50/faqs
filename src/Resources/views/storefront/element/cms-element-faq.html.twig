@@ -1,36 +1,36 @@
 {% block element_faq %}
 
-{# Settings Allgemein #}
-{% set id = element.id %}
-{% set c108faqhighlightcolor = element.config.c108faqhighlightcolor.value %}
-{% set c108faqbannertype = element.config.c108faqbannertype.value %}
-{% set c108faqbannerimg = element.config.c108faqbannerimg.value %}
-{% set c108faqbannertitle = element.config.c108faqbannertitle.value %}
-{% set currBannerTitle = element.config.c108faqbannertitle.value %}
+    {# Settings Allgemein #}
+    {% set id = element.id %}
+    {% set c108faqhighlightcolor = element.config.c108faqhighlightcolor.value %}
+    {% set c108faqbannertype = element.config.c108faqbannertype.value %}
+    {% set c108faqbannerimg = element.config.c108faqbannerimg.value %}
+    {% set c108faqbannertitle = element.config.c108faqbannertitle.value %}
+    {% set currBannerTitle = element.config.c108faqbannertitle.value %}
 
-{# Settings Bereich 1 #}
-{% set c108faqsection1title = element.config.c108faqsection1title.value %}
-{% set c108faqsection1text = element.config.c108faqsection1text.value %}
-{% set c108faqsection1icon = element.config.c108faqsection1icon.value %}
-{% set c108faqsection1icontype = element.config.c108faqsection1icontype.value %}
-{% set c108faqsection1iconpath = element.config.c108faqsection1iconpath.value %}
-{% set c108faqsection1questionsArray = element.config.c108faqsection1questionsArray.value %}
+    {# Settings Bereich 1 #}
+    {% set c108faqsection1title = element.config.c108faqsection1title.value %}
+    {% set c108faqsection1text = element.config.c108faqsection1text.value %}
+    {% set c108faqsection1icon = element.config.c108faqsection1icon.value %}
+    {% set c108faqsection1icontype = element.config.c108faqsection1icontype.value %}
+    {% set c108faqsection1iconpath = element.config.c108faqsection1iconpath.value %}
+    {% set c108faqsection1questionsArray = element.config.c108faqsection1questionsArray.value %}
 
-{# Settings Bereich 2 #}
-{% set c108faqsection2title = element.config.c108faqsection2title.value %}
-{% set c108faqsection2text = element.config.c108faqsection2text.value %}
-{% set c108faqsection2icon = element.config.c108faqsection2icon.value %}
-{% set c108faqsection2icontype = element.config.c108faqsection2icontype.value %}
-{% set c108faqsection2iconpath = element.config.c108faqsection2iconpath.value %}
-{% set c108faqsection2questionsArray = element.config.c108faqsection2questionsArray.value %}
+    {# Settings Bereich 2 #}
+    {% set c108faqsection2title = element.config.c108faqsection2title.value %}
+    {% set c108faqsection2text = element.config.c108faqsection2text.value %}
+    {% set c108faqsection2icon = element.config.c108faqsection2icon.value %}
+    {% set c108faqsection2icontype = element.config.c108faqsection2icontype.value %}
+    {% set c108faqsection2iconpath = element.config.c108faqsection2iconpath.value %}
+    {% set c108faqsection2questionsArray = element.config.c108faqsection2questionsArray.value %}
 
-{# Settings Bereich 3 #}
-{% set c108faqsection3title = element.config.c108faqsection3title.value %}
-{% set c108faqsection3text = element.config.c108faqsection3text.value %}
-{% set c108faqsection3icon = element.config.c108faqsection3icon.value %}
-{% set c108faqsection3icontype = element.config.c108faqsection3icontype.value %}
-{% set c108faqsection3iconpath = element.config.c108faqsection3iconpath.value %}
-{% set c108faqsection3questionsArray = element.config.c108faqsection3questionsArray.value %}
+    {# Settings Bereich 3 #}
+    {% set c108faqsection3title = element.config.c108faqsection3title.value %}
+    {% set c108faqsection3text = element.config.c108faqsection3text.value %}
+    {% set c108faqsection3icon = element.config.c108faqsection3icon.value %}
+    {% set c108faqsection3icontype = element.config.c108faqsection3icontype.value %}
+    {% set c108faqsection3iconpath = element.config.c108faqsection3iconpath.value %}
+    {% set c108faqsection3questionsArray = element.config.c108faqsection3questionsArray.value %}
 
     {# Settings Bereich 4 #}
     {% set c108faqsection4title = element.config.c108faqsection4title.value %}
@@ -73,37 +73,37 @@
     {% set c108faqsection8questionsArray = element.config.c108faqsection8questionsArray.value %}
 
 
-{# FAQ Element#}
-<div class="cms-element-faq" style="height: 100%; width: 100%">
+    {# FAQ Element#}
+    <div class="cms-element-faq" style="height: 100%; width: 100%">
 
-{% block element_faq_inner %}
+        {% block element_faq_inner %}
 
-{# Background image #}
-{# Shipped image #}
-{% if c108faqbannertype == 'shippedimage' %}
-{% set currImgPath = asset('bundles/c108faq/static/img/cms/'~ c108faqbannerimg ~'.jpg') %}
-{% endif %}
+            {# Background image #}
+            {# Shipped image #}
+            {% if c108faqbannertype == 'shippedimage' %}
+                {% set currImgPath = asset('bundles/c108faq/static/img/cms/'~ c108faqbannerimg ~'.jpg') %}
+            {% endif %}
 
-{# Own image #}
-{% if c108faqbannertype == 'ownimage' %}
-{% set currMediaId = element.config.media.value %}
-{% if currMediaId %}
-{% set currMediaCollection = searchMedia([currMediaId], context.context) %}
-{% set currMediaObject = currMediaCollection.get(currMediaId) %}
-{% set currImgPath = currMediaObject.url %}
-{% else %}
-  {% set currImgPath = '' %}
-{% endif %}
-{% endif %}
-    <div class="c108-faq-banner">
-        <div class="c108-faq-banner d-block d-sm-none" style="background-image:url('{{ elements.data.media.url }}');"></div>
-        <div class="c108-faq-banner d-none d-sm-block" style="background-image:url('{{ currImgPath }}');"></div>
-        <div class="c108-faq-inside">
-            {{ currBannerTitle }}
-        </div>
-        {# Suche #}
-        <div class="c108-faq-suchfeld-holder">
-            <label class="c108-faq-search-title">
+            {# Own image #}
+            {% if c108faqbannertype == 'ownimage' %}
+                {% set currMediaId = element.config.media.value %}
+                {% if currMediaId %}
+                    {% set currMediaCollection = searchMedia([currMediaId], context.context) %}
+                    {% set currMediaObject = currMediaCollection.get(currMediaId) %}
+                    {% set currImgPath = currMediaObject.url %}
+                {% else %}
+                    {% set currImgPath = '' %}
+                {% endif %}
+            {% endif %}
+            <div class="c108-faq-banner">
+                <div class="c108-faq-banner d-block d-sm-none" style="background-image:url('{{ elements.data.media.url }}');"></div>
+                <div class="c108-faq-banner d-none d-sm-block" style="background-image:url('{{ currImgPath }}');"></div>
+                <div class="c108-faq-inside">
+                    {{ currBannerTitle }}
+                </div>
+                {# Suche #}
+                <div class="c108-faq-suchfeld-holder">
+                    <label class="c108-faq-search-title">
             <span class="icon-search">
              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="18" height="18" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 19 19" xml:space="preserve" class=""><g>
             <g xmlns="http://www.w3.org/2000/svg">
@@ -143,821 +143,908 @@
             </g>
             </g></svg>
             </span>
-                <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld" placeholder="{{ 'faq.element.labelsearch'|trans }}">
-            </label>
-        </div>
-        {# Suche: Ende #}
-</div>
-{# Background image Ende #}
-
-{# Boxes #}
-    <div id="{{ id }}-questionwrapper" class="c108-faq-question-section c108-faq-question-wrapper">
-
-<div class="cms-element-faq-boxes">
-
-{# Bereich 1 #}
-<div class="c108faqwrappertype-{{ c108faqsection1icontype }} c108faqwrapper-einfach c108-faq-section-box">
-<div class="c108faq-content">
-
-{# Case 1: Shopware Icon #}
-{% if c108faqsection1icontype == 'shippedicon' %}
-<div class="c108-icon-wrapper">
-<span class="icon icon-{{ c108faqsection1icon }}" style="color:{{ c108faqhighlightcolor }};">
-{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection1icon ~'.svg', ignore_missing = true) }}
-</span>
-</div>
-{# Case 1: Shopware Icon - Ende #}
-{# Case 2: Own Icon #}
-{% elseif c108faqsection1icontype == 'ownicon' %}
-<div class="c108-icon-wrapper c108faqowniconwrapper">
-<img src="{{ c108faqsection1iconpath }}" alt="{{ c108faqsection1title }} Icon">
-</div>
-{% endif %}
-{# Case 2: Own Icon- Ende #}
-
-<div class="c108-faq-text-wrapper">
-<div class="c108-faq-section-title-boxes">{{ c108faqsection1title }}</div>
-<div class="c108-faq-section-text-boxes">
-    <a class="d-sm-block d-none" href="#account">{{ c108faqsection1text|nl2br }}</a>
-    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#accordion-account" aria-expanded="false" aria-controls="accordion-account">{{ c108faqsection1text|nl2br }}</span>
-</div>
-</div>
-</div>
-</div>
-{# Bereich 1: Ende #}
-   <div id="accordion-account" class="collapse c108-faq-question-section">
-            {# Fragen Bereich 1 #}
-            <div class="c108-faq-section-outer">
-                <div class="c108-faq-section-title">
-                    {{ c108faqsection1title }}
+                        <input id="{{ id }}-searchField" type="text" name="faqsuchfeld" class="c108-faq-suchfeld" placeholder="{{ 'faq.element.labelsearch'|trans }}">
+                    </label>
                 </div>
-                {% for currentQuestion in c108faqsection1questionsArray %}
-                    {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                        <div class="card">
-                            <div id="headingTwo-{{ loop.index }}">
-                                <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseTwo-{{ loop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ loop.index }}">
-                                    <span>{{ currentQuestion.question }}</span>
-                                </button>
-                            </div>
-                            <div id="collapseTwo-{{ loop.index }}" class="collapse" aria-labelledby="headingTwo-{{ loop.index }}" data-parent="#accordion-account">
-                                <div class="card-body">
-                                    <p>{{ currentQuestion.answer|nl2br}}</p>
+                {# Suche: Ende #}
+            </div>
+            {# Background image Ende #}
+
+            {# Boxes #}
+            <div id="{{ id }}-questionwrapper" class="c108-faq-question-section c108-faq-question-wrapper">
+
+                <div class="cms-element-faq-boxes">
+
+                    {# Bereich 1 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection1icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection1icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="35.947" height="41.565" viewBox="0 0 35.947 41.565">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: none;
+                                                    stroke: #333;
+                                                    stroke-linecap: round;
+                                                    stroke-linejoin: round;
+                                                    stroke-width: 1.2px;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <path id="Mein_Account_Icon" data-name="Mein Account_Icon" class="cls-1" d="M38.564,67.032a21.273,21.273,0,0,1,5.6-15.059,15.754,15.754,0,0,1,10.866-4.892,11.956,11.956,0,0,0,6.835-1.8C63.5,44.1,64.1,43.793,65.147,41.906c1.717-3.085,1.447-8.186-.387-11.178-2.489-4.059-8.645-5.317-12.208-2.513a10.831,10.831,0,0,0-3.638,6.851,11.22,11.22,0,0,0,2.006,8.116c.927,1.34,4.918,3.3,6.344,3.717,1.535.447,2.822.305,4.366.611a12.966,12.966,0,0,1,7.906,5.605c2.622,3.854,3.726,8.879,3.762,13.789" transform="translate(-37.955 -26.082)"/>
+                                    </svg>
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection1icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection1iconpath }}" alt="{{ c108faqsection1title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection1title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#account">{{ c108faqsection1text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#accordion-account" aria-expanded="false" aria-controls="accordion-account">{{ c108faqsection1text|nl2br }}</span>
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            {# Fragen Bereich 1: Ende #}
-        </div>
-{# Bereich 2 #}
-<div class="c108faqwrappertype-{{ c108faqsection2icontype }} c108faqwrapper-einfach c108-faq-section-box">
-<div class="c108faq-content">
-
-{# Case 1: Shopware Icon #}
-{% if c108faqsection2icontype == 'shippedicon' %}
-<div class="c108-icon-wrapper">
-    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45.84 37.216"><defs><style>.a{fill:none;stroke:#333;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><g transform="translate(0.632 0.6)"><g transform="translate(13.481)"><path class="a" d="M62.4,34.754A144.572,144.572,0,0,1,47.961,42.4c-.312.013-10.505-5.491-15.606-8.268,1.664-.814,12.782-6.166,15.581-6.3C50.6,27.708,61.629,34.29,62.4,34.754c.646.389.656,14.032.706,19.62-5.131,2.494-14.265,9.464-14.678,9.477-.44.013-16.1-9.664-16.305-10-.276-.446-.132-14.07.236-19.718" transform="translate(-31.975 -27.834)"/><path class="a" d="M51.289,46.737A143.1,143.1,0,0,0,51.145,63" transform="translate(-35.07 -31.908)"/><path class="a" d="M59.737,39.062c-3.052,1.312-4.63,2.2-7.276,3.423-.279,1.883-.644,2.643-.924,4.526-1.232-.618-2.6-1.772-3.9-2.28.285-1.369.323-3.467,1.036-4.2.468-.485,5.75-2.722,7.532-3.566q1.689,1.067,3.428,2.084" transform="translate(-40.894 -29.801)"/></g><path class="a" d="M80.3,36.79l-3.715-.169" transform="translate(-70.694 -29.728)"/><path class="a" d="M82.554,43.681H76.915" transform="translate(-73.2 -31.249)"/><path class="a" d="M86.445,50.545q-4.357-.1-8.713.139" transform="translate(-77.732 -32.722)"/></g></svg>
-{#<span class="icon icon-{{ c108faqsection2icon }}" style="color:{{ c108faqhighlightcolor }};">#}
-{#{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection2icon ~'.svg', ignore_missing = true) }}#}
-{#</span>#}
-</div>
-{# Case 1: Shopware Icon - Ende #}
-
-{# Case 2: Own Icon #}
-{% elseif c108faqsection2icontype == 'ownicon' %}
-<div class="c108-icon-wrapper c108faqowniconwrapper">
-<img src="{{ c108faqsection2iconpath }}" alt="{{ c108faqsection2title }} Icon">
-</div>
-{% endif %}
-{# Case 2: Own Icon- Ende #}
-
-<div class="c108-faq-text-wrapper">
-<div class="c108-faq-section-title-boxes">{{ c108faqsection2title }}</div>
-<div class="c108-faq-section-text-boxes">
-    <a class="d-sm-block d-none" href="#order">{{ c108faqsection2text|nl2br }}</a>
-    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#order-accordion" aria-expanded="false" aria-controls="order-accordion">{{ c108faqsection2text|nl2br }}</span>
-</div>
-</div>
-</div>
-</div>
-{# Bereich 2: Ende #}
-    {# Fragen Bereich 2 #}
-    <div id="order-accordion" class="collapse c108-faq-question-section">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection2title }}
-            </div>
-            {% for currentQuestion in c108faqsection2questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingThree-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseThree-{{ loop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
+                    </div>
+                    {# Bereich 1: Ende #}
+                    <div id="accordion-account" class="collapse c108-faq-question-section">
+                        {# Fragen Bereich 1 #}
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection1title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection1questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingTwo-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseTwo-{{ loop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseTwo-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingTwo-{{ loop.index }}" data-parent="#accordion-account">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        <div id="collapseThree-{{ loop.index }}" class="collapse" aria-labelledby="headingThree-{{ loop.index }}" data-parent="#order-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                        {# Fragen Bereich 1: Ende #}
+                    </div>
+                    {# Bereich 2 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection2icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection2icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="58.096" height="47.111" viewBox="0 0 58.096 47.111">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: none;
+                                                    stroke: #333;
+                                                    stroke-linecap: round;
+                                                    stroke-linejoin: round;
+                                                    stroke-width: 1.2px;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <g id="Bestellung_und_Versand_Icon" data-name="Bestellung und Versand_Icon" transform="translate(-31.375 -27.233)">
+                                            <g id="Gruppe_235" data-name="Gruppe 235">
+                                                <path id="Pfad_754" data-name="Pfad 754" class="cls-1" d="M32.875,36.655c4.09,2.807,17.939,9.731,18.4,9.751.4.017,13.391-7,19.893-10.54-2.121-1.038-16.293-7.86-19.861-8.03-3.4-.162-17.455,8.228-18.434,8.819-.824.5-.836,17.887-.9,25.01,6.54,3.179,18.184,12.064,18.711,12.08.561.017,20.522-12.319,20.785-12.744.352-.569.168-17.936-.3-25.135"/>
+                                                <path id="Pfad_755" data-name="Pfad 755" class="cls-1" d="M50.98,46.737a182.418,182.418,0,0,1,.184,20.731"/>
+                                                <path id="Pfad_756" data-name="Pfad 756" class="cls-1" d="M47.635,39.64c3.891,1.672,5.9,2.807,9.275,4.364.356,2.4.821,3.369,1.178,5.769,1.571-.788,3.32-2.259,4.974-2.907-.363-1.745-.412-4.419-1.32-5.36-.6-.618-7.33-3.47-9.6-4.546q-2.152,1.361-4.37,2.657"/>
+                                            </g>
+                                            <path id="Pfad_757" data-name="Pfad 757" class="cls-1" d="M76.589,36.836l4.735-.215"/>
+                                            <path id="Pfad_758" data-name="Pfad 758" class="cls-1" d="M76.915,43.681H84.1"/>
+                                            <path id="Pfad_759" data-name="Pfad 759" class="cls-1" d="M77.732,50.553q5.554-.125,11.107.177"/>
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection2icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection2iconpath }}" alt="{{ c108faqsection2title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection2title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#order">{{ c108faqsection2text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#order-accordion" aria-expanded="false" aria-controls="order-accordion">{{ c108faqsection2text|nl2br }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 2: Ende #}
-
-{# Bereich 1 #}
-<div class="c108faqwrappertype-{{ c108faqsection3icontype }} c108faqwrapper-einfach c108-faq-section-box">
-<div class="c108faq-content">
-
-{# Case 1: Shopware Icon #}
-{% if c108faqsection3icontype == 'shippedicon' %}
-<div class="c108-icon-wrapper">
-<span class="icon icon-{{ c108faqsection3icon }}" style="color:{{ c108faqhighlightcolor }};">
-{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection3icon ~'.svg', ignore_missing = true) }}
-</span>
-</div>
-{# Case 1: Shopware Icon - Ende #}
-
-{# Case 2: Own Icon #}
-{% elseif c108faqsection3icontype == 'ownicon' %}
-<div class="c108-icon-wrapper c108faqowniconwrapper">
-<img src="{{ c108faqsection3iconpath }}" alt="{{ c108faqsection3title }} Icon">
-</div>
-{% endif %}
-{# Case 2: Own Icon- Ende #}
-
-<div class="c108-faq-text-wrapper">
-<div class="c108-faq-section-title-boxes">{{ c108faqsection3title }}</div>
-<div class="c108-faq-section-text-boxes">
-    <a class="d-sm-block d-none" href="#return">{{ c108faqsection3text|nl2br }}</a>
-    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#return-accordion" aria-expanded="false" aria-controls="return-accordion">{{ c108faqsection3text|nl2br }}</span>
-</div>
-</div>
-</div>
-</div>
-
-    {# Fragen Bereich 3 #}
-    <div id="return-accordion" class="c108-faq-question-section collapse">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection3title }}
-            </div>
-            {% for currentQuestion in c108faqsection3questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingFour-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFour-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
+                    {# Bereich 2: Ende #}
+                    {# Fragen Bereich 2 #}
+                    <div id="order-accordion" class="collapse c108-faq-question-section">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection2title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection2questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingThree-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseThree-{{ loop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseThree-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingThree-{{ loop.index }}" data-parent="#order-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        <div id="collapseFour-{{ loop.index }}" class="collapse" aria-labelledby="headingFour-{{ loop.index }}" data-parent="#return-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                    </div>
+                    {# Fragen Bereich 2: Ende #}
+
+                    {# Bereich 1 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection3icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection3icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="44.667" height="63.695" viewBox="0 0 44.667 63.695">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: none;
+                                                    stroke: #333;
+                                                    stroke-linecap: round;
+                                                    stroke-linejoin: round;
+                                                    stroke-width: 1.2px;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <g id="Rückgabe_und_Erstattung_Icon" data-name="Rückgabe und Erstattung Icon" transform="translate(-34.234 -16.016)">
+                                            <g id="Gruppe_227" data-name="Gruppe 227">
+                                                <path id="Pfad_727" data-name="Pfad 727" class="cls-1" d="M40.409,35.89a165.176,165.176,0,0,0,16.52,8.753c.357.016,12.022-6.284,17.858-9.461-1.9-.932-14.626-7.056-17.829-7.208-3.052-.146-15.669,7.386-16.549,7.916-.739.445-.749,16.058-.807,22.451,5.87,2.854,16.323,10.83,16.8,10.845.5.015,18.424-11.059,18.66-11.44.316-.512.15-16.1-.271-22.564"/>
+                                                <path id="Pfad_728" data-name="Pfad 728" class="cls-1" d="M56.662,44.941a163.655,163.655,0,0,1,.165,18.61"/>
+                                                <path id="Pfad_729" data-name="Pfad 729" class="cls-1" d="M53.659,38.57c3.494,1.5,5.3,2.52,8.327,3.917.32,2.155.737,3.025,1.057,5.179,1.411-.707,2.981-2.027,4.466-2.61-.327-1.566-.37-3.966-1.185-4.811-.536-.555-6.58-3.115-8.619-4.081q-1.934,1.221-3.924,2.385"/>
+                                            </g>
+                                            <path id="Pfad_730" data-name="Pfad 730" class="cls-1" d="M44.6,26.52c-1.746.332-3.539.436-5.241.937a40.925,40.925,0,0,1-4.532,1.1c-.094-.1.91-7.154,1.259-10.18,1.318.916,4.708,4.035,5.061,4.4.826.861.046,1.824-1.328,1.491-1.673-.406-1.22-1.519-.236-2.159.416-.27,2.056-1.054,3.368-1.669,4.121-1.93,10.731-4.353,17-3.721,5.9.594,13.039,4.019,18.1,8.373"/>
+                                            <path id="Pfad_731" data-name="Pfad 731" class="cls-1" d="M68.538,69.207c1.746-.332,3.539-.437,5.242-.937a40.946,40.946,0,0,1,4.531-1.1c.094.1-.91,7.155-1.259,10.18a66.777,66.777,0,0,1-5.061-4.4c-.826-.861-.046-1.824,1.328-1.49,1.673.406,1.22,1.518.236,2.158-.416.271-2.056,1.054-3.368,1.669-4.121,1.931-10.731,4.354-17,3.722-5.9-.594-13.039-4.02-18.1-8.374"/>
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection3icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection3iconpath }}" alt="{{ c108faqsection3title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection3title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#return">{{ c108faqsection3text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#return-accordion" aria-expanded="false" aria-controls="return-accordion">{{ c108faqsection3text|nl2br }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 3: Ende #}
-{# Bereich 3: Ende #}
 
-    {# Bereich 4 #}
-    <div class="c108faqwrappertype-{{ c108faqsection4icontype }} c108faqwrapper-einfach c108-faq-section-box">
-        <div class="c108faq-content">
-
-            {# Case 1: Shopware Icon #}
-            {% if c108faqsection2icontype == 'shippedicon' %}
-                <div class="c108-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="43" height="29" viewBox="0 0 35.5 24.733"><defs><style>.a{fill:none;stroke:#333;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><g transform="translate(0.6 0.628)"><path class="a" d="M65.384,32.36,39.818,32.4c-1.435,0-3.092.147-3.942,1.709a7.833,7.833,0,0,0-.635,3.365c-.188,4.959-.148,9.934.118,14.886a4.364,4.364,0,0,0,.418,1.971,2.235,2.235,0,0,0,1.94.9c9.459.738,27.8.812,30.541-.21,1.961-.733.953-6.3.993-9.986.028-2.585-.092-6.478-.453-10.29-.154-1.626-1.021-2.352-3.365-2.463" transform="translate(-35.124 -32.281)"/><path class="a" d="M35.319,40.369l25.8-.428c2.342-.039,5.2.076,7.785.238" transform="translate(-35.166 -33.93)"/><path class="a" d="M35.394,37.848c8.6-.143,16.855-.31,25.453-.453,2.342-.039,5.2.076,7.785.238" transform="translate(-35.183 -33.381)"/><path class="a" d="M41.013,54.922a12.028,12.028,0,0,1,.044-2,1.077,1.077,0,0,1,.212-.628,1.137,1.137,0,0,1,.88-.241l2.518.033.136,2.176a.605.605,0,0,1-.713.8c-.886,0-2.191-.146-3.077-.149" transform="translate(-36.389 -36.543)"/><path class="a" d="M70.427,50.326a2.148,2.148,0,0,1-.216,2.572" transform="translate(-42.686 -36.17)"/><path class="a" d="M71.492,47.821c1.84,2.91,1.426,4.772-.308,6.458" transform="translate(-42.896 -35.63)"/></g></svg>
-{#<span class="icon icon-{{ c108faqsection4icon }}" style="color:{{ c108faqhighlightcolor }};">#}
-{#{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection4icon ~'.svg', ignore_missing = true) }}#}
-{#</span>#}
-                </div>
-                {# Case 1: Shopware Icon - Ende #}
-
-                {# Case 2: Own Icon #}
-            {% elseif c108faqsection2icontype == 'ownicon' %}
-                <div class="c108-icon-wrapper c108faqowniconwrapper">
-                    <img src="{{ c108faqsection4iconpath }}" alt="{{ c108faqsection4title }} Icon">
-                </div>
-            {% endif %}
-            {# Case 2: Own Icon- Ende #}
-
-            <div class="c108-faq-text-wrapper">
-                <div class="c108-faq-section-title-boxes">{{ c108faqsection4title }}</div>
-                <div class="c108-faq-section-text-boxes">
-                    <a class="d-sm-block d-none" href="#pay">{{ c108faqsection4text|nl2br }}</a>
-                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#pay-accordion" aria-expanded="false" aria-controls="pay-accordion">{{ c108faqsection4text|nl2br }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {# Fragen Bereich 4 #}
-    <div id="pay-accordion" class="c108-faq-question-section collapse">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection4title }}
-            </div>
-            {% for currentQuestion in c108faqsection4questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingFive-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFive-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
+                    {# Fragen Bereich 3 #}
+                    <div id="return-accordion" class="c108-faq-question-section collapse">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection3title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection3questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingFour-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFour-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseFour-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingFour-{{ loop.index }}" data-parent="#return-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        <div id="collapseFive-{{ loop.index }}" class="collapse" aria-labelledby="headingFive-{{ loop.index }}" data-parent="#pay-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                    </div>
+                    {# Fragen Bereich 3: Ende #}
+                    {# Bereich 3: Ende #}
+
+                    {# Bereich 4 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection4icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection2icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="43" height="29" viewBox="0 0 35.5 24.733"><defs><style>.a{fill:none;stroke:#333;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><g transform="translate(0.6 0.628)"><path class="a" d="M65.384,32.36,39.818,32.4c-1.435,0-3.092.147-3.942,1.709a7.833,7.833,0,0,0-.635,3.365c-.188,4.959-.148,9.934.118,14.886a4.364,4.364,0,0,0,.418,1.971,2.235,2.235,0,0,0,1.94.9c9.459.738,27.8.812,30.541-.21,1.961-.733.953-6.3.993-9.986.028-2.585-.092-6.478-.453-10.29-.154-1.626-1.021-2.352-3.365-2.463" transform="translate(-35.124 -32.281)"/><path class="a" d="M35.319,40.369l25.8-.428c2.342-.039,5.2.076,7.785.238" transform="translate(-35.166 -33.93)"/><path class="a" d="M35.394,37.848c8.6-.143,16.855-.31,25.453-.453,2.342-.039,5.2.076,7.785.238" transform="translate(-35.183 -33.381)"/><path class="a" d="M41.013,54.922a12.028,12.028,0,0,1,.044-2,1.077,1.077,0,0,1,.212-.628,1.137,1.137,0,0,1,.88-.241l2.518.033.136,2.176a.605.605,0,0,1-.713.8c-.886,0-2.191-.146-3.077-.149" transform="translate(-36.389 -36.543)"/><path class="a" d="M70.427,50.326a2.148,2.148,0,0,1-.216,2.572" transform="translate(-42.686 -36.17)"/><path class="a" d="M71.492,47.821c1.84,2.91,1.426,4.772-.308,6.458" transform="translate(-42.896 -35.63)"/></g></svg>
+                                    {#<span class="icon icon-{{ c108faqsection4icon }}" style="color:{{ c108faqhighlightcolor }};">#}
+                                    {#{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection4icon ~'.svg', ignore_missing = true) }}#}
+                                    {#</span>#}
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection2icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection4iconpath }}" alt="{{ c108faqsection4title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection4title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#pay">{{ c108faqsection4text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#pay-accordion" aria-expanded="false" aria-controls="pay-accordion">{{ c108faqsection4text|nl2br }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 4: Ende #}
 
-    {# Bereich 4: Ende #}
-
-    {# Bereich 5 #}
-    <div class="c108faqwrappertype-{{ c108faqsection5icontype }} c108faqwrapper-einfach c108-faq-section-box">
-        <div class="c108faq-content">
-
-            {# Case 1: Shopware Icon #}
-            {% if c108faqsection2icontype == 'shippedicon' %}
-                <div class="c108-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44.351" height="41.703" viewBox="0 0 44.351 41.703"><defs><style>.a{fill:none;stroke:#333;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><g transform="translate(0.583 0.6)"><path class="a" d="M72.033,35.845C74,33.752,76.09,31.91,76.1,31.7c.17-4.481-.076-6.147.163-10.721.011-.213,1.886-.235,1.93.086a98.131,98.131,0,0,1,.54,10.929l3.123,11.243c.086,1.585-.894,6.987-1.239,9.922-2.176-.118-3.943-.187-6.122-.221" transform="translate(-38.69 -20.818)"/><path class="a" d="M47.648,39.658l1.887-7.871c.447-.645.278-9,.168-10.043a6.95,6.95,0,0,1,2.206.055c.066,2.192-.126,8.8-.044,9.868.045.583,3.245,4.608,5.857,7.739" transform="translate(-33.435 -21.002)"/><path class="a" d="M63.845,40.574c2-2.3,3.783-3.77,3.791-3.965.17-4.481-.076-6.146.162-10.721.011-.213,1.886-.235,1.931.087a98.314,98.314,0,0,1,.54,10.928l3.122,11.244c.086,1.585-.893,6.987-1.239,9.921-2.061-.111-3.812-.18-5.876-.216" transform="translate(-36.925 -21.877)"/><path class="a" d="M39.252,44.689,40.961,37.8c.447-.645.278-9,.169-10.044a6.95,6.95,0,0,1,2.206.055c.065,2.192-.126,8.8-.044,9.868.054.7,4.768,6.238,7.315,9.314" transform="translate(-31.625 -22.297)"/><path class="a" d="M29.53,54.209l2.914-12.154c.447-.645.278-9,.168-10.043a6.95,6.95,0,0,1,2.206.055c.066,2.192-.126,8.8-.044,9.868.073.955,9.14,11.3,9.023,11.479,1.916-2.929,10-11.7,10.02-12.126.17-4.481-.076-6.147.162-10.721.011-.213,1.886-.235,1.931.087a98.305,98.305,0,0,1,.54,10.928l3.122,11.244c.086,1.584-.893,6.986-1.239,9.921a168.441,168.441,0,0,0-26.4.64L29.53,54.209" transform="translate(-29.53 -22.885)"/></g></svg>
-{#<span class="icon icon-{{ c108faqsection5icon }}" style="color:{{ c108faqhighlightcolor }};">#}
-{#{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection5icon ~'.svg', ignore_missing = true) }}#}
-{#</span>#}
-                </div>
-                {# Case 1: Shopware Icon - Ende #}
-
-                {# Case 2: Own Icon #}
-            {% elseif c108faqsection2icontype == 'ownicon' %}
-                <div class="c108-icon-wrapper c108faqowniconwrapper">
-                    <img src="{{ c108faqsection5iconpath }}" alt="{{ c108faqsection5title }} Icon">
-                </div>
-            {% endif %}
-            {# Case 2: Own Icon- Ende #}
-
-            <div class="c108-faq-text-wrapper">
-                <div class="c108-faq-section-title-boxes">{{ c108faqsection5title }}</div>
-                <div class="c108-faq-section-text-boxes">
-                    <a class="d-sm-block d-none" href="#availability">{{ c108faqsection5text|nl2br }}</a>
-                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#availability-accordion" aria-expanded="false" aria-controls="availability-accordion">{{ c108faqsection5text|nl2br }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {# Fragen Bereich 5 #}
-    <div id="availability-accordion" class="c108-faq-question-section collapse">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection5title }}
-            </div>
-            {% for currentQuestion in c108faqsection5questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingSix-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSix-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
+                    {# Fragen Bereich 4 #}
+                    <div id="pay-accordion" class="c108-faq-question-section collapse">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection4title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection4questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingFive-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFive-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseFive-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingFive-{{ loop.index }}" data-parent="#pay-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
-                        <div id="collapseSix-{{ loop.index }}" class="collapse" aria-labelledby="headingSix-{{ loop.index }}" data-parent="#availability-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                    </div>
+                    {# Fragen Bereich 4: Ende #}
+
+                    {# Bereich 4: Ende #}
+
+                    {# Bereich 5 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection5icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection2icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="44.351" height="41.703" viewBox="0 0 44.351 41.703"><defs><style>.a{fill:none;stroke:#333;stroke-linejoin:round;stroke-width:1.2px;}</style></defs><g transform="translate(0.583 0.6)"><path class="a" d="M72.033,35.845C74,33.752,76.09,31.91,76.1,31.7c.17-4.481-.076-6.147.163-10.721.011-.213,1.886-.235,1.93.086a98.131,98.131,0,0,1,.54,10.929l3.123,11.243c.086,1.585-.894,6.987-1.239,9.922-2.176-.118-3.943-.187-6.122-.221" transform="translate(-38.69 -20.818)"/><path class="a" d="M47.648,39.658l1.887-7.871c.447-.645.278-9,.168-10.043a6.95,6.95,0,0,1,2.206.055c.066,2.192-.126,8.8-.044,9.868.045.583,3.245,4.608,5.857,7.739" transform="translate(-33.435 -21.002)"/><path class="a" d="M63.845,40.574c2-2.3,3.783-3.77,3.791-3.965.17-4.481-.076-6.146.162-10.721.011-.213,1.886-.235,1.931.087a98.314,98.314,0,0,1,.54,10.928l3.122,11.244c.086,1.585-.893,6.987-1.239,9.921-2.061-.111-3.812-.18-5.876-.216" transform="translate(-36.925 -21.877)"/><path class="a" d="M39.252,44.689,40.961,37.8c.447-.645.278-9,.169-10.044a6.95,6.95,0,0,1,2.206.055c.065,2.192-.126,8.8-.044,9.868.054.7,4.768,6.238,7.315,9.314" transform="translate(-31.625 -22.297)"/><path class="a" d="M29.53,54.209l2.914-12.154c.447-.645.278-9,.168-10.043a6.95,6.95,0,0,1,2.206.055c.066,2.192-.126,8.8-.044,9.868.073.955,9.14,11.3,9.023,11.479,1.916-2.929,10-11.7,10.02-12.126.17-4.481-.076-6.147.162-10.721.011-.213,1.886-.235,1.931.087a98.305,98.305,0,0,1,.54,10.928l3.122,11.244c.086,1.584-.893,6.986-1.239,9.921a168.441,168.441,0,0,0-26.4.64L29.53,54.209" transform="translate(-29.53 -22.885)"/></g></svg>
+                                    {#<span class="icon icon-{{ c108faqsection5icon }}" style="color:{{ c108faqhighlightcolor }};">#}
+                                    {#{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection5icon ~'.svg', ignore_missing = true) }}#}
+                                    {#</span>#}
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection2icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection5iconpath }}" alt="{{ c108faqsection5title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection5title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#availability">{{ c108faqsection5text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#availability-accordion" aria-expanded="false" aria-controls="availability-accordion">{{ c108faqsection5text|nl2br }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 5: Ende #}
-    {# Bereich 5: Ende #}
 
-    {# Bereich 6 #}
-    <div class="c108faqwrappertype-{{ c108faqsection6icontype }} c108faqwrapper-einfach c108-faq-section-box">
-        <div class="c108faq-content">
+                    {# Fragen Bereich 5 #}
+                    <div id="availability-accordion" class="c108-faq-question-section collapse">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection5title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection5questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingSix-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSix-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseSix-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingSix-{{ loop.index }}" data-parent="#availability-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 5: Ende #}
+                    {# Bereich 5: Ende #}
 
-            {# Case 1: Shopware Icon #}
-            {% if c108faqsection2icontype == 'shippedicon' %}
-                <div class="c108-icon-wrapper">
-<span class="icon icon-{{ c108faqsection6icon }}" style="color:{{ c108faqhighlightcolor }};">
-{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection6icon ~'.svg', ignore_missing = true) }}
-</span>
+                    {# Bereich 6 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection6icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection2icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="49.017" height="57.823" viewBox="0 0 49.017 57.823">
+                                        <defs>
+                                            <style>
+                                                .cls-1 {
+                                                    fill: none;
+                                                    stroke: #333;
+                                                    stroke-linecap: round;
+                                                    stroke-linejoin: round;
+                                                    stroke-width: 1.2px;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <g id="Verantwortung_Icon" transform="translate(-32.334 -20.425)">
+                                            <g id="Gruppe_238" data-name="Gruppe 238">
+                                                <path id="Pfad_765" data-name="Pfad 765" class="cls-1" d="M59.188,54.653c2.248-.328,5.307-1.218,6.931-2.892a24.875,24.875,0,0,0,5-7.252,15.657,15.657,0,0,0-.387-13.96,17.614,17.614,0,0,0-9.286-8.537c-5.51-2.03-12.793-.534-17.232,3.282-3.923,3.373-5.4,8.547-5.108,13.538.138,2.374.514,4.993,1.963,6.927A36,36,0,0,0,45.7,50.9,17.544,17.544,0,0,0,59.188,54.653Z"/>
+                                                <path id="Pfad_766" data-name="Pfad 766" class="cls-1" d="M39.542,34.223c.3,2.717,0,2.666,1.33,5.223a9.425,9.425,0,0,0,1.458,1.316c.462.344,1.848,1.767,1.989,1.875a2.193,2.193,0,0,0,1.244.136c.637-.156.958,1.026.476,1.67-.564.751.239,1.432.919,2.079.508.483,1.8,1.035,2.258,1.556.386.44.429,1.027.732,1.547.617,1.053.935,2.248,1.511,3.322a2.205,2.205,0,0,0,.548.719.919.919,0,0,0,.853.182,1.369,1.369,0,0,0,.859-1.207,18.5,18.5,0,0,0,.061-2.293,1.907,1.907,0,0,1,.451-1.495c.46-.419,1.31-.481,1.76-.941a2.43,2.43,0,0,0,.8-1.536c.113-.959-.055-3.63-.782-4.267s-1.324-.872-3.246-1.046a26,26,0,0,0-5.471.195c-1.053.166-5.1-1.975-5.145-3.292A2.208,2.208,0,0,1,44.284,36.1c2.148-.2,3.931,2.278,2.826,3.1-.959.485-2.861-1.947-2.4-2.892a6.039,6.039,0,0,1,2.571-2.5c1.057-.572,1.914-1.16,2.99-1.693,1.046-.519,2.032-1.267,1.531-2.254a7.387,7.387,0,0,0-.612-.83,12.806,12.806,0,0,0-.808-1.007c-.3-.338.037-1.4.368-1.61.965-.6.4-3.357,1.005-3.605.269-.11,1.1,2.732,1.22,3.42s2.179,1.267,2.494.963a7.118,7.118,0,0,0,.836-1.308,1.846,1.846,0,0,1,.975-.782,4.6,4.6,0,0,1,1.416.167c.214.041,3.372,2.785,1.213,3.194-1.294.245-1.118-3.411-1.03-3.684a1.6,1.6,0,0,0-.054-1.14c-.272-.932-1.022-1.371-1.757-1.927a2.952,2.952,0,0,0-1.187-.592"/>
+                                                <path id="Pfad_767" data-name="Pfad 767" class="cls-1" d="M64.932,23.839c-.166.58-.925,2.463-.716,3.029.755,2.044-4.725,2.748-2.666,5.652.685.967,5.307-1.11,5.566.164.263,1.292,1.35,5.89,3.041,4.226,1.659-1.633-2.12-2.943-5.667-2.134a10.085,10.085,0,0,0-2.518,1.659c-1.74,1.8-1.577,3.6.872,5.016A26.972,26.972,0,0,1,65.753,43.1a2.859,2.859,0,0,1,.963,3.041,4.056,4.056,0,0,1-.638,1.026,16.148,16.148,0,0,0-1.407,2.1c-.363.669-1.186,1.77-.929,1.838a7.721,7.721,0,0,0,2.884-.54,3.966,3.966,0,0,0,2.313-2.2"/>
+                                            </g>
+                                            <path id="Pfad_768" data-name="Pfad 768" class="cls-1" d="M54.636,65.386l9.417.091a3.035,3.035,0,0,0,1.729-.328,2.718,2.718,0,0,0,.935-2.16,2.8,2.8,0,0,0-.4-1.939,3.145,3.145,0,0,0-2.233-.887A105.093,105.093,0,0,0,48.6,59.615a8.6,8.6,0,0,0-2.051.252,16.218,16.218,0,0,0-5.419,2.643,55.508,55.508,0,0,0-4.77,4.04c-1,.95-3.588,2.362-3.423,3.956a2.928,2.928,0,0,0,.5,1.181,30.054,30.054,0,0,0,4.268,5.87.249.249,0,0,0,.151.09.252.252,0,0,0,.168-.082,29.026,29.026,0,0,1,3.959-3.327A10.619,10.619,0,0,1,46.8,73.219l4.729-.248a63.7,63.7,0,0,1,7.96-.085,9.447,9.447,0,0,0,2.613-.015,7.485,7.485,0,0,0,3.114-1.759A112.877,112.877,0,0,0,73.6,63.259c1.377-1.394,2.739-2.8,4.115-4.2.974-.986,2.586-2.02,2.931-3.421a2.6,2.6,0,0,0-.808-2.6,3.581,3.581,0,0,0-3.686-.092,14.977,14.977,0,0,0-3.682,2.714l-6,5.447"/>
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection2icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection6iconpath }}" alt="{{ c108faqsection6title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection6title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#responsibility">{{ c108faqsection6text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#responsibility-accordion" aria-expanded="false" aria-controls="responsibility-accordion">{{ c108faqsection6text|nl2br }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Fragen Bereich 6 #}
+                    <div id="responsibility-accordion" class="c108-faq-question-section collapse">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection6title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection6questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headieven-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSeven-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseSeven-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingSeven-{{ loop.index }}" data-parent="#responsibility-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 6: Ende #}
+                    {# Bereich 6: Ende #}
+
+                    {# Bereich 7 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection7icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection2icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="47.283" height="46.198" viewBox="0 0 47.283 46.198">
+                                        <defs>
+                                            <style>
+                                                .cls-1, .cls-2 {
+                                                    fill: none;
+                                                    stroke: #333;
+                                                    stroke-linecap: round;
+                                                    stroke-miterlimit: 10;
+                                                    stroke-width: 1.2px;
+                                                }
+
+                                                .cls-1 {
+                                                    stroke-linejoin: round;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <g id="Über_uns_Icon" data-name="Über uns_Icon" transform="translate(-31.072 -23.591)">
+                                            <path id="Pfad_744" data-name="Pfad 744" class="cls-1" d="M32.816,68.282l3.431-5.57c-3.543-4.624-4.459-10.978-4.567-17A25.5,25.5,0,0,1,32.8,36.585c1.618-4.472,5.286-7.764,9.3-9.785,10.48-5.28,23.993-2.2,31.646,7.2a18.017,18.017,0,0,1,3.142,5.356c2.031,5.807-.13,12.445-3.51,17.454a19.253,19.253,0,0,1-3.783,4.315,19.1,19.1,0,0,1-9.141,3.548,44.249,44.249,0,0,1-15.888-.368,3.305,3.305,0,0,1-1.569-.636,2.138,2.138,0,0,1-.366-2.587,1.762,1.762,0,0,1,2.335-.637c1.218.713,1.233,2.754.381,3.938a7.1,7.1,0,0,1-3.548,2.206L35.2,69.019" transform="translate(0 0)"/>
+                                            <g id="Gruppe_232" data-name="Gruppe 232" transform="translate(45.008 36.294)">
+                                                <path id="Pfad_745" data-name="Pfad 745" class="cls-2" d="M47.935,38.721q.336,8.127,1.288,16.213" transform="translate(-47.935 -37.44)"/>
+                                                <path id="Pfad_746" data-name="Pfad 746" class="cls-2" d="M57.437,37.44q-.111,7.893-.6,15.775" transform="translate(-47.935 -37.44)"/>
+                                                <path id="Pfad_747" data-name="Pfad 747" class="cls-2" d="M49.488,50.022h7.038" transform="translate(-47.935 -37.44)"/>
+                                                <path id="Pfad_748" data-name="Pfad 748" class="cls-2" d="M61.83,43.837a86.48,86.48,0,0,0,.561,10.439" transform="translate(-47.935 -37.44)"/>
+                                                <path id="Pfad_749" data-name="Pfad 749" class="cls-1" d="M62.074,38.3a.213.213,0,1,1-.155.2" transform="translate(-47.935 -37.44)"/>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection2icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection7iconpath }}" alt="{{ c108faqsection7title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection7title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#about">{{ c108faqsection7text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#about-accordion" aria-expanded="false" aria-controls="about-accordion">{{ c108faqsection7text|nl2br }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Fragen Bereich 7 #}
+                    <div id="about-accordion" class="c108-faq-question-section collapse">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection7title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection7questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headieven-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseEight-{{ loop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseEight-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingEight-{{ loop.index }}" data-parent="#about-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 7: Ende #}
+                    {# Bereich 7: Ende #}
+
+                    {# Bereich 8 #}
+                    <div class="c108faqwrappertype-{{ c108faqsection8icontype }} c108faqwrapper-einfach c108-faq-section-box">
+                        <div class="c108faq-content">
+
+                            {# Case 1: Shopware Icon #}
+                            {% if c108faqsection2icontype == 'shippedicon' %}
+                                <div class="c108-icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32.242" height="49.113" viewBox="0 0 32.242 49.113">
+                                        <defs>
+                                            <style>
+                                                .cls-1, .cls-2 {
+                                                    fill: none;
+                                                    stroke: #333;
+                                                    stroke-linecap: round;
+                                                    stroke-miterlimit: 10;
+                                                    stroke-width: 1.2px;
+                                                }
+
+                                                .cls-1 {
+                                                    stroke-linejoin: round;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <g id="Jobs_bei_uns_Icon" data-name="Jobs bei uns_Icon" transform="translate(-37.793 -24.748)">
+                                            <path id="Pfad_750" data-name="Pfad 750" class="cls-1" d="M38.426,69.383,39.633,48.2c2.882,1.655,9.508,5.458,9.991,5.554.663.132,13.467-3.923,18.252-3.487-1.718-2.993-10.953-5.673-11.834-5.824-.623-.107-12.111,2.688-16.1,3.221"/>
+                                            <path id="Pfad_751" data-name="Pfad 751" class="cls-1" d="M56.042,44.44c.012-6.494-.652-12.871,2.034-18.864.408-.911,11.04,1.036,11.178,2.508,1.247,13.309-3.124,26.211-1.2,39.451"/>
+                                            <path id="Pfad_752" data-name="Pfad 752" class="cls-2" d="M49.892,54.792q-.189,9.225.115,18.45"/>
+                                            <path id="Pfad_753" data-name="Pfad 753" class="cls-2" d="M56.636,52.752c-.205,2.877-.453,8.063-.4,10.947"/>
+                                        </g>
+                                    </svg>
+
+                                </div>
+                                {# Case 1: Shopware Icon - Ende #}
+
+                                {# Case 2: Own Icon #}
+                            {% elseif c108faqsection2icontype == 'ownicon' %}
+                                <div class="c108-icon-wrapper c108faqowniconwrapper">
+                                    <img src="{{ c108faqsection8iconpath }}" alt="{{ c108faqsection8title }} Icon">
+                                </div>
+                            {% endif %}
+                            {# Case 2: Own Icon- Ende #}
+
+                            <div class="c108-faq-text-wrapper">
+                                <div class="c108-faq-section-title-boxes">{{ c108faqsection8title }}</div>
+                                <div class="c108-faq-section-text-boxes">
+                                    <a class="d-sm-block d-none" href="#job">{{ c108faqsection8text|nl2br }}</a>
+                                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#job-accordion" aria-expanded="false" aria-controls="job-accordion">{{ c108faqsection8text|nl2br }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {# Fragen Bereich 8 #}
+                    <div id="job-accordion" class="c108-faq-question-section collapse">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection8title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection8questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headieven-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseNine-{{ loop.index }}" aria-expanded="false" aria-controls="collapseNine-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseNine-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingNine-{{ loop.index }}" data-parent="#job-accordion">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 8: Ende #}
+                    {# Bereich 8: Ende #}
                 </div>
-                {# Case 1: Shopware Icon - Ende #}
 
-                {# Case 2: Own Icon #}
-            {% elseif c108faqsection2icontype == 'ownicon' %}
-                <div class="c108-icon-wrapper c108faqowniconwrapper">
-                    <img src="{{ c108faqsection6iconpath }}" alt="{{ c108faqsection6title }} Icon">
+                {# Boxes inkl. Suche: Ende #}
+
+                {# Fragen Bereich #}
+                <div class="d-none d-sm-block wrapper-cms" >
+
+                    {# Fragen Bereich 1 #}
+                    <div id="account">
+                        {# Fragen Bereich 1 #}
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection1title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection1questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingTwo-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseTwo-{{ loop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseTwo-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingTwo-{{ loop.index }}" data-parent="#account">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        {# Fragen Bereich 1: Ende #}
+                    </div>
+                    {# Fragen Bereich 1: Ende #}
+
+                    {# Fragen Bereich 2 #}
+                    <div id="order">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection2title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection2questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingThree-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseThree-{{ loop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseThree-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingThree-{{ loop.index }}" data-parent="#order">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 2: Ende #}
+
+                    {# Fragen Bereich 3 #}
+                    <div id="return">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection3title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection3questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingFour-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFour-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseFour-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingFour-{{ loop.index }}" data-parent="#return">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 3: Ende #}
+
+                    {# Fragen Bereich 4 #}
+                    <div id="pay">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection4title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection4questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingFive-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFive-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseFive-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingFive-{{ loop.index }}" data-parent="#pay">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 4: Ende #}
+
+                    {# Fragen Bereich 5 #}
+                    <div id="availability">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection5title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection5questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headingSix-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSix-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseSix-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingSix-{{ loop.index }}" data-parent="#availability">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 5: Ende #}
+
+                    {# Fragen Bereich 6 #}
+                    <div id="responsibility">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection6title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection6questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headieven-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSeven-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseSeven-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingSeven-{{ loop.index }}" data-parent="#responsibility">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 6: Ende #}
+
+                    {# Fragen Bereich 7 #}
+                    <div id="about">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection7title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection7questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headieven-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseEight-{{ loop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseEight-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingEight-{{ loop.index }}" data-parent="#about">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 7: Ende #}
+
+                    {# Fragen Bereich 8 #}
+                    <div id="job">
+                        <div class="c108-faq-section-outer">
+                            <div class="c108-faq-section-title">
+                                {{ c108faqsection8title }}
+                            </div>
+                            {% for currentQuestion in c108faqsection8questionsArray %}
+                                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
+                                    <div class="card">
+                                        <div id="headieven-{{ loop.index }}">
+                                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseNine-{{ loop.index }}" aria-expanded="false" aria-controls="collapseNine-{{ loop.index }}">
+                                                <span>{{ currentQuestion.question }}</span>
+                                            </button>
+                                        </div>
+                                        <div id="collapseNine-{{ loop.index }}" class="collapse collapse-item" aria-labelledby="headingNine-{{ loop.index }}" data-parent="#job">
+                                            <div class="card-body">
+                                                <p>{{ currentQuestion.answer|nl2br}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {# Fragen Bereich 8: Ende #}
+
+
+                    {# Anzeige keine Suchtreffer #}
+                    <div class="c108-faq-no-results">
+                        <p>{{ 'faq.element.noresults'|trans }}</p>
+                    </div>
+                    {# Anzeige keine Suchtreffer: Ende #}
+
                 </div>
-            {% endif %}
-            {# Case 2: Own Icon- Ende #}
-
-            <div class="c108-faq-text-wrapper">
-                <div class="c108-faq-section-title-boxes">{{ c108faqsection6title }}</div>
-                <div class="c108-faq-section-text-boxes">
-                    <a class="d-sm-block d-none" href="#responsibility">{{ c108faqsection6text|nl2br }}</a>
-                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#responsibility-accordion" aria-expanded="false" aria-controls="responsibility-accordion">{{ c108faqsection6text|nl2br }}</span>
-                </div>
+                {# Fragen Bereich: Ende #}
             </div>
-        </div>
+        {% endblock %}
+
+        <script>
+            var faqElement = document.getElementById("{{ id }}-questionwrapper");
+            var questionTabs = faqElement.getElementsByClassName("questiontab");
+            var answerTabs = faqElement.getElementsByClassName("answertab");
+            var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
+            var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
+
+            var j;
+
+            for (j = 0; j < questionTabs.length; j++) {
+                questionTabs[j].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var answertab = this.nextElementSibling;
+                    if (answertab.style.maxHeight) {
+                        answertab.style.maxHeight = null;
+                    } else {
+                        answertab.style.maxHeight = answertab.scrollHeight + "px";
+                    }
+                });
+            }
+
+            var searchField = document.getElementById("{{ id }}-searchField");
+
+            searchField.addEventListener('input', function() {
+
+                var faqElement = document.getElementById("{{ id }}-questionwrapper");
+                var questionTabs = faqElement.getElementsByClassName("questiontab");
+                // var answerTabs = faqElement.getElementsByClassName("answertab");
+                var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
+                var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
+
+                var noResults = true;
+
+                // hide section title
+                for (var k = 0; k < sectionTitles.length; k++) {
+                    sectionTitles[k].style['display'] = 'none';
+                }
+
+                // get search input
+                var searchVal = this.value.toLowerCase();
+
+                // check if search input matches content of answer or question
+                for (var i = 0; i < questionTabs.length; i++) {
+                    if (questionTabs[i].textContent.toLowerCase().indexOf(searchVal) > -1 && searchVal) {
+                        questionTabs[i].style['display'] = 'block';
+                        questionTabs[i].style['background-color'] = '{{ c108faqhighlightcolor }}';
+                        questionTabs[i].querySelector('span').style['color'] = 'white';
+                        questionTabs[i].classList.add('hide');
+
+                        // hide no results text
+                        noResults = false;
+                        noResultsText[0].style['display'] = 'none';
+                    }
+
+                    else if(!searchVal){
+                        questionTabs[i].style['display'] = 'block';
+                        questionTabs[i].style['background-color'] = 'white';
+                        questionTabs[i].querySelector('span').style['color'] = '#4a545b';
+                        questionTabs[i].classList.remove('hide');
+
+                        // hide no results text
+                        noResults = true;
+                        noResultsText[0].style['display'] = 'none';
+
+                        // show section title
+                        for (var k = 0; k < sectionTitles.length; k++) {
+                            sectionTitles[k].style['display'] = 'block';
+                        }
+                    }
+
+                    else {
+                        questionTabs[i].style['display'] = 'none';
+                        questionTabs[i].style['background-color'] = 'white';
+                        questionTabs[i].querySelector('span').style['color'] = '#4a545b';
+                        questionTabs[i].classList.remove('hide');
+
+                        // show no results text
+                        noResults = true;
+                        noResultsText[0].style['display'] = 'block';
+                    }
+                }
+
+            });
+
+        </script>
     </div>
-
-    {# Fragen Bereich 6 #}
-    <div id="responsibility-accordion" class="c108-faq-question-section collapse">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection6title }}
-            </div>
-            {% for currentQuestion in c108faqsection6questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headieven-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSeven-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseSeven-{{ loop.index }}" class="collapse" aria-labelledby="headingSeven-{{ loop.index }}" data-parent="#responsibility-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 6: Ende #}
-    {# Bereich 6: Ende #}
-
-    {# Bereich 7 #}
-    <div class="c108faqwrappertype-{{ c108faqsection7icontype }} c108faqwrapper-einfach c108-faq-section-box">
-        <div class="c108faq-content">
-
-            {# Case 1: Shopware Icon #}
-            {% if c108faqsection2icontype == 'shippedicon' %}
-                <div class="c108-icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 23.888 23.44">
-                        <defs>
-                            <style>
-                                .cls-1, .cls-2 {
-                                    fill: none;
-                                    stroke: #666;
-                                    stroke-linecap: round;
-                                    stroke-miterlimit: 10;
-                                    stroke-width: 1.2px;
-                                }
-
-                                .cls-1 {
-                                    stroke-linejoin: round;
-                                }
-                            </style>
-                        </defs>
-                        <g id="Schreib_uns_Icon" data-name="Schreib uns Icon" transform="translate(-31.071 -23.61)">
-                            <path id="Pfad_744" data-name="Pfad 744" class="cls-1" d="M32.234,45.917l1.689-2.742c-1.744-2.277-2.2-5.4-2.248-8.367a12.553,12.553,0,0,1,.551-4.5A9.052,9.052,0,0,1,36.8,25.494a12.941,12.941,0,0,1,15.58,3.547,8.87,8.87,0,0,1,1.547,2.637c1,2.859-.064,6.127-1.728,8.593A9.479,9.479,0,0,1,50.338,42.4a9.4,9.4,0,0,1-4.5,1.747,21.784,21.784,0,0,1-7.822-.181,1.627,1.627,0,0,1-.772-.313,1.052,1.052,0,0,1-.18-1.274.868.868,0,0,1,1.149-.314A1.412,1.412,0,0,1,38.4,44a3.493,3.493,0,0,1-1.747,1.086L33.409,46.28" transform="translate(0 0)"/>
-                            <g id="Gruppe_232" data-name="Gruppe 232" transform="translate(38.236 30.169)">
-                                <path id="Pfad_745" data-name="Pfad 745" class="cls-2" d="M47.935,38.721q.165,4,.634,7.982" transform="translate(-47.935 -38.09)"/>
-                                <path id="Pfad_746" data-name="Pfad 746" class="cls-2" d="M57.134,37.44q-.055,3.886-.294,7.766" transform="translate(-52.456 -37.44)"/>
-                                <path id="Pfad_747" data-name="Pfad 747" class="cls-2" d="M49.488,50.022h3.465" transform="translate(-48.723 -43.828)"/>
-                                <path id="Pfad_748" data-name="Pfad 748" class="cls-2" d="M61.829,43.837a42.576,42.576,0,0,0,.276,5.139" transform="translate(-54.988 -40.688)"/>
-                                <path id="Pfad_749" data-name="Pfad 749" class="cls-1" d="M62,38.3a.105.105,0,1,1-.076.1" transform="translate(-55.034 -37.875)"/>
-                            </g>
-                        </g>
-                    </svg>
-
-                    {#<span class="icon icon-{{ c108faqsection7icon }}" style="color:{{ c108faqhighlightcolor }};">#}
-{#{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection7icon ~'.svg', ignore_missing = true) }}#}
-{#</span>#}
-                </div>
-                {# Case 1: Shopware Icon - Ende #}
-
-                {# Case 2: Own Icon #}
-            {% elseif c108faqsection2icontype == 'ownicon' %}
-                <div class="c108-icon-wrapper c108faqowniconwrapper">
-                    <img src="{{ c108faqsection7iconpath }}" alt="{{ c108faqsection7title }} Icon">
-                </div>
-            {% endif %}
-            {# Case 2: Own Icon- Ende #}
-
-            <div class="c108-faq-text-wrapper">
-                <div class="c108-faq-section-title-boxes">{{ c108faqsection7title }}</div>
-                <div class="c108-faq-section-text-boxes">
-                    <a class="d-sm-block d-none" href="#about">{{ c108faqsection7text|nl2br }}</a>
-                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#about-accordion" aria-expanded="false" aria-controls="about-accordion">{{ c108faqsection7text|nl2br }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {# Fragen Bereich 7 #}
-    <div id="about-accordion" class="c108-faq-question-section collapse">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection7title }}
-            </div>
-            {% for currentQuestion in c108faqsection7questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headieven-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseEight-{{ loop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseEight-{{ loop.index }}" class="collapse" aria-labelledby="headingEight-{{ loop.index }}" data-parent="#about-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 7: Ende #}
-    {# Bereich 7: Ende #}
-
-    {# Bereich 8 #}
-    <div class="c108faqwrappertype-{{ c108faqsection8icontype }} c108faqwrapper-einfach c108-faq-section-box">
-        <div class="c108faq-content">
-
-            {# Case 1: Shopware Icon #}
-            {% if c108faqsection2icontype == 'shippedicon' %}
-                <div class="c108-icon-wrapper">
-<span class="icon icon-{{ c108faqsection8icon }}" style="color:{{ c108faqhighlightcolor }};">
-{{ source('@Storefront/../app/storefront/dist/assets/icon/default/'~ c108faqsection8icon ~'.svg', ignore_missing = true) }}
-</span>
-                </div>
-                {# Case 1: Shopware Icon - Ende #}
-
-                {# Case 2: Own Icon #}
-            {% elseif c108faqsection2icontype == 'ownicon' %}
-                <div class="c108-icon-wrapper c108faqowniconwrapper">
-                    <img src="{{ c108faqsection8iconpath }}" alt="{{ c108faqsection8title }} Icon">
-                </div>
-            {% endif %}
-            {# Case 2: Own Icon- Ende #}
-
-            <div class="c108-faq-text-wrapper">
-                <div class="c108-faq-section-title-boxes">{{ c108faqsection8title }}</div>
-                <div class="c108-faq-section-text-boxes">
-                    <a class="d-sm-block d-none" href="#job">{{ c108faqsection8text|nl2br }}</a>
-                    <span class="boxes-link d-block d-sm-none" data-toggle="collapse" data-target="#job-accordion" aria-expanded="false" aria-controls="job-accordion">{{ c108faqsection8text|nl2br }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    {# Fragen Bereich 8 #}
-    <div id="job-accordion" class="c108-faq-question-section collapse">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection8title }}
-            </div>
-            {% for currentQuestion in c108faqsection8questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headieven-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseNine-{{ loop.index }}" aria-expanded="false" aria-controls="collapseNine-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseNine-{{ loop.index }}" class="collapse" aria-labelledby="headingNine-{{ loop.index }}" data-parent="#job-accordion">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 8: Ende #}
-    {# Bereich 8: Ende #}
-</div>
-
-{# Boxes inkl. Suche: Ende #}
-
-{# Fragen Bereich #}
-<div class="d-none d-sm-block wrapper-cms" >
-
-{# Fragen Bereich 1 #}
-    <div id="account">
-        {# Fragen Bereich 1 #}
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection1title }}
-            </div>
-            {% for currentQuestion in c108faqsection1questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingTwo-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseTwo-{{ loop.index }}" aria-expanded="false" aria-controls="collapseTwo-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseTwo-{{ loop.index }}" class="collapse" aria-labelledby="headingTwo-{{ loop.index }}" data-parent="#account">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        {# Fragen Bereich 1: Ende #}
-    </div>
-{# Fragen Bereich 1: Ende #}
-
-{# Fragen Bereich 2 #}
-    <div id="order">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection2title }}
-            </div>
-            {% for currentQuestion in c108faqsection2questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingThree-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseThree-{{ loop.index }}" aria-expanded="false" aria-controls="collapseThree-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseThree-{{ loop.index }}" class="collapse" aria-labelledby="headingThree-{{ loop.index }}" data-parent="#order">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-{# Fragen Bereich 2: Ende #}
-
-{# Fragen Bereich 3 #}
-    <div id="return">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection3title }}
-            </div>
-            {% for currentQuestion in c108faqsection3questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingFour-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFour-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFour-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseFour-{{ loop.index }}" class="collapse" aria-labelledby="headingFour-{{ loop.index }}" data-parent="#return">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-{# Fragen Bereich 3: Ende #}
-
-    {# Fragen Bereich 4 #}
-    <div id="pay">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection4title }}
-            </div>
-            {% for currentQuestion in c108faqsection4questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingFive-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseFive-{{ loop.index }}" aria-expanded="false" aria-controls="collapseFive-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseFive-{{ loop.index }}" class="collapse" aria-labelledby="headingFive-{{ loop.index }}" data-parent="#pay">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 4: Ende #}
-
-    {# Fragen Bereich 5 #}
-    <div id="availability">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection5title }}
-            </div>
-            {% for currentQuestion in c108faqsection5questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headingSix-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSix-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSix-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseSix-{{ loop.index }}" class="collapse" aria-labelledby="headingSix-{{ loop.index }}" data-parent="#availability">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 5: Ende #}
-
-    {# Fragen Bereich 6 #}
-    <div id="responsibility">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection6title }}
-            </div>
-            {% for currentQuestion in c108faqsection6questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headieven-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseSeven-{{ loop.index }}" aria-expanded="false" aria-controls="collapseSeven-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseSeven-{{ loop.index }}" class="collapse" aria-labelledby="headingSeven-{{ loop.index }}" data-parent="#responsibility">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 6: Ende #}
-
-    {# Fragen Bereich 7 #}
-    <div id="about">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection7title }}
-            </div>
-            {% for currentQuestion in c108faqsection7questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headieven-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseEight-{{ loop.index }}" aria-expanded="false" aria-controls="collapseEight-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseEight-{{ loop.index }}" class="collapse" aria-labelledby="headingEight-{{ loop.index }}" data-parent="#about">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 7: Ende #}
-
-    {# Fragen Bereich 8 #}
-    <div id="job">
-        <div class="c108-faq-section-outer">
-            <div class="c108-faq-section-title">
-                {{ c108faqsection8title }}
-            </div>
-            {% for currentQuestion in c108faqsection8questionsArray %}
-                {% if currentQuestion.question is not empty and currentQuestion.answer is not empty %}
-                    <div class="card">
-                        <div id="headieven-{{ loop.index }}">
-                            <button class="btn btn-link collapsed questiontab" data-toggle="collapse" data-target="#collapseNine-{{ loop.index }}" aria-expanded="false" aria-controls="collapseNine-{{ loop.index }}">
-                                <span>{{ currentQuestion.question }}</span>
-                            </button>
-                        </div>
-                        <div id="collapseNine-{{ loop.index }}" class="collapse" aria-labelledby="headingNine-{{ loop.index }}" data-parent="#job">
-                            <div class="card-body">
-                                <p>{{ currentQuestion.answer|nl2br}}</p>
-                            </div>
-                        </div>
-                    </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-    {# Fragen Bereich 8: Ende #}
-
-
-    {# Anzeige keine Suchtreffer #}
-<div class="c108-faq-no-results">
-<p>{{ 'faq.element.noresults'|trans }}</p>
-</div>
-{# Anzeige keine Suchtreffer: Ende #}
-
-</div>
-{# Fragen Bereich: Ende #}
-    </div>
-{% endblock %}
-
-<script>
-var faqElement = document.getElementById("{{ id }}-questionwrapper");
-var questionTabs = faqElement.getElementsByClassName("questiontab");
-var answerTabs = faqElement.getElementsByClassName("answertab");
-var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
-var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
-
-var j;
-
-for (j = 0; j < questionTabs.length; j++) {
-  questionTabs[j].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var answertab = this.nextElementSibling;
-    if (answertab.style.maxHeight) {
-      answertab.style.maxHeight = null;
-    } else {
-      answertab.style.maxHeight = answertab.scrollHeight + "px";
-    }
-  });
-}
-
-var searchField = document.getElementById("{{ id }}-searchField");
-
-searchField.addEventListener('input', function() {
-
-  var faqElement = document.getElementById("{{ id }}-questionwrapper");
-  var questionTabs = faqElement.getElementsByClassName("questiontab");
-  // var answerTabs = faqElement.getElementsByClassName("answertab");
-  var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
-  var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
-
-  var noResults = true;
-
-  // hide section title
-  for (var k = 0; k < sectionTitles.length; k++) {
-    sectionTitles[k].style['display'] = 'none';
-  }
-
-  // get search input
-  var searchVal = this.value.toLowerCase();
-
-  // check if search input matches content of answer or question
-  for (var i = 0; i < questionTabs.length; i++) {
-    if (questionTabs[i].textContent.toLowerCase().indexOf(searchVal) > -1 && searchVal) {
-      questionTabs[i].style['display'] = 'block';
-      questionTabs[i].style['background-color'] = '{{ c108faqhighlightcolor }}';
-      questionTabs[i].querySelector('span').style['color'] = 'white';
-      questionTabs[i].classList.add('hide');
-
-      // hide no results text
-      noResults = false;
-      noResultsText[0].style['display'] = 'none';
-    }
-
-    else if(!searchVal){
-      questionTabs[i].style['display'] = 'block';
-      questionTabs[i].style['background-color'] = 'white';
-      questionTabs[i].querySelector('span').style['color'] = '#4a545b';
-      questionTabs[i].classList.remove('hide');
-
-      // hide no results text
-      noResults = true;
-      noResultsText[0].style['display'] = 'none';
-
-      // show section title
-      for (var k = 0; k < sectionTitles.length; k++) {
-        sectionTitles[k].style['display'] = 'block';
-      }
-    }
-
-    else {
-      questionTabs[i].style['display'] = 'none';
-      questionTabs[i].style['background-color'] = 'white';
-      questionTabs[i].querySelector('span').style['color'] = '#4a545b';
-      questionTabs[i].classList.remove('hide');
-
-      // show no results text
-      noResults = true;
-      noResultsText[0].style['display'] = 'block';
-    }
-  }
-
-});
-
-</script>
-</div>
 {% endblock %}

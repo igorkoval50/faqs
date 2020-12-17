@@ -27,7 +27,7 @@ $( document ).ready(function() {
             $(".collapse-item").filter(function() {
                 if($(this).text().toLowerCase().indexOf(value) > -1) {
                     $(this).addClass('show');
-                    $(this).siblings().children().show();
+                    $(this).siblings().children().show().addClass('minus-val');
                     $(this).siblings().children().css('backgroundColor', $("#val-color").text());
                     $('.questiontab').addClass('minus-val');
 
@@ -59,6 +59,5 @@ $( document ).ready(function() {
             }
         }
     });
-
 
 });

@@ -225,7 +225,7 @@ html {
   display:none;
   position: absolute;
   top:80px;
-  z-index: -10;
+  z-index: 1;
   font-size: 24px;
   padding-left: 0;
 }
@@ -524,3 +524,24 @@ html {
     display: none;
   }
 }
+
+.collapse-item {
+  position: relative;
+  z-index: 10;
+  background: #fff;
+}
+.questiontab {
+  position: relative;
+  z-index: 10;
+}
+.content-main {
+  .cms-element-faq {
+    .minus-val.collapsed {
+      pointer-events: none;
+      &:after {
+        content: "-";
+      }
+    }
+  }
+}
+

@@ -954,7 +954,9 @@
                     <div class="c108-faq-no-results">
                         <p>{{ 'faq.element.noresults'|trans }}</p>
                     </div>
+
                     {# Anzeige keine Suchtreffer: Ende #}
+                    <div class="d-none" id="val-color">{{ c108faqhighlightcolor }}</div>
 
                 </div>
                 {# Fragen Bereich: Ende #}
@@ -967,20 +969,6 @@
             var answerTabs = faqElement.getElementsByClassName("answertab");
             var sectionTitles = faqElement.getElementsByClassName("c108-faq-section-title");
             var noResultsText = faqElement.getElementsByClassName("c108-faq-no-results");
-
-            var j;
-
-            for (j = 0; j < questionTabs.length; j++) {
-                questionTabs[j].addEventListener("click", function() {
-                    this.classList.toggle("active");
-                    var answertab = this.nextElementSibling;
-                    if (answertab.style.maxHeight) {
-                        answertab.style.maxHeight = null;
-                    } else {
-                        answertab.style.maxHeight = answertab.scrollHeight + "px";
-                    }
-                });
-            }
 
             var searchField = document.getElementById("{{ id }}-searchField");
 

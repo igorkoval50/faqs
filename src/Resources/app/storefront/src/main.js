@@ -21,6 +21,23 @@ $( document ).ready(function() {
             $('.questiontab').addClass('add-padding');
             $('.questiontab').addClass('collapsed');
             $('.collapse-item').removeClass('show');
+
+            //new search logic
+            let value = $(this).val().toLowerCase();
+            $(".collapse-item").filter(function() {
+                if($(this).text().toLowerCase().indexOf(value) > -1) {
+                    $(this).addClass('show');
+                    $(this).siblings().children().show();
+                    $(this).siblings().children().css('backgroundColor', $("#val-color").text());
+                    $('.questiontab').addClass('minus-val');
+
+
+                } else {
+                    $('.c108-faq-no-results').show();
+                }
+            });
+            //the end search logic
+
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').addClass('show');
                 $('.c108-faq-question-section').addClass('remove-margin');
@@ -33,6 +50,8 @@ $( document ).ready(function() {
             $('.c108-faq-section-outer').removeClass('remove-margin');
             $('.wrapper-cms').removeClass('add-margin');
             $('.questiontab').removeClass('add-padding');
+            $('.questiontab').removeClass('minus-val');
+            $('.collapse-item').removeClass('show');
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').removeClass('show');
                 $('.c108-faq-question-section').removeClass('remove-margin');
@@ -40,4 +59,6 @@ $( document ).ready(function() {
             }
         }
     });
+
+
 });

@@ -1,4 +1,5 @@
 import Plugin from 'src/plugin-system/plugin.class';
+import Mark from '../node_modules/mark.js/src/vanilla';
 
 // Import logger
 import { mark } from '@mark';
@@ -43,11 +44,30 @@ export default class ExamplePlugin extends Plugin{
             "debug": false,
             "log": window.console
         };
-        console.log('init');
-        document.querySelector('.c108-faq-suchfeld').addEventListener('input', function (e) {
-            var instance = new Mark(document.querySelectorAll('p'));
-            instance.mark(e.target.value, options);
-        });
+
+        var markInstanceP = new Mark(document.querySelectorAll(".collapse-item p"));
+        var markInstanceSpan = new Mark(document.querySelectorAll(".questiontab span"));
+        // Cache DOM elements
+        var keywordInput = document.querySelector(".c108-faq-suchfeld");
+
+        function performMark() {
+
+            var keyword = keywordInput.value;
+
+            markInstanceP.unmark({
+                done: function(){
+                    markInstanceP.mark(keyword, options);
+                }
+            });
+
+            markInstanceSpan.unmark({
+                done: function(){
+                    markInstanceSpan.mark(keyword, options);
+                }
+            });
+        };
+
+        keywordInput.addEventListener("input", performMark);
 
     }
 }

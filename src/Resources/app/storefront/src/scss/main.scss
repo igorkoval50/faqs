@@ -539,12 +539,14 @@ html {
     .minus-val.collapsed {
       pointer-events: none;
       &:after {
-        content: "-";
+        content: "";
       }
     }
   }
 }
 
-.highlight {
-  background-color: yellow;
+mark {
+    padding: 0;
+    background-color: #333;
+    color: #fff
 }

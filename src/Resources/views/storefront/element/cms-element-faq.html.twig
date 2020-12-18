@@ -1035,4 +1035,70 @@
 
         </script>
     </div>
+
+{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.es6.min.js" integrity="sha512-zWsaatY+hhFTn7k17RE63/Tb2gzMwZnMiF2lSINfPkIBciAvHpSxwW7N8BpF/szQ3g9kVyskM53vSCvcgXxv+g==" crossorigin="anonymous"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.es6.js" integrity="sha512-f5x7/TNoU0+GTUi+u+FgPejOlqswO2E8NiasRAHlu/ugCcu/C6L8Kk9xbMSSSVubNSL+vpSXThxUy+/Pmx9kow==" crossorigin="anonymous"></script>#}
+    <script>
+         (function($){
+             var mark = function() {
+                 var keyword = $(".c108-faq-suchfeld").val();
+                 $(".questiontab span").unmark({
+                     done: function() {
+                         $(".questiontab span").mark(keyword);
+                     }
+                 });
+                 $(".collapse-item p").unmark({
+                     done: function() {
+                         $(".collapse-item p").mark(keyword);
+                     }
+                 });
+             };
+             $(".c108-faq-suchfeld").on("input", mark);
+
+         })(jQuery);
+</script>
+{#        var options = {#}
+{#            "element": "mark",#}
+{#            "className": "",#}
+{#            "exclude": [],#}
+{#            "separateWordSearch": true,#}
+{#            "accuracy": "partially",#}
+{#            "diacritics": true,#}
+{#            "synonyms": {},#}
+{#            "iframes": false,#}
+{#            "iframesTimeout": 5000,#}
+{#            "acrossElements": false,#}
+{#            "caseSensitive": false,#}
+{#            "ignoreJoiners": false,#}
+{#            "ignorePunctuation": [],#}
+{#            "wildcards": "disabled",#}
+{#            "each": function(node){#}
+{#                // node is the marked DOM element#}
+{#            },#}
+{#            "filter": function(textNode, foundTerm, totalCounter, counter){#}
+{#                // textNode is the text node which contains the found term#}
+{#                // foundTerm is the found search term#}
+{#                // totalCounter is a counter indicating the total number of all marks#}
+{#                //              at the time of the function call#}
+{#                // counter is a counter indicating the number of marks for the found term#}
+{#                return true; // must return either true or false#}
+{#            },#}
+{#            "noMatch": function(term){#}
+{#                // term is the not found term#}
+{#            },#}
+{#            "done": function(counter){#}
+{#                // counter is a counter indicating the total number of all marks#}
+{#            },#}
+{#            "debug": false,#}
+{#            "log": window.console#}
+{#        };#}
+{#        var context = document.querySelectorAll(".collapse-item p"); // requires an element with class "context" to exist#}
+{#        for(let i = 0; i < context.length; i++) {#}
+{#            var instance = new Mark(context[i]);#}
+{#        }#}
+
+{#        instance.mark("lorem", options); // will mark the keyword "test"#}
+{#    </script>#}
+    <template data-example-plugin></template>
 {% endblock %}

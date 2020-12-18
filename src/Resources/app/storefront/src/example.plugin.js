@@ -1,11 +1,6 @@
 import Plugin from 'src/plugin-system/plugin.class';
 import Mark from '../node_modules/mark.js/src/vanilla';
 
-// Import logger
-import { mark } from '@mark';
-
-// Initializing the logger
-
 // The plugin skeleton
 export default class ExamplePlugin extends Plugin{
     init() {
@@ -24,23 +19,12 @@ export default class ExamplePlugin extends Plugin{
             "ignoreJoiners": false,
             "ignorePunctuation": [],
             "wildcards": "disabled",
-            "each": function(node){
-                // node is the marked DOM element
-            },
+            "each": function(node){},
             "filter": function(textNode, foundTerm, totalCounter, counter){
-                // textNode is the text node which contains the found term
-                // foundTerm is the found search term
-                // totalCounter is a counter indicating the total number of all marks
-                //              at the time of the function call
-                // counter is a counter indicating the number of marks for the found term
                 return true; // must return either true or false
             },
-            "noMatch": function(term){
-                // term is the not found term
-            },
-            "done": function(counter){
-                // counter is a counter indicating the total number of all marks
-            },
+            "noMatch": function(term){},
+            "done": function(counter){},
             "debug": false,
             "log": window.console
         };
@@ -68,6 +52,5 @@ export default class ExamplePlugin extends Plugin{
         };
 
         keywordInput.addEventListener("input", performMark);
-
     }
 }

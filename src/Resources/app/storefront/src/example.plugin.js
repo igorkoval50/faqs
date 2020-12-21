@@ -2,9 +2,9 @@ import Plugin from 'src/plugin-system/plugin.class';
 import Mark from '../node_modules/mark.js/src/vanilla';
 
 // The plugin skeleton
-export default class ExamplePlugin extends Plugin{
-    init() {
-        var options = {
+export default class ExamplePlugin extends Plugin {
+
+    static options = {
             "element": "mark",
             "className": "",
             "exclude": [],
@@ -27,30 +27,55 @@ export default class ExamplePlugin extends Plugin{
             "done": function(counter){},
             "debug": false,
             "log": window.console
-        };
+    };
 
-        var markInstanceP = new Mark(document.querySelectorAll(".collapse-item p"));
-        var markInstanceSpan = new Mark(document.querySelectorAll(".questiontab span"));
-        // Cache DOM elements
-        var keywordInput = document.querySelector(".c108-faq-suchfeld");
+    static selectors = {
+        collapseItemP: '.collapse-item p',
+        questionTabSpan: '.questiontab span',
+    };
 
-        function performMark() {
 
-            var keyword = keywordInput.value;
+    init() {
+        var that = this;
+        this.markInstanceP = new Mark(document.querySelectorAll('.collapse-item p'));
+        this.markInstanceSpan = new Mark(document.querySelectorAll('.questiontab span'));
+        this._registerEvents();
 
-            markInstanceP.unmark({
-                done: function(){
-                    markInstanceP.mark(keyword, options);
-                }
-            });
-
-            markInstanceSpan.unmark({
-                done: function(){
-                    markInstanceSpan.mark(keyword, options);
-                }
-            });
-        };
-
-        keywordInput.addEventListener("input", performMark);
     }
+    _registerEvents() {
+        console.log('test');
+        this.el.addEventListener("input",event => this._onInput(event))
+    }
+    /**
+     * callback when the form has changed
+     *
+     * @param event
+     * @private
+     */
+    _onInput(event){
+
+        let test = this.markInstanceP;
+        let test1 = this.markInstanceSpan;
+
+
+        let searchFieldValue = event.target.value;
+        let options = this.options;
+
+        test.unmark({
+            done: function(){
+                test.mark(searchFieldValue, options);
+            }
+        });
+
+        test1.unmark({
+            done: function(){
+                test1.mark(searchFieldValue, options);
+            }
+        });
+
+
+
+    }
+
+
 }

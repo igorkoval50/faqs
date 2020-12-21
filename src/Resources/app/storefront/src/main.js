@@ -3,7 +3,11 @@ import ExamplePlugin from './example.plugin.js';
 
 // Register them via the existing PluginManager
 const PluginManager = window.PluginManager;
-PluginManager.register('ExamplePlugin', ExamplePlugin);
+PluginManager.register('ExamplePlugin', ExamplePlugin,'[data-enable-mark]');
+
+if (module.hot) {
+    module.hot.accept();
+}
 
 $( document ).ready(function() {
     //smooth scrolling to the link

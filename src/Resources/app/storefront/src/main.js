@@ -21,6 +21,7 @@ $( document ).ready(function() {
     //logic for search
     $('.c108-faq-suchfeld').on('input', function (e) {
         if(e.target.value !== "") {
+            $('.c108-faq-no-results').show();
             $('.c108-faq-section-box').hide();
             $('.cms-element-faq-boxes').addClass('less-margin');
             $('.c108-faq-section-outer').addClass('remove-margin');
@@ -53,6 +54,7 @@ $( document ).ready(function() {
                 $('.c108-faq-question-wrapper').addClass('add-margin');
             }
         } else {
+            $('.c108-faq-no-results').hide();
             $('.c108-faq-section-box').show();
             $('.cms-element-faq-boxes').removeClass('less-margin');
             $('.c108-faq-section-outer').removeClass('remove-margin');

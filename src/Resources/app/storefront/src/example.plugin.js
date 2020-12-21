@@ -13,7 +13,7 @@ export default class ExamplePlugin extends Plugin{
             "diacritics": true,
             "synonyms": {},
             "iframes": false,
-            "iframesTimeout": 300,
+            "iframesTimeout": 0,
             "acrossElements": false,
             "caseSensitive": false,
             "ignoreJoiners": false,

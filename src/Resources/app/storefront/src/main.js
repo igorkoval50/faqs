@@ -60,6 +60,7 @@ $( document ).ready(function() {
             $('.questiontab').removeClass('add-padding');
             $('.questiontab').removeClass('minus-val');
             $('.collapse-item').removeClass('show');
+            $('.card').show();
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').removeClass('show');
                 $('.c108-faq-question-section').removeClass('remove-margin');

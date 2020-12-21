@@ -37,10 +37,11 @@ $( document ).ready(function() {
                     $(this).siblings().children().show().addClass('minus-val');
                     $(this).siblings().children().css('backgroundColor', $("#val-color").text());
                     $('.questiontab').addClass('minus-val');
-
+                    $(this).parent().show();
 
                 } else {
                     $('.c108-faq-no-results').show();
+                    $(this).parent().hide();
                 }
             });
             //the end search logic

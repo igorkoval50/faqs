@@ -416,6 +416,8 @@ html {
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
+      position: relative;
+      z-index: 2;
     @media (max-width: 576px) {
       height: 240px;
     }
@@ -549,5 +551,13 @@ mark {
     padding: 0;
     background-color: #333;
     color: #fff
+}
+
+@media (max-width: 576px) {
+    .c108-faq-no-results {
+        top: 58px;
+        font-size: 18px;
+        left: 20px;
+    }
 }
 

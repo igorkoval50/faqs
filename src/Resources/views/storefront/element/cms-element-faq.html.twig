@@ -1038,5 +1038,36 @@
         </script>
     </div>
 
-    <template data-example-plugin></template>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/7.0.0/mark.es6.min.js" integrity="sha512-+ZDAK21HxklekVU6N72wf/8kukjOVup+W2lOF6WpApdCEU4T9+UBui9eo1dl3XTHJNd6gHB29h4QYOjcRUNELg==" crossorigin="anonymous"></script>
+    <script>
+        var options;
+        var markInstanceP = new Mark(document.querySelectorAll(".collapse-item p"));
+        var markInstanceSpan = new Mark(document.querySelectorAll(".questiontab span"));
+        // Cache DOM elements
+        var keywordInput = document.querySelector(".c108-faq-suchfeld");
+
+        function performMark() {
+
+            // Read the keyword
+            var keyword = keywordInput.value;
+
+            // Determine selected options
+
+            // Remove previous marked elements and mark
+            // the new keyword inside the context
+            markInstanceP.unmark({
+                done: function(){
+                    markInstanceP.mark(keyword, options);
+                }
+            });
+            markInstanceSpan.unmark({
+                done: function(){
+                    markInstanceSpan.mark(keyword, options);
+                }
+            });
+        };
+        // Listen to input and option changes
+        keywordInput.addEventListener("input", performMark);
+    </script>
+
 {% endblock %}

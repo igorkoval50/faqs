@@ -1,10 +1,3 @@
-// Import all necessary Storefront plugins and scss files
-import ExamplePlugin from './example.plugin.js';
-
-// Register them via the existing PluginManager
-const PluginManager = window.PluginManager;
-PluginManager.register('ExamplePlugin', ExamplePlugin,'[data-enable-mark]');
-
 if (module.hot) {
     module.hot.accept();
 }

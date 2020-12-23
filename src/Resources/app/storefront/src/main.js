@@ -49,6 +49,15 @@ $( document ).ready(function() {
                     $(this).parent().addClass('minus-val');
                 }
             });
+
+            $(".c108-faq-section-title").filter(function() {
+                if($(this).text().toLowerCase().indexOf(value) > -1) {
+                    $(this).show();
+                    $(this).css('backgroundColor', $("#val-color").text());
+                    $(this).addClass('title-show');
+                }
+            });
+
             //the end search logic
 
             if ($(window).width() <= 575) {
@@ -68,6 +77,8 @@ $( document ).ready(function() {
             $('.collapse-item').removeClass('show');
             $('.questiontab').removeClass('minus-val');
             $('.card').show();
+            $(".c108-faq-section-title").css('backgroundColor', '#fff');
+            $(c108-faq-section-title).addClass('title-show');
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').removeClass('show');
                 $('.c108-faq-question-section').removeClass('remove-margin');

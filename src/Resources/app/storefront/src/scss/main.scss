@@ -460,6 +460,8 @@ html {
     padding-bottom: 26px;
     max-width: 100%;
     border-bottom: 1px solid #333;
+    position: relative;
+    z-index: 2;
   }
   .questiontab {
     width: 100%;
@@ -565,4 +567,13 @@ mark {
         left: 20px;
     }
 }
+.container-main {
+  .cms-page {
+    .title-show {
+      border: none;
+      padding: 8px 5px;
+    }
+  }
+}
+
 

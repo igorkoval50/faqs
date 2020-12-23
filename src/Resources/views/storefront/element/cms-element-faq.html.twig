@@ -1044,6 +1044,7 @@
         var markInstanceP = new Mark(document.querySelectorAll(".collapse-item p"));
         var markInstanceSpan = new Mark(document.querySelectorAll(".questiontab span"));
         var markInstanceQuestion = new Mark(document.querySelectorAll(".questiontab span"));
+        var markInstanceTitle = new Mark(document.querySelectorAll(".c108-faq-section-title"));
         // Cache DOM elements
         var keywordInput = document.querySelector(".c108-faq-suchfeld");
 
@@ -1069,6 +1070,11 @@
             markInstanceQuestion.unmark({
                 done: function(){
                     markInstanceQuestion.mark(keyword, options);
+                }
+            });
+            markInstanceTitle.unmark({
+                done: function(){
+                    markInstanceTitle.mark(keyword, options);
                 }
             });
         };

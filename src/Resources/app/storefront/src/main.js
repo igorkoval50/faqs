@@ -42,6 +42,13 @@ $( document ).ready(function() {
                     $(this).parent().hide();
                 }
             });
+            $(".questiontab span").filter(function() {
+                if($(this).text().toLowerCase().indexOf(value) > -1) {
+                    $(this).show();
+                    $(this).parent().parent().parent().show();
+                    $(this).parent().addClass('minus-val');
+                }
+            });
             //the end search logic
 
             if ($(window).width() <= 575) {
@@ -59,6 +66,7 @@ $( document ).ready(function() {
             $('.questiontab').removeClass('add-padding');
             $('.questiontab').removeClass('minus-val');
             $('.collapse-item').removeClass('show');
+            $('.questiontab').removeClass('minus-val');
             $('.card').show();
             if ($(window).width() <= 575) {
                 $('.c108-faq-question-section').removeClass('show');
